@@ -1,0 +1,71 @@
+{
+    "nav": {
+      "home": "الرئيسية",
+      "opportunities": "الفرص",
+      "saved": "المحفوظات",
+      "dashboard": "لوحة التحكم",
+      "about": "من نحن",
+      "contact": "اتصل بنا",
+      "login": "تسجيل الدخول",
+      "register": "إنشاء حساب",
+      "logout": "تسجيل الخروج"
+    },
+    "home": {
+      "hero": {
+        "title": "اعثر على فرصتك",
+        "subtitle": "اكتشف الوظائف والتدريب والمنح الدراسية والمزيد في مكان واحد",
+        "search": "ابحث عن الفرص...",
+        "button": "ابدأ الآن"
+      },
+      "featured": "الفرص المميزة",
+      "categories": "تصفح حسب الفئة",
+      "viewAll": "عرض الكل"
+    },
+    "opportunities": {
+      "title": "جميع الفرص",
+      "search": "بحث...",
+      "filter": "تصفية",
+      "noResults": "لم يتم العثور على فرص",
+      "deadline": "الموعد النهائي",
+      "apply": "قدم الآن",
+      "save": "حفظ",
+      "saved": "تم الحفظ",
+      "remote": "عن بعد",
+      "onsite": "حضوري",
+      "hybrid": "هجين"
+    },
+    "categories": {
+      "job": "وظيفة",
+      "internship": "تدريب",
+      "scholarship": "منحة دراسية",
+      "onlineCourse": "دورة أونلاين",
+      "remoteWork": "عمل عن بعد",
+      "trainingProgram": "برنامج تدريبي",
+      "volunteerWork": "عمل تطوعي"
+    },
+    "dashboard": {
+      "title": "لوحة التحكم",
+      "total": "إجمالي الفرص",
+      "jobs": "الوظائف",
+      "scholarships": "المنح",
+      "internships": "التدريبات",
+      "remote": "عن بعد",
+      "expiringSoon": "تنتهي قريباً",
+      "recent": "آخر الإضافات"
+    },
+    "footer": {
+      "rights": "جميع الحقوق محفوظة",
+      "description": "OpenPath - بوابتك إلى الفرص العالمية"
+    },
+    "common": {
+      "loading": "جاري التحميل...",
+      "error": "حدث خطأ ما",
+      "empty": "لا يوجد شيء هنا بعد",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "submit": "إرسال",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "back": "رجوع"
+    }
+  }
