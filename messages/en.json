@@ -1,0 +1,72 @@
+{
+    "nav": {
+        "home": "Home",
+        "opportunities": "Opportunities",
+        "saved": "Saved",
+        "dashboard": "Dashboard",
+        "about": "About",
+        "team": "Team",
+        "contact": "Contact",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout"
+    },
+    "home": {
+        "hero": {
+            "title": "Find Your Opportunity",
+            "subtitle": "Discover jobs, internships, scholarships, and more in one place",
+            "search": "Search opportunities...",
+            "button": "Get Started"
+        },
+        "featured": "Featured Opportunities",
+        "categories": "Browse by Category",
+        "viewAll": "View All"
+    },
+    "opportunities": {
+        "title": "All Opportunities",
+        "search": "Search...",
+        "filter": "Filter",
+        "noResults": "No opportunities found",
+        "deadline": "Deadline",
+        "apply": "Apply Now",
+        "save": "Save",
+        "saved": "Saved",
+        "remote": "Remote",
+        "onsite": "On-site",
+        "hybrid": "Hybrid"
+    },
+    "categories": {
+        "job": "Job",
+        "internship": "Internship",
+        "scholarship": "Scholarship",
+        "onlineCourse": "Online Course",
+        "remoteWork": "Remote Work",
+        "trainingProgram": "Training Program",
+        "volunteerWork": "Volunteer Work"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "total": "Total Opportunities",
+        "jobs": "Jobs",
+        "scholarships": "Scholarships",
+        "internships": "Internships",
+        "remote": "Remote",
+        "expiringSoon": "Expiring Soon",
+        "recent": "Recent Submissions"
+    },
+    "footer": {
+        "rights": "All rights reserved",
+        "description": "OpenPath - Your Gateway to Global Opportunities"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Something went wrong",
+        "empty": "Nothing here yet",
+        "save": "Save",
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "edit": "Edit",
+        "delete": "Delete",
+        "back": "Back"
+    }
+}
