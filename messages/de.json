@@ -1,0 +1,71 @@
+{
+    "nav": {
+      "home": "Startseite",
+      "opportunities": "Möglichkeiten",
+      "saved": "Gespeichert",
+      "dashboard": "Dashboard",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "login": "Anmelden",
+      "register": "Registrieren",
+      "logout": "Abmelden"
+    },
+    "home": {
+      "hero": {
+        "title": "Finde deine Chance",
+        "subtitle": "Entdecke Jobs, Praktika, Stipendien und mehr an einem Ort",
+        "search": "Möglichkeiten suchen...",
+        "button": "Loslegen"
+      },
+      "featured": "Ausgewählte Möglichkeiten",
+      "categories": "Nach Kategorie durchsuchen",
+      "viewAll": "Alle anzeigen"
+    },
+    "opportunities": {
+      "title": "Alle Möglichkeiten",
+      "search": "Suchen...",
+      "filter": "Filter",
+      "noResults": "Keine Möglichkeiten gefunden",
+      "deadline": "Frist",
+      "apply": "Jetzt bewerben",
+      "save": "Speichern",
+      "saved": "Gespeichert",
+      "remote": "Remote",
+      "onsite": "Vor Ort",
+      "hybrid": "Hybrid"
+    },
+    "categories": {
+      "job": "Job",
+      "internship": "Praktikum",
+      "scholarship": "Stipendium",
+      "onlineCourse": "Online-Kurs",
+      "remoteWork": "Remote-Arbeit",
+      "trainingProgram": "Trainingsprogramm",
+      "volunteerWork": "Freiwilligenarbeit"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "total": "Gesamte Möglichkeiten",
+      "jobs": "Jobs",
+      "scholarships": "Stipendien",
+      "internships": "Praktika",
+      "remote": "Remote",
+      "expiringSoon": "Läuft bald ab",
+      "recent": "Neueste Einträge"
+    },
+    "footer": {
+      "rights": "Alle Rechte vorbehalten",
+      "description": "OpenPath - Dein Tor zu globalen Möglichkeiten"
+    },
+    "common": {
+      "loading": "Wird geladen...",
+      "error": "Etwas ist schiefgelaufen",
+      "empty": "Noch nichts hier",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "submit": "Absenden",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "back": "Zurück"
+    }
+  }
