@@ -1,0 +1,71 @@
+{
+    "nav": {
+        "home": "خانه",
+        "opportunities": "فرصت‌ها",
+        "saved": "ذخیره شده",
+        "dashboard": "داشبورد",
+        "about": "درباره ما",
+        "contact": "تماس",
+        "login": "ورود",
+        "register": "ثبت نام",
+        "logout": "خروج"
+    },
+    "home": {
+        "hero": {
+            "title": "فرصت خود را بیابید",
+            "subtitle": "شغل، کارآموزی، بورسیه و بیشتر را در یک جا کشف کنید",
+            "search": "جستجوی فرصت‌ها...",
+            "button": "شروع کنید"
+        },
+        "featured": "فرصت‌های ویژه",
+        "categories": "مرور بر اساس دسته‌بندی",
+        "viewAll": "مشاهده همه"
+    },
+    "opportunities": {
+        "title": "همه فرصت‌ها",
+        "search": "جستجو...",
+        "filter": "فیلتر",
+        "noResults": "فرصتی یافت نشد",
+        "deadline": "مهلت",
+        "apply": "ثبت نام",
+        "save": "ذخیره",
+        "saved": "ذخیره شد",
+        "remote": "دورکاری",
+        "onsite": "حضوری",
+        "hybrid": "ترکیبی"
+    },
+    "categories": {
+        "job": "شغل",
+        "internship": "کارآموزی",
+        "scholarship": "بورسیه",
+        "onlineCourse": "دوره آنلاین",
+        "remoteWork": "کار از راه دور",
+        "trainingProgram": "برنامه آموزشی",
+        "volunteerWork": "کار داوطلبانه"
+    },
+    "dashboard": {
+        "title": "داشبورد",
+        "total": "مجموع فرصت‌ها",
+        "jobs": "مشاغل",
+        "scholarships": "بورسیه‌ها",
+        "internships": "کارآموزی‌ها",
+        "remote": "دورکاری",
+        "expiringSoon": "به زودی منقضی می‌شود",
+        "recent": "آخرین ثبت‌ها"
+    },
+    "footer": {
+        "rights": "تمام حقوق محفوظ است",
+        "description": "OpenPath - دروازه شما به فرصت‌های جهانی"
+    },
+    "common": {
+        "loading": "در حال بارگذاری...",
+        "error": "مشکلی پیش آمد",
+        "empty": "هنوز چیزی اینجا نیست",
+        "save": "ذخیره",
+        "cancel": "لغو",
+        "submit": "ارسال",
+        "edit": "ویرایش",
+        "delete": "حذف",
+        "back": "برگشت"
+    }
+}
