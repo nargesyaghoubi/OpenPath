@@ -1,33 +1,50 @@
-import createMiddleware from "next-intl/middleware"
-import { locales, defaultLocale } from "./i18n"
+import { auth } from "./auth";
+import createIntlMiddleware from "next-intl/middleware";
+import { routing } from "./lib/i18n/routing";
+import { NextRequest, NextResponse } from "next/server";
 
-// Language routing
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: "always",
-})
+// Routes (WITHOUT locale prefix) that require authentication
+const protectedPaths = [
+    "/dashboard",
+    "/saved",
+    "/add-opportunity",
+];
 
-// Protected routes - auth required
-const protectedRoutes = ["/dashboard", "/saved", "/add-opportunity", "/admin"]
+const intlMiddleware = createIntlMiddleware(routing);
 
-export function proxy(request: any) {
-  const { nextUrl } = request
-  const isLoggedIn = Boolean(request.auth)
+// Combine next-intl + Auth.js in a single proxy function (Next.js 16 style)
+export default async function proxy(request: NextRequest) {
+    const { pathname } = request.nextUrl;
 
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    nextUrl.pathname.includes(route)
-  )
+    // Strip locale prefix to get the base path
+    // e.g. /en/dashboard → /dashboard, /fa/saved → /saved
+    const localePattern = new RegExp(
+        `^\\/(${routing.locales.join("|")})(\\/.*)$`
+    );
+    const match = pathname.match(localePattern);
+    const basePath = match ? match[2] : pathname;
 
-  if (isProtectedRoute && !isLoggedIn) {
-    const loginUrl = new URL(`/${defaultLocale}/auth/login`, nextUrl)
-    loginUrl.searchParams.set("callbackUrl", nextUrl.pathname)
-    return Response.redirect(loginUrl)
-  }
+    const isProtected = protectedPaths.some(
+        (p) => basePath === p || basePath.startsWith(p + "/")
+    );
 
-  return intlMiddleware(request)
+    if (isProtected) {
+        const session = await auth();
+
+        if (!session?.user) {
+            // Detect locale for the redirect
+            const locale = match ? match[1] : routing.defaultLocale;
+            const loginUrl = new URL(`/${locale}/login`, request.url);
+            loginUrl.searchParams.set("callbackUrl", pathname);
+            return NextResponse.redirect(loginUrl);
+        }
+    }
+
+    // Let next-intl handle locale routing for everything else
+    return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
-}
+    // Apply proxy to all pages, skip static files and API routes
+    matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+};
