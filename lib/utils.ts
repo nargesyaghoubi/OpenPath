@@ -1,10 +1,12 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+// Merge Tailwind classes safely without conflicts
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Format deadline date to readable string (e.g. "Aug 15, 2026")
 export function formatDeadline(deadline: string): string {
   const date = new Date(deadline);
   return date.toLocaleDateString("en-US", {
@@ -14,6 +16,7 @@ export function formatDeadline(deadline: string): string {
   });
 }
 
+// Check if opportunity is expiring within the given days threshold
 export function isExpiringSoon(deadline: string, daysThreshold = 14): boolean {
   const now = new Date();
   const deadlineDate = new Date(deadline);
@@ -61,6 +64,7 @@ export function isRTL(locale: string): boolean {
   return RTL_LOCALES.includes(locale);
 }
 
+// Display names for supported locales
 export const LOCALE_NAMES: Record<string, string> = {
   en: "English",
   fa: "فارسی",
@@ -70,6 +74,7 @@ export const LOCALE_NAMES: Record<string, string> = {
   de: "Deutsch",
 };
 
+// Flag emojis for supported locales
 export const LOCALE_FLAGS: Record<string, string> = {
   en: "🇬🇧",
   fa: "🇦🇫",
