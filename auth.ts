@@ -1,17 +1,29 @@
-// Authentication configuration using NextAuth.js
-// Currently using mock credentials - can be replaced with a real database later
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 
-import NextAuth from "next-auth"
-import Credentials from "next-auth/providers/credentials"
+// ── Demo users (in production: replace with DB + bcrypt) ──────────────────────
+const users = [
+    {
+        id: "1",
+        name: "Demo User",
+        email: "user@example.com",
+        password: "user123",
+        role: "user",
+    },
+    {
+        id: "2",
+        name: "Admin User",
+        email: "admin@example.com",
+        password: "admin123",
+        role: "admin",
+    },
+];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-    // Use JWT strategy for session management
-    session: {
-        strategy: "jwt",
-    },
-    // Custom pages
+    session: { strategy: "jwt" },
     pages: {
-        signIn: "/fa/auth/login",
+        // next-intl prefix will be added in proxy.ts — auth.js just needs base path
+        signIn: "/login",
     },
     providers: [
         Credentials({
@@ -21,41 +33,36 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
-                const email = String(credentials?.email || "").trim().toLowerCase()
-                const password = String(credentials?.password || "")
+                const email = String(credentials?.email ?? "").trim().toLowerCase();
+                const password = String(credentials?.password ?? "");
 
-                if (!email || !password) return null
+                if (!email || !password) return null;
 
-                // Mock user - replace with real database lookup later
-                if (email === "admin@kaaryab.com" && password === "admin123") {
-                    return {
-                        id: "1",
-                        name: "Admin",
-                        email: "admin@kaaryab.com",
-                        role: "admin",
-                    }
-                }
+                const user = users.find((u) => u.email === email);
 
-                return null
+                // Demo only: plain-text comparison.
+                // Production: use bcrypt.compare(password, user.hashedPassword)
+                if (!user || user.password !== password) return null;
+
+                return { id: user.id, name: user.name, email: user.email, role: user.role };
             },
         }),
     ],
     callbacks: {
-        // Add custom fields to JWT token
         async jwt({ token, user }) {
             if (user) {
-                token.id = user.id
-                token.role = user.role
+                token.id = user.id;
+                // ts-expect-error – role is a custom field
+                token.role = user.role;
             }
-            return token
+            return token;
         },
-        // Add custom fields to session
         async session({ session, token }) {
             if (session.user) {
-                session.user.id = token.id as string
-                session.user.role = token.role as string
+                (session.user as { id?: string }).id = token.id as string;
+                (session.user as { role?: string }).role = token.role as string;
             }
-            return session
+            return session;
         },
     },
-})
+});
