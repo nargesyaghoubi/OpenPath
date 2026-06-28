@@ -1,21 +1,18 @@
-import { notFound } from "next/navigation"
-import { getRequestConfig } from "next-intl/server"
-
-// Supported languages
-export const locales = ["fa", "en", "ar", "de"] as const
-export const defaultLocale = "fa"
-
-export type Locale = (typeof locales)[number]
+// Loads the correct translation messages based on the current locale
+import { getRequestConfig } from "next-intl/server";
+import { routing } from "./lib/i18n/routing";
 
 export default getRequestConfig(async ({ requestLocale }) => {
-    const locale = await requestLocale
+  let locale = await requestLocale;
 
-    if (!locale || !locales.includes(locale as Locale)) {
-        notFound()
-    }
+// Fall back to default locale if invalid or missing
+  if (!locale || !routing.locales.includes(locale as typeof routing.locales[number])) {
+    locale = routing.defaultLocale;
+  }
 
-    return {
-        locale,
-        messages: (await import(`./messages/${locale}.json`)).default,
-    }
-})
+  return {
+    locale,
+    // Dynamically import translation messages for the current locale
+    messages: (await import(`./messages/${locale}.json`)).default,
+  };
+});
