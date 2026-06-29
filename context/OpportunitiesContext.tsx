@@ -46,7 +46,7 @@ export function OpportunitiesProvider({ children }: { children: ReactNode }) {
         const newOpp: Opportunity = {
             ...opp,
             id: Date.now().toString(),
-            createdAt: new Date().toISOString().split("T")[0],
+            postedAt: new Date().toISOString().split("T")[0],
         };
         persist([newOpp, ...opportunities]);
     };
