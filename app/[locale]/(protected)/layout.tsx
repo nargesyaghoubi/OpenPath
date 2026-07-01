@@ -1,6 +1,7 @@
 // Checks authentication before rendering children
-// Redirects to login if user is not authenticatedimport { auth } from "@/auth";
+// Redirects to login if user is not authenticated
 
+import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getLocale } from "next-intl/server";
 
