@@ -1,71 +1,257 @@
 {
-    "nav": {
-      "home": "Startseite",
-      "opportunities": "Möglichkeiten",
-      "saved": "Gespeichert",
-      "dashboard": "Dashboard",
-      "about": "Über uns",
-      "contact": "Kontakt",
-      "login": "Anmelden",
-      "register": "Registrieren",
-      "logout": "Abmelden"
-    },
-    "home": {
-      "hero": {
-        "title": "Finde deine Chance",
-        "subtitle": "Entdecke Jobs, Praktika, Stipendien und mehr an einem Ort",
-        "search": "Möglichkeiten suchen...",
-        "button": "Loslegen"
-      },
-      "featured": "Ausgewählte Möglichkeiten",
-      "categories": "Nach Kategorie durchsuchen",
-      "viewAll": "Alle anzeigen"
-    },
-    "opportunities": {
-      "title": "Alle Möglichkeiten",
-      "search": "Suchen...",
-      "filter": "Filter",
-      "noResults": "Keine Möglichkeiten gefunden",
-      "deadline": "Frist",
-      "apply": "Jetzt bewerben",
-      "save": "Speichern",
-      "saved": "Gespeichert",
-      "remote": "Remote",
-      "onsite": "Vor Ort",
-      "hybrid": "Hybrid"
+  "nav": {
+    "home": "Startseite",
+    "opportunities": "Möglichkeiten",
+    "saved": "Gespeicherte",
+    "dashboard": "Dashboard",
+    "addOpportunity": "Möglichkeit hinzufügen",
+    "about": "Über uns",
+    "team": "Team",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden"
+  },
+  "home": {
+    "hero": {
+      "badge": "Für die afghanische Jugend",
+      "title": "Entdecke deine nächste",
+      "titleHighlight": "Möglichkeit",
+      "subtitle": "OpenPath verbindet junge Menschen weltweit mit Jobs, Stipendien, Praktika und Weiterbildungsmöglichkeiten – alles an einem Ort.",
+      "browseBtn": "Möglichkeiten durchsuchen",
+      "addBtn": "Möglichkeit hinzufügen",
+      "stats": {
+        "opportunities": "Möglichkeiten",
+        "organizations": "Organisationen",
+        "categories": "Kategorien",
+        "countries": "Länder"
+      }
     },
     "categories": {
-      "job": "Job",
-      "internship": "Praktikum",
-      "scholarship": "Stipendium",
-      "onlineCourse": "Online-Kurs",
-      "remoteWork": "Remote-Arbeit",
-      "trainingProgram": "Trainingsprogramm",
-      "volunteerWork": "Freiwilligenarbeit"
+      "title": "Nach Kategorie durchsuchen",
+      "subtitle": "Finde den richtigen Möglichkeitstyp für deine Ziele",
+      "viewAll": "Alle anzeigen"
     },
-    "dashboard": {
-      "title": "Dashboard",
+    "featured": {
+      "title": "Hervorgehobene Möglichkeiten",
+      "subtitle": "Ausgewählte Möglichkeiten, um deine Karriere zu starten",
+      "viewAll": "Alle Möglichkeiten anzeigen",
+      "deadline": "Bewerbungsschluss",
+      "apply": "Jetzt bewerben",
+      "save": "Speichern"
+    },
+    "cta": {
+      "title": "Kennst du eine tolle Möglichkeit?",
+      "subtitle": "Hilf anderen jungen Menschen, indem du Jobs, Stipendien und Weiterbildungsprogramme auf OpenPath teilst.",
+      "btn": "Möglichkeit teilen"
+    },
+    "byCountry": {
+      "title": "Explore by Country",
+      "subtitle": "Find opportunities in your target destination",
+      "viewAll": "View All"
+    }
+  },
+  "opportunities": {
+    "title": "Alle Möglichkeiten",
+    "subtitle": "{count} Möglichkeiten für junge Menschen weltweit",
+    "search": "Möglichkeiten suchen...",
+    "filters": {
+      "category": "Kategorie",
+      "location": "Ort",
+      "type": "Typ",
+      "allCategories": "Alle Kategorien",
+      "allLocations": "Alle Orte",
+      "allTypes": "Alle Typen",
+      "remote": "Remote",
+      "onsite": "Vor Ort",
+      "hybrid": "Hybrid",
+      "sortBy": "Sortieren nach",
+      "newest": "Neueste",
+      "deadline": "Bewerbungsschluss",
+      "title": "Titel",
+      "country": "Country",
+      "allCountries": "All Countries"
+    },
+    "noResults": "Keine Möglichkeiten gefunden",
+    "noResultsSubtitle": "Versuche, deine Filter oder Suchbegriffe anzupassen",
+    "deadline": "Bewerbungsschluss",
+    "location": "Ort",
+    "viewDetails": "Details anzeigen",
+    "save": "Speichern",
+    "saved": "Gespeichert",
+    "featured": "Hervorgehoben",
+    "expiringSoon": "Läuft bald ab"
+  },
+  "details": {
+    "about": "Über diese Möglichkeit",
+    "requirements": "Anforderungen",
+    "deadline": "Bewerbungsschluss",
+    "location": "Ort",
+    "type": "Arbeitstyp",
+    "organization": "Organisation",
+    "tags": "Tags",
+    "applyNow": "Jetzt bewerben",
+    "saveOpportunity": "Möglichkeit speichern",
+    "saved": "Gespeichert ✓",
+    "share": "Teilen",
+    "back": "Zurück zu Möglichkeiten",
+    "demoNote": "⚠️ Demodaten — Dies sind Beispieldaten nur zu Bildungszwecken.",
+    "country": "Country"
+  },
+  "saved": {
+    "title": "Gespeicherte Möglichkeiten",
+    "subtitle": "Deine mit Lesezeichen versehenen Möglichkeiten",
+    "empty": "Noch keine gespeicherten Möglichkeiten",
+    "emptySubtitle": "Durchsuche Möglichkeiten und speichere die, die dir gefallen",
+    "browse": "Möglichkeiten durchsuchen",
+    "remove": "Entfernen",
+    "deadline": "Bewerbungsschluss"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Übersicht aller Möglichkeiten auf OpenPath",
+    "stats": {
       "total": "Gesamte Möglichkeiten",
       "jobs": "Jobs",
       "scholarships": "Stipendien",
       "internships": "Praktika",
       "remote": "Remote",
-      "expiringSoon": "Läuft bald ab",
-      "recent": "Neueste Einträge"
+      "expiringSoon": "Läuft bald ab"
     },
-    "footer": {
-      "rights": "Alle Rechte vorbehalten",
-      "description": "OpenPath - Dein Tor zu globalen Möglichkeiten"
+    "recentTitle": "Aktuelle Einreichungen",
+    "chartTitle": "Möglichkeiten nach Kategorie",
+    "noData": "Keine Daten verfügbar",
+    "countryChartTitle": "Opportunities by Country"
+  },
+  "addOpportunity": {
+    "title": "Möglichkeit hinzufügen",
+    "subtitle": "Teile eine neue Möglichkeit mit der afghanischen Jugend",
+    "fields": {
+      "title": "Titel der Möglichkeit",
+      "titlePlaceholder": "z.B. Frontend-Entwickler Praktikant",
+      "organization": "Organisation",
+      "organizationPlaceholder": "z.B. Kabul Tech Community",
+      "category": "Kategorie",
+      "location": "Ort",
+      "locationPlaceholder": "z.B. Kabul oder Online",
+      "type": "Arbeitstyp",
+      "deadline": "Bewerbungsschluss",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Beschreibe die Möglichkeit ausführlich...",
+      "requirements": "Anforderungen",
+      "requirementsPlaceholder": "z.B. Grundlegendes React, HTML/CSS (eines pro Zeile)",
+      "applyLink": "Bewerbungslink",
+      "applyLinkPlaceholder": "https://example.com/apply",
+      "tags": "Tags",
+      "tagsPlaceholder": "z.B. React, Remote, Anfänger (durch Kommas getrennt)",
+      "country": "Country",
+      "countryPlaceholder": "e.g. United Kingdom"
     },
-    "common": {
-      "loading": "Wird geladen...",
-      "error": "Etwas ist schiefgelaufen",
-      "empty": "Noch nichts hier",
-      "save": "Speichern",
-      "cancel": "Abbrechen",
-      "submit": "Absenden",
-      "edit": "Bearbeiten",
-      "delete": "Löschen",
-      "back": "Zurück"
+    "submit": "Möglichkeit einreichen",
+    "submitting": "Wird eingereicht...",
+    "success": "Möglichkeit erfolgreich eingereicht!",
+    "reset": "Weitere hinzufügen"
+  },
+  "about": {
+    "title": "Über OpenPath",
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "OpenPath ist eine kostenlose, offene Plattform, die Menschen mit lebensverändernden Möglichkeiten verbindet – Jobs, Stipendien, Praktika, Remote-Arbeit und Weiterbildungsprogramme – alles an einem zentralen und leicht zugänglichen Ort."
+    },
+    "problem": {
+      "title": "Das Problem, das wir lösen",
+      "text": "Weltweit sind Informationen über Chancen oft über soziale Medien, Messenger-Gruppen und zahlreiche Websites verstreut. Viele Menschen verpassen wertvolle Möglichkeiten, weil sie nicht wissen, wo sie suchen sollen."
+    },
+    "solution": {
+      "title": "Unsere Lösung",
+      "text": "OpenPath bündelt verifizierte Chancen auf einer schnellen, benutzerfreundlichen und für Mobilgeräte optimierten Plattform. Nutzer können Chancen suchen, filtern, speichern und sich bewerben – in mehreren Sprachen und von jedem Gerät aus."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "access": "Gleicher Zugang",
+      "accessText": "Jeder junge globale verdient es, die für ihn verfügbaren Möglichkeiten zu kennen.",
+      "inclusion": "Inklusion",
+      "inclusionText": "Wir priorisieren Frauen, Jugendliche in Provinzen und unterrepräsentierte Gemeinschaften.",
+      "transparency": "Transparenz",
+      "transparencyText": "Alle Daten auf der Plattform sind klar gekennzeichnet — real oder Demo."
+    },
+    "demoNote": "Dieses Projekt wurde als Abschlussprojekt erstellt. Alle aktuellen Daten sind Demodaten zu Bildungszwecken."
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "Die Menschen, die OpenPath aufbauen"
+  },
+  "contact": {
+    "title": "Kontaktiere uns",
+    "subtitle": "Hast du eine Frage oder möchtest zusammenarbeiten? Melde dich.",
+    "fields": {
+      "name": "Dein Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "jane@example.com",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Wie können wir helfen?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Schreibe deine Nachricht hier..."
+    },
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet...",
+    "success": "Nachricht gesendet! Wir melden uns bald bei dir.",
+    "info": {
+      "title": "In Kontakt bleiben",
+      "email": "hello@openpath.world",
+      "location": "Berlin, Germany",
+      "social": "Folge uns"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melde dich bei deinem OpenPath-Konto an",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "noAccount": "Kein Konto?",
+      "register": "Registrieren",
+      "forgotPassword": "Passwort vergessen?"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "subtitle": "Tritt OpenPath bei und entdecke Möglichkeiten",
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "submit": "Konto erstellen",
+      "hasAccount": "Hast du bereits ein Konto?",
+      "login": "Anmelden"
+    }
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Etwas ist schiefgelaufen",
+    "retry": "Erneut versuchen",
+    "notFound": "Seite nicht gefunden",
+    "backHome": "Zurück zur Startseite",
+    "demoData": "Demodaten",
+    "learnMore": "Mehr erfahren",
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "language": "Sprache"
+  },
+  "footer": {
+    "tagline": "Menschen weltweit mit Chancen verbinden",
+    "links": "Schnelllinks",
+    "categories": "Kategorien",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "disclaimer": "Demodaten-Haftungsausschluss",
+    "rights": "Alle Rechte vorbehalten",
+    "madeWith": "Mit ❤️ für alle gemacht"
   }
+}
