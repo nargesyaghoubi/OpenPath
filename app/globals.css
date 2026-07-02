@@ -1,46 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  /*  main color */
-  --primary: #7C3AED;
-  --primary-dark: #6D28D9;
-  --primary-light: #A78BFA;
+/* Tailwind v4: class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
 
-  --background: #F8F7FF;
-  --card: #FFFFFF;
+@layer base {
+  [data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
 
- 
-  --foreground: #1E1B4B;
-  --foreground-muted: #6B7280;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-
-  --accent: #06B6D4;
-
- /* error & success */
-  --success: #10B981;
-  --error: #EF4444;
-  --warning: #F59E0B;
-
-  
-  --border: #E5E7EB;
+  [dir="rtl"] body,
+  [lang="fa"] body,
+  [lang="ar"] body {
+    font-family: "Tahoma", "Segoe UI", "Arial", sans-serif;
+  }
 }
 
-.dark {
-  --background: #0F0A1E;
-  --card: #1A1033;
-  --foreground: #EDE9FE;
-  --foreground-muted: #9CA3AF;
-  --border: #2D2050;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.3s, color 0.3s;
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
