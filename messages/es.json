@@ -1,0 +1,257 @@
+{
+    "nav": {
+      "home": "Inicio",
+      "opportunities": "Oportunidades",
+      "saved": "Guardadas",
+      "dashboard": "Panel",
+      "addOpportunity": "Agregar oportunidad",
+      "about": "Acerca de",
+      "team": "Team",
+      "contact": "Contacto",
+      "login": "Iniciar sesión",
+      "register": "Registrarse",
+      "logout": "Cerrar sesión"
+    },
+    "home": {
+      "hero": {
+        "badge": "Para jóvenes de todo el mundo",
+        "title": "Descubre tu próxima",
+        "titleHighlight": "Oportunidad",
+        "subtitle": "OpenPath conecta a jóvenes de todo el mundo con empleos, becas, pasantías y oportunidades de desarrollo, todo en un solo lugar.",
+        "browseBtn": "Ver oportunidades",
+        "addBtn": "Agregar oportunidad",
+        "stats": {
+          "opportunities": "Oportunidades",
+          "organizations": "Organizaciones",
+          "categories": "Categorías",
+          "countries": "Países"
+        }
+      },
+      "categories": {
+        "title": "Explorar por categoría",
+        "subtitle": "Encuentra el tipo correcto de oportunidad para tus objetivos",
+        "viewAll": "Ver todo"
+      },
+      "featured": {
+        "title": "Oportunidades destacadas",
+        "subtitle": "Oportunidades seleccionadas para impulsar tu carrera",
+        "viewAll": "Ver todas las oportunidades",
+        "deadline": "Fecha límite",
+        "apply": "Aplicar ahora",
+        "save": "Guardar"
+      },
+      "cta": {
+        "title": "¿Conoces una gran oportunidad?",
+        "subtitle": "Ayuda a jóvenes de todo el mundo compartiendo empleos, becas y programas de formación en OpenPath.",
+        "btn": "Compartir una oportunidad"
+      },
+      "byCountry": {
+        "title": "Explore by Country",
+        "subtitle": "Find opportunities in your target destination",
+        "viewAll": "View All"
+      }
+    },
+    "opportunities": {
+      "title": "Todas las oportunidades",
+      "subtitle": "{count} oportunidades disponibles para jóvenes de todo el mundo",
+      "search": "Buscar oportunidades...",
+      "filters": {
+        "category": "Categoría",
+        "location": "Ubicación",
+        "type": "Tipo",
+        "allCategories": "Todas las categorías",
+        "allLocations": "Todas las ubicaciones",
+        "allTypes": "Todos los tipos",
+        "remote": "Remoto",
+        "onsite": "Presencial",
+        "hybrid": "Híbrido",
+        "sortBy": "Ordenar por",
+        "newest": "Más reciente",
+        "deadline": "Fecha límite",
+        "title": "Título",
+        "country": "Country",
+        "allCountries": "All Countries"
+      },
+      "noResults": "No se encontraron oportunidades",
+      "noResultsSubtitle": "Intenta ajustar tus filtros o términos de búsqueda",
+      "deadline": "Fecha límite",
+      "location": "Ubicación",
+      "viewDetails": "Ver detalles",
+      "save": "Guardar",
+      "saved": "Guardada",
+      "featured": "Destacada",
+      "expiringSoon": "Expira pronto"
+    },
+    "details": {
+      "about": "Acerca de esta oportunidad",
+      "requirements": "Requisitos",
+      "deadline": "Fecha límite de solicitud",
+      "location": "Ubicación",
+      "type": "Tipo de trabajo",
+      "organization": "Organización",
+      "tags": "Etiquetas",
+      "applyNow": "Aplicar ahora",
+      "saveOpportunity": "Guardar oportunidad",
+      "saved": "Guardada ✓",
+      "share": "Compartir",
+      "back": "Volver a oportunidades",
+      "demoNote": "⚠️ Datos de demostración — Estos son datos de muestra solo con fines educativos.",
+      "country": "Country"
+    },
+    "saved": {
+      "title": "Oportunidades guardadas",
+      "subtitle": "Tus oportunidades marcadas",
+      "empty": "No hay oportunidades guardadas aún",
+      "emptySubtitle": "Explora oportunidades y guarda las que te gusten",
+      "browse": "Ver oportunidades",
+      "remove": "Eliminar",
+      "deadline": "Fecha límite"
+    },
+    "dashboard": {
+      "title": "Panel de control",
+      "subtitle": "Resumen de todas las oportunidades en OpenPath",
+      "stats": {
+        "total": "Total de oportunidades",
+        "jobs": "Empleos",
+        "scholarships": "Becas",
+        "internships": "Pasantías",
+        "remote": "Remoto",
+        "expiringSoon": "Expiran pronto"
+      },
+      "recentTitle": "Envíos recientes",
+      "chartTitle": "Oportunidades por categoría",
+      "noData": "No hay datos disponibles",
+      "countryChartTitle": "Opportunities by Country"
+    },
+    "addOpportunity": {
+      "title": "Agregar oportunidad",
+      "subtitle": "Comparte una nueva oportunidad con jóvenes de todo el mundo",
+      "fields": {
+        "title": "Título de la oportunidad",
+        "titlePlaceholder": "ej. Pasante de desarrollador frontend",
+        "organization": "Organización",
+        "organizationPlaceholder": "ej. Comunidad Tech de Kabul",
+        "category": "Categoría",
+        "location": "Ubicación",
+        "locationPlaceholder": "ej. Kabul o En línea",
+        "type": "Tipo de trabajo",
+        "deadline": "Fecha límite de solicitud",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Describe la oportunidad en detalle...",
+        "requirements": "Requisitos",
+        "requirementsPlaceholder": "ej. React básico, HTML/CSS (uno por línea)",
+        "applyLink": "Enlace de solicitud",
+        "applyLinkPlaceholder": "https://example.com/apply",
+        "tags": "Etiquetas",
+        "tagsPlaceholder": "ej. React, Remoto, Principiante (separados por comas)",
+        "country": "Country",
+        "countryPlaceholder": "e.g. United Kingdom"
+      },
+      "submit": "Enviar oportunidad",
+      "submitting": "Enviando...",
+      "success": "¡Oportunidad enviada con éxito!",
+      "reset": "Agregar otra"
+    },
+    "about": {
+      "title": "Acerca de OpenPath",
+      "mission": {
+        "title": "Nuestra misión",
+        "text": "OpenPath es una plataforma gratuita y abierta que conecta a personas de todo el mundo con oportunidades que cambian vidas: empleos, becas, pasantías, trabajo remoto y programas de capacitación, todo en un solo lugar accesible."
+      },
+      "problem": {
+        "title": "El problema que resolvemos",
+        "text": "En todo el mundo, la información sobre oportunidades suele estar dispersa entre redes sociales, aplicaciones de mensajería y numerosos sitios web. Muchas personas pierden oportunidades valiosas simplemente porque no saben dónde buscarlas."
+      },
+      "solution": {
+        "title": "Nuestra solución",
+        "text": "OpenPath centraliza oportunidades verificadas en una plataforma rápida, intuitiva y adaptada a dispositivos móviles. Los usuarios pueden buscar, filtrar, guardar y postular en varios idiomas desde cualquier dispositivo."
+      },
+      "values": {
+        "title": "Nuestros valores",
+        "access": "Acceso igual",
+        "accessText": "Toda persona merece conocer las oportunidades disponibles para ella..",
+        "inclusion": "Inclusión",
+        "inclusionText": "Priorizamos a mujeres, jóvenes en provincias y comunidades subrepresentadas.",
+        "transparency": "Transparencia",
+        "transparencyText": "Todos los datos en la plataforma están claramente etiquetados — reales o de demostración."
+      },
+      "demoNote": "Este proyecto fue construido como proyecto final. Todos los datos actuales son datos de demostración con fines educativos."
+    },
+    "team": {
+      "title": "Nuestro equipo",
+      "subtitle": "Las personas que construyen OpenPath"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "subtitle": "¿Tienes una pregunta o quieres colaborar? Ponte en contacto.",
+      "fields": {
+        "name": "Tu nombre",
+        "namePlaceholder": "Jane Smith",
+        "email": "Correo electrónico",
+        "emailPlaceholder": "jane@example.com",
+        "subject": "Asunto",
+        "subjectPlaceholder": "¿Cómo podemos ayudarte?",
+        "message": "Mensaje",
+        "messagePlaceholder": "Escribe tu mensaje aquí..."
+      },
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Mensaje enviado! Te responderemos pronto.",
+      "info": {
+        "title": "Ponte en contacto",
+        "email": "hello@openpath.world",
+        "location": "Madrid, Spain",
+        "social": "Síguenos"
+      }
+    },
+    "auth": {
+      "login": {
+        "title": "Bienvenido de vuelta",
+        "subtitle": "Inicia sesión en tu cuenta OpenPath",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "submit": "Iniciar sesión",
+        "noAccount": "¿No tienes cuenta?",
+        "register": "Registrarse",
+        "forgotPassword": "¿Olvidaste tu contraseña?"
+      },
+      "register": {
+        "title": "Crear cuenta",
+        "subtitle": "Únete a OpenPath y descubre oportunidades",
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña",
+        "submit": "Crear cuenta",
+        "hasAccount": "¿Ya tienes cuenta?",
+        "login": "Iniciar sesión"
+      }
+    },
+    "common": {
+      "loading": "Cargando...",
+      "error": "Algo salió mal",
+      "retry": "Intentar de nuevo",
+      "notFound": "Página no encontrada",
+      "backHome": "Volver al inicio",
+      "demoData": "Datos de demo",
+      "learnMore": "Saber más",
+      "close": "Cerrar",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "save": "Guardar",
+      "language": "Idioma"
+    },
+    "footer": {
+      "tagline": "Conectando a las personas con oportunidades",
+      "links": "Enlaces rápidos",
+      "categories": "Categorías",
+      "legal": "Legal",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de uso",
+      "disclaimer": "Descargo de responsabilidad de datos demo",
+      "rights": "Todos los derechos reservados",
+      "madeWith": "Hecho con ❤️ para todos"
+    }
+  }

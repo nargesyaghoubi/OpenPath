@@ -2,9 +2,11 @@
     "nav": {
       "home": "الرئيسية",
       "opportunities": "الفرص",
-      "saved": "المحفوظات",
+      "saved": "المحفوظة",
       "dashboard": "لوحة التحكم",
+      "addOpportunity": "إضافة فرصة",
       "about": "من نحن",
+      "team": "Team",
       "contact": "اتصل بنا",
       "login": "تسجيل الدخول",
       "register": "إنشاء حساب",
@@ -12,60 +14,243 @@
     },
     "home": {
       "hero": {
-        "title": "اعثر على فرصتك",
-        "subtitle": "اكتشف الوظائف والتدريب والمنح الدراسية والمزيد في مكان واحد",
-        "search": "ابحث عن الفرص...",
-        "button": "ابدأ الآن"
+        "badge": "بوابة الفرص العالمية",
+        "title": "اكتشف فرصتك",
+        "titleHighlight": "القادمة",
+        "subtitle": "OpenPath يربط الشباب حول العالم بالوظائف والمنح والتدريب وفرص تطوير المهارات — كل ذلك في مكان واحد.",      "browseBtn": "تصفح الفرص",
+        "addBtn": "إضافة فرصة",
+        "stats": {
+          "opportunities": "فرصة",
+          "organizations": "منظمة",
+          "categories": "فئة",
+          "countries": "دولة"
+        }
       },
-      "featured": "الفرص المميزة",
-      "categories": "تصفح حسب الفئة",
-      "viewAll": "عرض الكل"
+      "categories": {
+        "title": "تصفح حسب الفئة",
+        "subtitle": "ابحث عن النوع المناسب من الفرص لأهدافك",
+        "viewAll": "عرض الكل"
+      },
+      "featured": {
+        "title": "الفرص المميزة",
+        "subtitle": "فرص مختارة لبدء مسيرتك المهنية",
+        "viewAll": "عرض جميع الفرص",
+        "deadline": "الموعد النهائي",
+        "apply": "قدّم الآن",
+        "save": "حفظ"
+      },
+      "cta": {
+        "title": "هل تعرف فرصة رائعة؟",
+        "subtitle": "ساعد الشباب حول العالم من خلال مشاركة الوظائف والمنح وبرامج التدريب على OpenPath.",
+        "btn": "شارك فرصة"
+      },
+      "byCountry": {
+        "title": "Explore by Country",
+        "subtitle": "Find opportunities in your target destination",
+        "viewAll": "View All"
+      }
     },
     "opportunities": {
       "title": "جميع الفرص",
-      "search": "بحث...",
-      "filter": "تصفية",
+      "subtitle": "{count} فرص للشباب حول العالم",
+      "search": "ابحث عن الفرص...",
+      "filters": {
+        "category": "الفئة",
+        "location": "الموقع",
+        "type": "النوع",
+        "allCategories": "جميع الفئات",
+        "allLocations": "جميع المواقع",
+        "allTypes": "جميع الأنواع",
+        "remote": "عن بُعد",
+        "onsite": "حضوري",
+        "hybrid": "هجين",
+        "sortBy": "ترتيب حسب",
+        "newest": "الأحدث",
+        "deadline": "الموعد النهائي",
+        "title": "العنوان",
+        "country": "Country",
+        "allCountries": "All Countries"
+      },
       "noResults": "لم يتم العثور على فرص",
+      "noResultsSubtitle": "حاول تعديل الفلاتر أو مصطلحات البحث",
       "deadline": "الموعد النهائي",
-      "apply": "قدم الآن",
+      "location": "الموقع",
+      "viewDetails": "عرض التفاصيل",
       "save": "حفظ",
-      "saved": "تم الحفظ",
-      "remote": "عن بعد",
-      "onsite": "حضوري",
-      "hybrid": "هجين"
+      "saved": "محفوظة",
+      "featured": "مميزة",
+      "expiringSoon": "تنتهي قريباً"
     },
-    "categories": {
-      "job": "وظيفة",
-      "internship": "تدريب",
-      "scholarship": "منحة دراسية",
-      "onlineCourse": "دورة أونلاين",
-      "remoteWork": "عمل عن بعد",
-      "trainingProgram": "برنامج تدريبي",
-      "volunteerWork": "عمل تطوعي"
+    "details": {
+      "about": "حول هذه الفرصة",
+      "requirements": "المتطلبات",
+      "deadline": "الموعد النهائي للتقديم",
+      "location": "الموقع",
+      "type": "نوع العمل",
+      "organization": "المنظمة",
+      "tags": "الوسوم",
+      "applyNow": "قدّم الآن",
+      "saveOpportunity": "حفظ الفرصة",
+      "saved": "محفوظة ✓",
+      "share": "مشاركة",
+      "back": "العودة إلى الفرص",
+      "demoNote": "⚠️ بيانات تجريبية — هذه بيانات نموذجية للأغراض التعليمية فقط.",
+      "country": "Country"
+    },
+    "saved": {
+      "title": "الفرص المحفوظة",
+      "subtitle": "فرصك المُعلَّمة بإشارة مرجعية",
+      "empty": "لا توجد فرص محفوظة بعد",
+      "emptySubtitle": "تصفح الفرص واحفظ التي تعجبك",
+      "browse": "تصفح الفرص",
+      "remove": "إزالة",
+      "deadline": "الموعد النهائي"
     },
     "dashboard": {
       "title": "لوحة التحكم",
-      "total": "إجمالي الفرص",
-      "jobs": "الوظائف",
-      "scholarships": "المنح",
-      "internships": "التدريبات",
-      "remote": "عن بعد",
-      "expiringSoon": "تنتهي قريباً",
-      "recent": "آخر الإضافات"
+      "subtitle": "نظرة عامة على جميع الفرص في كاريياب",
+      "stats": {
+        "total": "إجمالي الفرص",
+        "jobs": "الوظائف",
+        "scholarships": "المنح",
+        "internships": "التدريب",
+        "remote": "عن بُعد",
+        "expiringSoon": "تنتهي قريباً"
+      },
+      "recentTitle": "التقديمات الأخيرة",
+      "chartTitle": "الفرص حسب الفئة",
+      "noData": "لا تتوفر بيانات",
+      "countryChartTitle": "Opportunities by Country"
     },
-    "footer": {
-      "rights": "جميع الحقوق محفوظة",
-      "description": "OpenPath - بوابتك إلى الفرص العالمية"
+    "addOpportunity": {
+      "title": "إضافة فرصة",
+      "subtitle": "شارك فرصة جديدة مع الشباب الأفغاني",
+      "fields": {
+        "title": "عنوان الفرصة",
+        "titlePlaceholder": "مثال: متدرب مطور واجهة أمامية",
+        "organization": "المنظمة",
+        "organizationPlaceholder": "مثال: مجتمع كابل التقني",
+        "category": "الفئة",
+        "location": "الموقع",
+        "locationPlaceholder": "مثال: كابول أو عبر الإنترنت",
+        "type": "نوع العمل",
+        "deadline": "الموعد النهائي للتقديم",
+        "description": "الوصف",
+        "descriptionPlaceholder": "صف الفرصة بالتفصيل...",
+        "requirements": "المتطلبات",
+        "requirementsPlaceholder": "مثال: React الأساسي، HTML/CSS (واحد في كل سطر)",
+        "applyLink": "رابط التقديم",
+        "applyLinkPlaceholder": "https://example.com/apply",
+        "tags": "الوسوم",
+        "tagsPlaceholder": "مثال: React، عن بُعد، مبتدئ (مفصولة بفواصل)",
+        "country": "Country",
+        "countryPlaceholder": "e.g. United Kingdom"
+      },
+      "submit": "إرسال الفرصة",
+      "submitting": "جارٍ الإرسال...",
+      "success": "تم إرسال الفرصة بنجاح!",
+      "reset": "إضافة فرصة أخرى"
+    },
+    "about": {
+      "title": "حول كاريياب",
+      "mission": {
+        "title": "مهمتنا",
+        "text": "OpenPath منصة مجانية ومفتوحة تربط الأشخاص بفرص تغيّر الحياة، مثل الوظائف، والمنح الدراسية، والتدريب، والعمل عن بُعد، وبرامج التطوير، وكل ذلك في مكان واحد سهل الوصول."
+      },
+      "problem": {
+        "title": "المشكلة التي نحلها",
+        "text": "في جميع أنحاء العالم، غالبًا ما تكون المعلومات حول الفرص موزعة بين وسائل التواصل الاجتماعي، وتطبيقات المراسلة، والعديد من المواقع الإلكترونية. يفوّت كثير من الأشخاص فرصًا قيّمة لمجرد أنهم لا يعرفون أين يبحثون. "
+      },
+      "solution": {
+        "title": "حلنا",
+        "text": "تجمع كاريياب الفرص الموثقة في منصة نظيفة وسريعة وملائمة للهاتف المحمول. يمكن للمستخدمين البحث والتصفية والحفظ والتقديم — بعدة لغات — من أي جهاز."
+      },
+      "values": {
+        "title": "قيمنا",
+        "access": "وصول متساوٍ",
+        "accessText": "يستحق الجميع الوصول إلى الفرص التي يمكن أن تغيّر حياتهم.",
+        "inclusion": "الشمول",
+        "inclusionText": "نعطي الأولوية للنساء والشباب في المناطق والمجتمعات المهمشة.",
+        "transparency": "الشفافية",
+        "transparencyText": "يتم تصنيف جميع البيانات على المنصة بوضوح — حقيقية أو تجريبية."
+      },
+      "demoNote": "تم بناء هذا المشروع كمشروع تخرج. جميع البيانات الحالية بيانات تجريبية لأغراض تعليمية."
+    },
+    "team": {
+      "title": "فريقنا",
+      "subtitle": "الأشخاص الذين يبنون كاريياب أفغانستان"
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "subtitle": "لديك سؤال أو تريد التعاون؟ تواصل معنا.",
+      "fields": {
+        "name": "اسمك",
+        "namePlaceholder": "حسین یعقوبی",
+        "email": "عنوان البريد الإلكتروني",
+        "emailPlaceholder": "hossien@example.com",
+        "subject": "الموضوع",
+        "subjectPlaceholder": "كيف يمكننا المساعدة؟",
+        "message": "الرسالة",
+        "messagePlaceholder": "اكتب رسالتك هنا..."
+      },
+      "submit": "إرسال الرسالة",
+      "submitting": "جارٍ الإرسال...",
+      "success": "تم إرسال الرسالة! سنتواصل معك قريباً.",
+      "info": {
+        "title": "تواصل معنا",
+        "email": "hello@openpath.world",
+        "location": "كابول، أفغانستان",
+        "social": "تابعنا"
+      }
+    },
+    "auth": {
+      "login": {
+        "title": "مرحباً بعودتك",
+        "subtitle": "سجّل الدخول إلى حساب كاريياب",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "submit": "تسجيل الدخول",
+        "noAccount": "ليس لديك حساب؟",
+        "register": "إنشاء حساب",
+        "forgotPassword": "نسيت كلمة المرور؟"
+      },
+      "register": {
+        "title": "إنشاء حساب",
+        "subtitle": "انضم إلى كاريياب واكتشف الفرص",
+        "name": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirmPassword": "تأكيد كلمة المرور",
+        "submit": "إنشاء حساب",
+        "hasAccount": "لديك حساب بالفعل؟",
+        "login": "تسجيل الدخول"
+      }
     },
     "common": {
-      "loading": "جاري التحميل...",
+      "loading": "جارٍ التحميل...",
       "error": "حدث خطأ ما",
-      "empty": "لا يوجد شيء هنا بعد",
-      "save": "حفظ",
+      "retry": "حاول مرة أخرى",
+      "notFound": "الصفحة غير موجودة",
+      "backHome": "العودة إلى الرئيسية",
+      "demoData": "بيانات تجريبية",
+      "learnMore": "اعرف أكثر",
+      "close": "إغلاق",
       "cancel": "إلغاء",
-      "submit": "إرسال",
-      "edit": "تعديل",
+      "confirm": "تأكيد",
       "delete": "حذف",
-      "back": "رجوع"
+      "edit": "تعديل",
+      "save": "حفظ",
+      "language": "اللغة"
+    },
+    "footer": {
+      "tagline": "ربط الأشخاص بالفرص",
+      "links": "روابط سريعة",
+      "categories": "الفئات",
+      "legal": "قانوني",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الاستخدام",
+      "disclaimer": "إخلاء مسؤولية البيانات التجريبية",
+      "rights": "جميع الحقوق محفوظة",
+      "madeWith": "صُنع بـ ❤️ لكل من يبحث عن الفرص "
     }
   }
