@@ -38,7 +38,7 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
         { href: "/about", label: t("about") },
         { href: "/contact", label: t("contact") },
     ];
-
+    
     // Handle locale switching
     const changeLocale = (newLocale: string) => {
         router.push(pathname, { locale: newLocale });
@@ -109,7 +109,7 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                                 className="hidden md:flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
                             >
                                 <FileText className="w-4 h-4" />
-                                <span>CV Builder</span>
+                                <span>{t("cvBuilder")}</span>
                             </Link>
                         )}
 
@@ -211,7 +211,7 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                                 <LayoutDashboard className="w-4 h-4" /> {t("dashboard")}
                             </Link>
                             <Link href="/cv-builder" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-600 dark:text-neutral-400">
-                                <FileText className="w-4 h-4" /> CV Builder
+                                <FileText className="w-4 h-4" /> {t("cvBuilder")}
                             </Link>
                             <Link href="/add-opportunity" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium bg-indigo-600 text-white mt-2">
                                 <Plus className="w-4 h-4" /> {t("addOpportunity")}
