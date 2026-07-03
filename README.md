@@ -3,11 +3,77 @@
 **A modern opportunity-finder platform** that helps students, graduates, and job seekers discover jobs, internships, scholarships, online courses, remote work, and training programs all in one place.
 
 ---
-## Live Demo: 
+## Live Demo & Repository
+
+| | |
+|---|---|
+| **Live Demo** |https://open-path-one.vercel.app/en|
+| **GitHub Repository** | https://github.com/nargesyaghoubi/OpenPath |
+
 
 ## Screenshots
+<div align="center">
+  <table align="center">
+    <tr align="center">
+      <td align="center">
+        <h3>Home</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/home.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/home.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>Opportunities</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/opportunities.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/opportunities.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>About</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/about.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/about.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>Add Opportunity</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/add-opportunity.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/add-opportunity.png?raw=true" height="400px">
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div align="center">
+  <table align="center">
+    <tr align="center">
+      <td align="center">
+        <h3>Contact</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/contact.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/contact.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>Register</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/register.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/register.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>CV Builder</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/cv.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/cv.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>Dashboard</h3>
+        <a href="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/dashboard.png">
+          <img src="https://github.com/nargesyaghoubi/OpenPath/blob/main/public/dashboard.png?raw=true" height="400px">
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
----
+
 ## Features
 
 - Search & filter — by title, category, location, remote/on-site, sorted by newest / deadline / title
@@ -169,7 +235,6 @@ Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to 
 | `AUTH_URL` | Base URL of the app (e.g. `http://localhost:3000` in dev). |
 | `NEXT_PUBLIC_DEMO_MODE` | Set to `true` to show demo-mode notices in the UI. |
 
-See `.env.example` for a template.
 
 ## Demo Accounts
 
@@ -188,6 +253,15 @@ You can also create a new account from `/register` — it becomes usable immedia
 | `npm run build` | Build for production |
 | `npm run start` | Start the production build |
 | `npm run lint` | Run ESLint |
+
+## Future Improvements
+
+- Replace `localStorage` / in-memory storage with a real database (e.g. PostgreSQL + Prisma) so data persists across restarts and devices
+- Hash passwords with bcrypt and move auth to a proper users table
+- Admin approval workflow for user-submitted opportunities
+- Real email delivery for the contact form and deadline-reminder notifications
+- Per-user saved opportunities tied to an account instead of `localStorage`
+- Automated tests (unit + e2e)
 
 ## Contact
 For any inquiries, please contact:
