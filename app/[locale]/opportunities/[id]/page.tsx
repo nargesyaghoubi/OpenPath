@@ -7,8 +7,9 @@ import { Link } from "@/lib/i18n/navigation";
 import { motion } from "framer-motion";
 import { CATEGORY_COLORS, CATEGORY_ICONS, formatDeadline, isExpiringSoon, isRTL } from "@/lib/utils";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, Calendar, Building2, Tag, ExternalLink, Bookmark, BookmarkCheck, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Building2, Tag, ExternalLink, Bookmark, BookmarkCheck, CheckCircle2, Pencil } from "lucide-react";
 import { use } from "react";
+import CountdownTimer from "@/components/CountdownTimer";
 
 export default function OpportunityDetailPage({ params }: { params: Promise<{ id: string }> }) {
     // Get route params, translations, locale, and opportunity data
@@ -108,14 +109,24 @@ export default function OpportunityDetailPage({ params }: { params: Promise<{ id
                         <button
                             onClick={() => toggleSave(opp)}
                             className={`w-full flex items-center justify-center gap-2 py-2.5 px-4 border rounded-xl text-sm font-medium transition-colors ${saved
-                                    ? "bg-indigo-50 border-indigo-300 text-indigo-700 dark:bg-indigo-900/20 dark:border-indigo-700 dark:text-indigo-400"
-                                    : "border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-indigo-300"
+                                ? "bg-indigo-50 border-indigo-300 text-indigo-700 dark:bg-indigo-900/20 dark:border-indigo-700 dark:text-indigo-400"
+                                : "border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-indigo-300"
                                 }`}
                         >
                             {saved ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
                             {saved ? t("saved") : t("saveOpportunity")}
                         </button>
+                        <Link
+                            href={`/edit-opportunity/${opp.id}`}
+                            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 mt-2 border rounded-xl text-sm font-medium border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-blue-300 hover:text-blue-600 transition-colors"
+                        >
+                            <Pencil className="w-4 h-4" /> Edit Opportunity
+                        </Link>
                     </div>
+
+                    {/* Live countdown to the application deadline */}
+                    <CountdownTimer deadline={opp.deadline} />
+
                     {/* Opportunity metadata */}
                     <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 space-y-4">
                         {[
