@@ -10,8 +10,4 @@ export const metadata: Metadata = {
 export default function RootPage() {
     // Redirect users to the default locale (English)
     redirect("/en");
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 007741b7cd2adb02e71b54f1dd91e62a49e03949
