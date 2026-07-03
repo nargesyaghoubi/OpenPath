@@ -1,25 +1,12 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { findUserByEmail } from "@/lib/users-store";
 
-// ── Demo users (in production: replace with DB + bcrypt) ──────────────────────
-const users = [
-    {
-        id: "1",
-        name: "Demo User",
-        email: "user@example.com",
-        password: "user123",
-        role: "user",
-    },
-    {
-        id: "2",
-        name: "Admin User",
-        email: "admin@example.com",
-        password: "admin123",
-        role: "admin",
-    },
-];
+// User lookup lives in lib/users-store.ts so that accounts created via the
+// /register page (in production: replace with DB + bcrypt) can also sign in.
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+    trustHost: true,
     session: { strategy: "jwt" },
     pages: {
         // next-intl prefix will be added in proxy.ts — auth.js just needs base path
@@ -38,7 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
                 if (!email || !password) return null;
 
-                const user = users.find((u) => u.email === email);
+                const user = findUserByEmail(email);
 
                 // Demo only: plain-text comparison.
                 // Production: use bcrypt.compare(password, user.hashedPassword)
@@ -52,7 +39,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         async jwt({ token, user }) {
             if (user) {
                 token.id = user.id;
-                // ts-expect-error – role is a custom field
+                // @ts-expect-error – role is a custom field
                 token.role = user.role;
             }
             return token;
