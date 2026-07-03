@@ -1,87 +1,15 @@
 "use client";
-
-import { useState } from "react";
+// Page for submitting a new opportunity.
 import { useTranslations, useLocale } from "next-intl";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod/v4";
-import { useOpportunities } from "@/context/OpportunitiesContext";
 import { isRTL } from "@/lib/utils";
-import { categories } from "@/data/opportunities";
-import { CheckCircle2, Plus } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-// Validation schema for the opportunity form
-const schema = z.object({
-    title: z.string().min(5, "Title must be at least 5 characters"),
-    organization: z.string().min(2, "Organization required"),
-    category: z.enum(["Job", "Internship", "Scholarship", "Online Course", "Remote Work", "Training Program", "Volunteer"]),
-    country: z.string().min(2, "Country required"),
-    location: z.string().min(2, "Location required"),
-    type: z.enum(["Remote", "On-site", "Hybrid"]),
-    deadline: z.string().min(1, "Deadline required"),
-    description: z.string().min(30, "Description must be at least 30 characters"),
-    requirements: z.string().min(5, "At least one requirement"),
-    applyLink: z.string().url("Must be a valid URL"),
-    tags: z.string().optional(),
-});
-
-type FormData = z.infer<typeof schema>;
+import { Plus } from "lucide-react";
+import OpportunityForm from "@/components/OpportunityForm";
 
 export default function AddOpportunityPage() {
     const t = useTranslations("addOpportunity");
     const locale = useLocale();
     const rtl = isRTL(locale);
-    const { addOpportunity } = useOpportunities();
-    const [success, setSuccess] = useState(false);
-
-    const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
-        resolver: zodResolver(schema),
-    });
-
-// Simulate async submission delay
-    const onSubmit = async (data: FormData) => {
-        await new Promise((r) => setTimeout(r, 600));
-        addOpportunity({
-            title: data.title,
-            organization: data.organization,
-            category: data.category,
-            country: data.country,
-            countryCode: "GL",
-            location: data.location,
-            type: data.type,
-            deadline: data.deadline,
-            description: data.description,
-            requirements: data.requirements.split("\n").map((s) => s.trim()).filter(Boolean),
-            applyLink: data.applyLink,
-            tags: data.tags ? data.tags.split(",").map((s) => s.trim()).filter(Boolean) : [],
-            featured: false,
-        });
-        setSuccess(true);
-    };
-
-    if (success) {
-        return (
-            <div className="max-w-2xl mx-auto px-4 py-20 text-center">
-                <div className="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-5">
-                    <CheckCircle2 className="w-8 h-8 text-indigo-600" />
-                </div>
-                <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3">{t("success")}</h2>
-                <button
-                    onClick={() => { setSuccess(false); reset(); }}
-                    className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-medium transition-colors"
-                >
-                    {t("reset")}
-                </button>
-            </div>
-        );
-    }
-    
-    // Reusable input, label and error styles
-    const inputClass = "w-full px-4 py-2.5 text-sm bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:text-white dark:placeholder:text-neutral-500";
-    const labelClass = "block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5";
-    const errorClass = "text-xs text-red-500 mt-1";
-
+    // Add opportunity page layout
     return (
         <div dir={rtl ? "rtl" : "ltr"} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div className="mb-8">
@@ -90,94 +18,8 @@ export default function AddOpportunityPage() {
                 </h1>
                 <p className="text-neutral-500 dark:text-neutral-400">{t("subtitle")}</p>
             </div>
-
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                        <label className={labelClass}>{t("fields.title")} *</label>
-                        <input {...register("title")} placeholder={t("fields.titlePlaceholder")} className={inputClass} />
-                        {errors.title && <p className={errorClass}>{errors.title.message}</p>}
-                    </div>
-                    <div>
-                        <label className={labelClass}>{t("fields.organization")} *</label>
-                        <input {...register("organization")} placeholder={t("fields.organizationPlaceholder")} className={inputClass} />
-                        {errors.organization && <p className={errorClass}>{errors.organization.message}</p>}
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <div>
-                        <label className={labelClass}>{t("fields.category")} *</label>
-                        <select {...register("category")} className={inputClass}>
-                            <option value="">Select...</option>
-                            {categories.map((c) => <option key={c} value={c}>{c}</option>)}
-                        </select>
-                        {errors.category && <p className={errorClass}>{errors.category.message}</p>}
-                    </div>
-                    <div>
-                        <label className={labelClass}>{t("fields.country")} *</label>
-                        <input {...register("country")} placeholder={t("fields.countryPlaceholder")} className={inputClass} />
-                        {errors.country && <p className={errorClass}>{errors.country.message}</p>}
-                    </div>
-                    <div>
-                        <label className={labelClass}>{t("fields.location")} *</label>
-                        <input {...register("location")} placeholder={t("fields.locationPlaceholder")} className={inputClass} />
-                        {errors.location && <p className={errorClass}>{errors.location.message}</p>}
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                        <label className={labelClass}>{t("fields.type")} *</label>
-                        <select {...register("type")} className={inputClass}>
-                            <option value="">Select...</option>
-                            <option value="Remote">Remote</option>
-                            <option value="On-site">On-site</option>
-                            <option value="Hybrid">Hybrid</option>
-                        </select>
-                        {errors.type && <p className={errorClass}>{errors.type.message}</p>}
-                    </div>
-                    <div>
-                        <label className={labelClass}>{t("fields.deadline")} *</label>
-                        <input type="date" {...register("deadline")} className={inputClass} />
-                        {errors.deadline && <p className={errorClass}>{errors.deadline.message}</p>}
-                    </div>
-                </div>
-
-                <div>
-                    <label className={labelClass}>{t("fields.description")} *</label>
-                    <textarea {...register("description")} rows={4} placeholder={t("fields.descriptionPlaceholder")} className={cn(inputClass, "resize-none")} />
-                    {errors.description && <p className={errorClass}>{errors.description.message}</p>}
-                </div>
-
-                <div>
-                    <label className={labelClass}>{t("fields.requirements")} *</label>
-                    <textarea {...register("requirements")} rows={3} placeholder={t("fields.requirementsPlaceholder")} className={cn(inputClass, "resize-none")} />
-                    {errors.requirements && <p className={errorClass}>{errors.requirements.message}</p>}
-                </div>
-
-                <div>
-                    <label className={labelClass}>{t("fields.applyLink")} *</label>
-                    <input {...register("applyLink")} placeholder={t("fields.applyLinkPlaceholder")} className={inputClass} />
-                    {errors.applyLink && <p className={errorClass}>{errors.applyLink.message}</p>}
-                </div>
-
-                <div>
-                    <label className={labelClass}>{t("fields.tags")}</label>
-                    <input {...register("tags")} placeholder={t("fields.tagsPlaceholder")} className={inputClass} />
-                </div>
-
-                <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={cn(
-                        "w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2",
-                        isSubmitting && "opacity-70 cursor-not-allowed"
-                    )}
-                >
-                    {isSubmitting ? t("submitting") : t("submit")}
-                </button>
-            </form>
+            {/* Opportunity submission form */}
+            <OpportunityForm mode="add" />
         </div>
     );
 }
