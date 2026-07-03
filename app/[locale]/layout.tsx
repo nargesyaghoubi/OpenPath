@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Vazirmatn } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,6 +9,15 @@ import { ThemeProvider, ThemeScript } from "@/components/ThemeProvider";
 import { SavedProvider } from "@/context/SavedContext";
 import { OpportunitiesProvider } from "@/context/OpportunitiesContext";
 import ClientLayout from "@/components/ClientLayout";
+
+// Self-hosted via next/font/google (no runtime request to Google, no
+// layout-shift/FOUT). Covers Persian, Arabic, Pashto, Kurdish, Urdu, etc.
+// Exposed as a CSS variable and wired up in globals.css for RTL locales.
+const vazirmatn = Vazirmatn({
+    subsets: ["arabic", "latin"],
+    variable: "--font-vazirmatn",
+    display: "swap",
+});
 
 // Application metadata for SEO and browser title
 export const metadata: Metadata = {
@@ -42,7 +52,7 @@ export default async function LocaleLayout({
     // This is the ONE AND ONLY <html> in the tree.
     // Root layout (app/layout.tsx) intentionally returns `children` only.
     return (
-        <html lang={locale} dir={rtl ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
+        <html lang={locale} dir={rtl ? "rtl" : "ltr"} className={vazirmatn.variable} suppressHydrationWarning data-scroll-behavior="smooth">
             <body>
                 {/* Apply theme before hydration */}
                 <ThemeScript />

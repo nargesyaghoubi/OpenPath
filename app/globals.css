@@ -16,7 +16,7 @@
   [dir="rtl"] body,
   [lang="fa"] body,
   [lang="ar"] body {
-    font-family: "Tahoma", "Segoe UI", "Arial", sans-serif;
+    font-family: var(--font-vazirmatn), "Segoe UI", "Arial", sans-serif;
   }
 }
 
