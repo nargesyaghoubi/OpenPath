@@ -8,6 +8,7 @@ import OpportunityCard from "@/components/OpportunityCard";
 import SearchFilter from "@/components/SearchFilter";
 import EmptyState from "@/components/EmptyState";
 import Modal from "@/components/Modal";
+import { useRouter } from "@/lib/i18n/navigation";
 import { isRTL } from "@/lib/utils";
 import { Trash2 } from "lucide-react";
 
@@ -15,6 +16,7 @@ export default function OpportunitiesPage() {
     const t = useTranslations("opportunities");
     const locale = useLocale();
     const rtl = isRTL(locale);
+    const router = useRouter();
     const { opportunities, deleteOpportunity } = useOpportunities();
 
     const [search, setSearch] = useState("");
@@ -94,6 +96,7 @@ export default function OpportunitiesPage() {
                                     opportunity={opp}
                                     showActions
                                     onDelete={(id) => setDeleteTarget(id)}
+                                    onEdit={(o) => router.push(`/edit-opportunity/${o.id}`)}
                                 />
                             </motion.div>
                         ))}
