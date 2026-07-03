@@ -8,6 +8,8 @@ const protectedPaths = [
     "/dashboard",
     "/saved",
     "/add-opportunity",
+    "/edit-opportunity",
+    "/cv-builder",
 ];
 
 const intlMiddleware = createIntlMiddleware(routing);
