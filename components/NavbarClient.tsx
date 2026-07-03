@@ -10,7 +10,7 @@ import { useTheme } from "@/components/ThemeProvider";
 import UserMenu from "@/components/auth/UserMenu";
 import {
     Menu, X, Bookmark, LayoutDashboard, Plus, Globe,
-    Sun, Moon, ChevronDown, LogIn,
+    Sun, Moon, ChevronDown, LogIn, FileText,
 } from "lucide-react";
 
 
@@ -38,7 +38,7 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
         { href: "/about", label: t("about") },
         { href: "/contact", label: t("contact") },
     ];
-    
+
     // Handle locale switching
     const changeLocale = (newLocale: string) => {
         router.push(pathname, { locale: newLocale });
@@ -101,6 +101,17 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                                 </span>
                             )}
                         </Link>
+
+                        {/* CV Builder — only if logged in */}
+                        {user && (
+                            <Link
+                                href="/cv-builder"
+                                className="hidden md:flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
+                            >
+                                <FileText className="w-4 h-4" />
+                                <span>CV Builder</span>
+                            </Link>
+                        )}
 
                         {/* Add opportunity */}
                         {user && (
@@ -198,6 +209,9 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                         <>
                             <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-600 dark:text-neutral-400">
                                 <LayoutDashboard className="w-4 h-4" /> {t("dashboard")}
+                            </Link>
+                            <Link href="/cv-builder" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-600 dark:text-neutral-400">
+                                <FileText className="w-4 h-4" /> CV Builder
                             </Link>
                             <Link href="/add-opportunity" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium bg-indigo-600 text-white mt-2">
                                 <Plus className="w-4 h-4" /> {t("addOpportunity")}
