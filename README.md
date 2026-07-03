@@ -1,4 +1,4 @@
-# 🌍 OpenPath
+# OpenPath
 
 **A modern opportunity-finder platform** that helps students, graduates, and job seekers discover jobs, internships, scholarships, online courses, remote work, and training programs all in one place.
 
@@ -11,12 +11,12 @@
 ## Features
 
 - Search & filter — by title, category, location, remote/on-site, sorted by newest / deadline / title
-- Dynamic details page (`/opportunities/[id]`) — full opportunity info, requirements, tags, and a **live countdown timer** to the deadline
+- Dynamic details page — full opportunity info, requirements, tags, and a **live countdown timer** to the deadline
 - Save opportunities — bookmark for later, persisted in `localStorage`
-- Full CRUD — create, read, **edit**, and delete opportunities (React Context + `localStorage`)
+- Full CRUD — create, read, **edit**, and delete opportunities
 - Add / Edit form — one shared, fully validated form (React Hook Form + Zod) used for both creating and editing
-- Authentication — login and registration; new accounts can sign in immediately after registering (see [Known Limitations](#known-limitations-read-this))
-- CV / Resume Builder (`/cv-builder`) — enter personal details, work experience, and education, see a live preview, and download a polished PDF résumé (built client-side with `@react-pdf/renderer`)
+- Authentication — login and registration; new accounts can sign in immediately after registering
+- CV / Resume Builder — enter personal details, work experience, and education, see a live preview, and download a polished PDF résumé
 - Deadline countdown — live days/hours/minutes/seconds countdown on each opportunity's details page
 - Multi-language support — English, Dari, Arabic, French, Spanish, German — with full right-to-left (RTL) layout support
 - Framer Motion animations throughout
@@ -37,7 +37,6 @@
 - [Environment Variables](#environment-variables)
 - [Demo Accounts](#demo-accounts)
 - [Available Scripts](#available-scripts)
-- [Future Improvements](#future-improvements)
 
 ---
 
@@ -137,7 +136,7 @@ proxy.ts        → locale + auth middleware (protected route guard)
 ### Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/nargesyaghoubi/OpenPath
 cd openpath
 npm install
 ```
@@ -190,13 +189,14 @@ You can also create a new account from `/register` — it becomes usable immedia
 | `npm run start` | Start the production build |
 | `npm run lint` | Run ESLint |
 
+## Contact
+For any inquiries, please contact:
+- nargesyaghoubi2001@gmail.com
 
-## Future Improvements
+## Links
+### Narges Yaghoubi
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://nargesyaghoubi-ygh.github.io/My-portfolio/)
 
-- Replace `localStorage` / in-memory storage with a real database (e.g. PostgreSQL + Prisma) so data persists across restarts and devices
-- Hash passwords with bcrypt and move auth to a proper users table
-- Admin approval workflow for user-submitted opportunities
-- Real email delivery for the contact form and deadline-reminder notifications
-- Per-user saved opportunities tied to an account instead of `localStorage`
-- Automated tests (unit + e2e)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/narges-yaghoubi-656a28243/)
+
 
