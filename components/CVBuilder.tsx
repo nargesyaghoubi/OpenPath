@@ -20,18 +20,18 @@ const experienceSchema = z.object({
     company: z.string().min(1, "Required"),
     role: z.string().min(1, "Required"),
     period: z.string().min(1, "Required"),
-    description: z.string().optional(),
+    description: z.string(),
 });
 
 const schema = z.object({
     fullName: z.string().min(2, "Full name is required"),
     email: z.string().email("Valid email required"),
-    phone: z.string().optional(),
-    location: z.string().optional(),
-    summary: z.string().max(600, "Keep the summary under 600 characters").optional(),
-    skills: z.string().optional(),
-    education: z.array(educationSchema).default([]),
-    experience: z.array(experienceSchema).default([]),
+    phone: z.string(),
+    location: z.string(),
+    summary: z.string().max(600, "Keep the summary under 600 characters"),
+    skills: z.string(),
+    education: z.array(educationSchema),
+    experience: z.array(experienceSchema),
 });
 
 type CVFormData = z.infer<typeof schema>;
@@ -57,7 +57,7 @@ interface PdfLabels {
     skills: string;
 }
 
-//  PDF document (built on-demand inside handleDownload, never rendered to DOM directly)
+// PDF document (built on-demand inside handleDownload, never rendered to DOM directly) 
 const pdfStyles = StyleSheet.create({
     page: { padding: 36, fontSize: 10, fontFamily: "Helvetica", color: "#1f2937" },
     name: { fontSize: 22, fontWeight: 700, marginBottom: 2 },
