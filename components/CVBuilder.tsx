@@ -1,7 +1,7 @@
 "use client";
 
-// Interactive CV builder with live preview and client-side PDF generation.
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod/v4";
@@ -23,10 +23,9 @@ const experienceSchema = z.object({
     description: z.string().optional(),
 });
 
-// Validation schemas for resume sections
 const schema = z.object({
     fullName: z.string().min(2, "Full name is required"),
-    email: z.email("Valid email required"),
+    email: z.string().email("Valid email required"),
     phone: z.string().optional(),
     location: z.string().optional(),
     summary: z.string().max(600, "Keep the summary under 600 characters").optional(),
@@ -36,7 +35,7 @@ const schema = z.object({
 });
 
 type CVFormData = z.infer<typeof schema>;
-// Initial values for a new resume
+
 const defaultValues: CVFormData = {
     fullName: "",
     email: "",
@@ -48,7 +47,17 @@ const defaultValues: CVFormData = {
     experience: [{ company: "", role: "", period: "", description: "" }],
 };
 
-//  PDF document (built on-demand inside handleDownload, never rendered to DOM directly) 
+// Labels that need to appear inside the generated PDF itself, translated to
+// match whatever language the CV Builder page is currently in.
+interface PdfLabels {
+    yourName: string;
+    summary: string;
+    experience: string;
+    education: string;
+    skills: string;
+}
+
+//  PDF document (built on-demand inside handleDownload, never rendered to DOM directly)
 const pdfStyles = StyleSheet.create({
     page: { padding: 36, fontSize: 10, fontFamily: "Helvetica", color: "#1f2937" },
     name: { fontSize: 22, fontWeight: 700, marginBottom: 2 },
@@ -70,15 +79,15 @@ const pdfStyles = StyleSheet.create({
         borderRadius: 4, fontSize: 9,
     },
 });
-// PDF template rendered by @react-pdf/renderer
-function ResumeDocument({ data }: { data: CVFormData }) {
+
+function ResumeDocument({ data, labels }: { data: CVFormData; labels: PdfLabels }) {
     const skills = (data.skills ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const contactParts = [data.email, data.phone, data.location].filter(Boolean);
 
     return (
         <Document>
             <Page size="A4" style={pdfStyles.page}>
-                <Text style={pdfStyles.name}>{data.fullName || "Your Name"}</Text>
+                <Text style={pdfStyles.name}>{data.fullName || labels.yourName}</Text>
                 <View style={pdfStyles.contactRow}>
                     {contactParts.map((part, i) => (
                         <Text key={i}>{part}{i < contactParts.length - 1 ? "  •  " : ""}</Text>
@@ -87,14 +96,14 @@ function ResumeDocument({ data }: { data: CVFormData }) {
 
                 {data.summary && (
                     <>
-                        <Text style={pdfStyles.sectionTitle}>Summary</Text>
+                        <Text style={pdfStyles.sectionTitle}>{labels.summary}</Text>
                         <Text style={pdfStyles.summaryText}>{data.summary}</Text>
                     </>
                 )}
 
                 {data.experience.some((e) => e.company || e.role) && (
                     <>
-                        <Text style={pdfStyles.sectionTitle}>Experience</Text>
+                        <Text style={pdfStyles.sectionTitle}>{labels.experience}</Text>
                         {data.experience.filter((e) => e.company || e.role).map((e, i) => (
                             <View key={i} style={pdfStyles.entry}>
                                 <View style={pdfStyles.entryHeader}>
@@ -109,7 +118,7 @@ function ResumeDocument({ data }: { data: CVFormData }) {
 
                 {data.education.some((e) => e.school || e.degree) && (
                     <>
-                        <Text style={pdfStyles.sectionTitle}>Education</Text>
+                        <Text style={pdfStyles.sectionTitle}>{labels.education}</Text>
                         {data.education.filter((e) => e.school || e.degree).map((e, i) => (
                             <View key={i} style={pdfStyles.entry}>
                                 <View style={pdfStyles.entryHeader}>
@@ -123,7 +132,7 @@ function ResumeDocument({ data }: { data: CVFormData }) {
 
                 {skills.length > 0 && (
                     <>
-                        <Text style={pdfStyles.sectionTitle}>Skills</Text>
+                        <Text style={pdfStyles.sectionTitle}>{labels.skills}</Text>
                         <View style={pdfStyles.skillsRow}>
                             {skills.map((s, i) => <Text key={i} style={pdfStyles.skillPill}>{s}</Text>)}
                         </View>
@@ -134,8 +143,9 @@ function ResumeDocument({ data }: { data: CVFormData }) {
     );
 }
 
-// ─── Main builder UI: form on the left, live HTML preview on the right ───
+// Main builder UI: form on the left, live HTML preview on the right 
 export default function CVBuilder() {
+    const t = useTranslations("cvBuilder");
     const [isGenerating, setIsGenerating] = useState(false);
     const [downloadError, setDownloadError] = useState<string | null>(null);
 
@@ -143,7 +153,7 @@ export default function CVBuilder() {
         resolver: zodResolver(schema),
         defaultValues,
     });
-    // Dynamic sections for education and work experience
+
     const education = useFieldArray({ control, name: "education" });
     const experience = useFieldArray({ control, name: "experience" });
     const liveData = watch();
@@ -151,14 +161,21 @@ export default function CVBuilder() {
     const inputClass = "w-full px-3.5 py-2 text-sm bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:text-white dark:placeholder:text-neutral-500";
     const labelClass = "block text-xs font-medium text-neutral-600 dark:text-neutral-400 mb-1";
     const errorClass = "text-xs text-red-500 mt-1";
-    // Generate and download the resume as a PDF
+
     const onSubmit = async (data: CVFormData) => {
         setDownloadError(null);
         setIsGenerating(true);
         try {
             // Generated fully client-side inside this event handler, so there's
             // no server round-trip and no SSR concerns with @react-pdf/renderer.
-            const blob = await pdf(<ResumeDocument data={data} />).toBlob();
+            const labels: PdfLabels = {
+                yourName: t("yourName"),
+                summary: t("summary"),
+                experience: t("experience"),
+                education: t("education"),
+                skills: t("skills").replace(/\s*\(.*\)\s*$/, ""), // strip "(comma separated)" for the PDF heading
+            };
+            const blob = await pdf(<ResumeDocument data={data} labels={labels} />).toBlob();
             const url = URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
@@ -168,7 +185,7 @@ export default function CVBuilder() {
             a.remove();
             URL.revokeObjectURL(url);
         } catch {
-            setDownloadError("Couldn't generate the PDF. Please check your entries and try again.");
+            setDownloadError(t("downloadError"));
         } finally {
             setIsGenerating(false);
         }
@@ -183,36 +200,36 @@ export default function CVBuilder() {
                 {/* Personal info */}
                 <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5">
                     <h2 className="font-semibold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-indigo-500" /> Personal Details
+                        <FileText className="w-4 h-4 text-indigo-500" /> {t("personalDetails")}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label className={labelClass}>Full Name *</label>
-                            <input {...register("fullName")} placeholder="Jane Smith" className={inputClass} />
+                            <label className={labelClass}>{t("fullName")} *</label>
+                            <input {...register("fullName")} placeholder={t("fullNamePlaceholder")} className={inputClass} />
                             {errors.fullName && <p className={errorClass}>{errors.fullName.message}</p>}
                         </div>
                         <div>
-                            <label className={labelClass}>Email *</label>
-                            <input {...register("email")} placeholder="jane@example.com" className={inputClass} />
+                            <label className={labelClass}>{t("email")} *</label>
+                            <input {...register("email")} placeholder={t("emailPlaceholder")} className={inputClass} />
                             {errors.email && <p className={errorClass}>{errors.email.message}</p>}
                         </div>
                         <div>
-                            <label className={labelClass}>Phone</label>
-                            <input {...register("phone")} placeholder="+93 700 000 000" className={inputClass} />
+                            <label className={labelClass}>{t("phone")}</label>
+                            <input {...register("phone")} placeholder={t("phonePlaceholder")} className={inputClass} />
                         </div>
                         <div>
-                            <label className={labelClass}>Location</label>
-                            <input {...register("location")} placeholder="Kabul, Afghanistan" className={inputClass} />
+                            <label className={labelClass}>{t("location")}</label>
+                            <input {...register("location")} placeholder={t("locationPlaceholder")} className={inputClass} />
                         </div>
                     </div>
                     <div className="mt-4">
-                        <label className={labelClass}>Summary</label>
-                        <textarea {...register("summary")} rows={3} placeholder="A short pitch about yourself..." className={cn(inputClass, "resize-none")} />
+                        <label className={labelClass}>{t("summary")}</label>
+                        <textarea {...register("summary")} rows={3} placeholder={t("summaryPlaceholder")} className={cn(inputClass, "resize-none")} />
                         {errors.summary && <p className={errorClass}>{errors.summary.message}</p>}
                     </div>
                     <div className="mt-4">
-                        <label className={labelClass}>Skills (comma separated)</label>
-                        <input {...register("skills")} placeholder="React, Next.js, Communication" className={inputClass} />
+                        <label className={labelClass}>{t("skills")}</label>
+                        <input {...register("skills")} placeholder={t("skillsPlaceholder")} className={inputClass} />
                     </div>
                 </div>
 
@@ -220,28 +237,28 @@ export default function CVBuilder() {
                 <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5">
                     <div className="flex items-center justify-between mb-4">
                         <h2 className="font-semibold text-neutral-900 dark:text-white flex items-center gap-2">
-                            <Briefcase className="w-4 h-4 text-indigo-500" /> Experience
+                            <Briefcase className="w-4 h-4 text-indigo-500" /> {t("experience")}
                         </h2>
                         <button
                             type="button"
                             onClick={() => experience.append({ company: "", role: "", period: "", description: "" })}
                             className="flex items-center gap-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
                         >
-                            <Plus className="w-3.5 h-3.5" /> Add
+                            <Plus className="w-3.5 h-3.5" /> {t("add")}
                         </button>
                     </div>
                     <div className="space-y-4">
                         {experience.fields.map((field, i) => (
                             <div key={field.id} className="border border-neutral-100 dark:border-neutral-800 rounded-xl p-3.5 space-y-3">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <input {...register(`experience.${i}.role`)} placeholder="Role / Title" className={inputClass} />
-                                    <input {...register(`experience.${i}.company`)} placeholder="Company" className={inputClass} />
+                                    <input {...register(`experience.${i}.role`)} placeholder={t("rolePlaceholder")} className={inputClass} />
+                                    <input {...register(`experience.${i}.company`)} placeholder={t("companyPlaceholder")} className={inputClass} />
                                 </div>
-                                <input {...register(`experience.${i}.period`)} placeholder="e.g. Jan 2024 – Present" className={inputClass} />
-                                <textarea {...register(`experience.${i}.description`)} rows={2} placeholder="What did you work on?" className={cn(inputClass, "resize-none")} />
+                                <input {...register(`experience.${i}.period`)} placeholder={t("periodPlaceholder")} className={inputClass} />
+                                <textarea {...register(`experience.${i}.description`)} rows={2} placeholder={t("descriptionPlaceholder")} className={cn(inputClass, "resize-none")} />
                                 {experience.fields.length > 1 && (
                                     <button type="button" onClick={() => experience.remove(i)} className="text-xs text-red-500 hover:underline flex items-center gap-1">
-                                        <Trash2 className="w-3 h-3" /> Remove
+                                        <Trash2 className="w-3 h-3" /> {t("remove")}
                                     </button>
                                 )}
                             </div>
@@ -253,27 +270,27 @@ export default function CVBuilder() {
                 <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5">
                     <div className="flex items-center justify-between mb-4">
                         <h2 className="font-semibold text-neutral-900 dark:text-white flex items-center gap-2">
-                            <GraduationCap className="w-4 h-4 text-indigo-500" /> Education
+                            <GraduationCap className="w-4 h-4 text-indigo-500" /> {t("education")}
                         </h2>
                         <button
                             type="button"
                             onClick={() => education.append({ school: "", degree: "", year: "" })}
                             className="flex items-center gap-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
                         >
-                            <Plus className="w-3.5 h-3.5" /> Add
+                            <Plus className="w-3.5 h-3.5" /> {t("add")}
                         </button>
                     </div>
                     <div className="space-y-4">
                         {education.fields.map((field, i) => (
                             <div key={field.id} className="border border-neutral-100 dark:border-neutral-800 rounded-xl p-3.5 space-y-3">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <input {...register(`education.${i}.degree`)} placeholder="Degree / Program" className={inputClass} />
-                                    <input {...register(`education.${i}.school`)} placeholder="School / University" className={inputClass} />
+                                    <input {...register(`education.${i}.degree`)} placeholder={t("degreePlaceholder")} className={inputClass} />
+                                    <input {...register(`education.${i}.school`)} placeholder={t("schoolPlaceholder")} className={inputClass} />
                                 </div>
-                                <input {...register(`education.${i}.year`)} placeholder="e.g. 2022 – 2026" className={inputClass} />
+                                <input {...register(`education.${i}.year`)} placeholder={t("yearPlaceholder")} className={inputClass} />
                                 {education.fields.length > 1 && (
                                     <button type="button" onClick={() => education.remove(i)} className="text-xs text-red-500 hover:underline flex items-center gap-1">
-                                        <Trash2 className="w-3 h-3" /> Remove
+                                        <Trash2 className="w-3 h-3" /> {t("remove")}
                                     </button>
                                 )}
                             </div>
@@ -296,9 +313,9 @@ export default function CVBuilder() {
                     )}
                 >
                     {isGenerating ? (
-                        <><Loader2 className="w-4 h-4 animate-spin" /> Generating PDF...</>
+                        <><Loader2 className="w-4 h-4 animate-spin" /> {t("generating")}</>
                     ) : (
-                        <><Download className="w-4 h-4" /> Download as PDF</>
+                        <><Download className="w-4 h-4" /> {t("download")}</>
                     )}
                 </button>
             </div>
@@ -306,7 +323,7 @@ export default function CVBuilder() {
             {/* Live preview column */}
             <div className="lg:sticky lg:top-24 h-fit">
                 <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 shadow-sm">
-                    <h3 className="text-xl font-bold text-neutral-900 dark:text-white">{liveData.fullName || "Your Name"}</h3>
+                    <h3 className="text-xl font-bold text-neutral-900 dark:text-white">{liveData.fullName || t("yourName")}</h3>
                     <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
                         {[liveData.email, liveData.phone, liveData.location].filter(Boolean).join("  •  ")}
                     </p>
@@ -317,7 +334,7 @@ export default function CVBuilder() {
 
                     {liveData.experience?.some((e) => e.company || e.role) && (
                         <div className="mt-5">
-                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">Experience</h4>
+                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">{t("experience")}</h4>
                             <div className="space-y-3">
                                 {liveData.experience.filter((e) => e.company || e.role).map((e, i) => (
                                     <div key={i}>
@@ -334,7 +351,7 @@ export default function CVBuilder() {
 
                     {liveData.education?.some((e) => e.school || e.degree) && (
                         <div className="mt-5">
-                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">Education</h4>
+                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">{t("education")}</h4>
                             <div className="space-y-2">
                                 {liveData.education.filter((e) => e.school || e.degree).map((e, i) => (
                                     <div key={i} className="flex items-baseline justify-between text-sm">
@@ -348,7 +365,7 @@ export default function CVBuilder() {
 
                     {skillsPreview.length > 0 && (
                         <div className="mt-5">
-                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">Skills</h4>
+                            <h4 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 border-b border-neutral-200 dark:border-neutral-800 pb-1.5 mb-2.5">{t("skills").replace(/\s*\(.*\)\s*$/, "")}</h4>
                             <div className="flex flex-wrap gap-1.5">
                                 {skillsPreview.map((s, i) => (
                                     <span key={i} className="text-xs px-2.5 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-400 rounded-md">{s}</span>
@@ -358,7 +375,7 @@ export default function CVBuilder() {
                     )}
                 </div>
                 <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-3 text-center">
-                    Live preview — click &quot;Download as PDF&quot; to export
+                    {t("livePreviewNote")}
                 </p>
             </div>
         </form>
