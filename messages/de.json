@@ -10,7 +10,8 @@
         "contact": "Kontakt",
         "login": "Anmelden",
         "register": "Registrieren",
-        "logout": "Abmelden"
+        "logout": "Abmelden",
+        "cvBuilder": "Lebenslauf-Ersteller"
     },
     "home": {
         "hero": {
@@ -246,12 +247,45 @@
     "footer": {
         "tagline": "Menschen weltweit mit Chancen verbinden",
         "links": "Schnelllinks",
-        "categories": "Kategorien",
         "legal": "Rechtliches",
         "privacy": "Datenschutzrichtlinie",
         "terms": "Nutzungsbedingungen",
         "disclaimer": "Demodaten-Haftungsausschluss",
         "rights": "Alle Rechte vorbehalten",
+        "connect": "Folgen",
         "madeWith": "Mit ❤️ für alle gemacht"
+    },
+    "cvBuilder": {
+        "title": "Lebenslauf-Ersteller",
+        "subtitle": "Gib deine Daten ein, sieh eine Live-Vorschau und lade einen professionellen Lebenslauf als PDF herunter.",
+        "personalDetails": "Persönliche Daten",
+        "fullName": "Vollständiger Name",
+        "fullNamePlaceholder": "Jana Schmidt",
+        "email": "E-Mail",
+        "emailPlaceholder": "jana@example.com",
+        "phone": "Telefon",
+        "phonePlaceholder": "+49 170 0000000",
+        "location": "Standort",
+        "locationPlaceholder": "Berlin, Deutschland",
+        "summary": "Zusammenfassung",
+        "summaryPlaceholder": "Eine kurze Vorstellung von dir...",
+        "skills": "Fähigkeiten (durch Kommas getrennt)",
+        "skillsPlaceholder": "React, Next.js, Kommunikation",
+        "experience": "Berufserfahrung",
+        "education": "Ausbildung",
+        "add": "Hinzufügen",
+        "remove": "Entfernen",
+        "rolePlaceholder": "Position / Titel",
+        "companyPlaceholder": "Unternehmen",
+        "periodPlaceholder": "z. B. Jan. 2024 – heute",
+        "descriptionPlaceholder": "Woran hast du gearbeitet?",
+        "degreePlaceholder": "Abschluss / Studiengang",
+        "schoolPlaceholder": "Schule / Universität",
+        "yearPlaceholder": "z. B. 2022 – 2026",
+        "download": "PDF herunterladen",
+        "generating": "PDF wird erstellt...",
+        "downloadError": "PDF konnte nicht erstellt werden. Bitte überprüfe deine Angaben und versuche es erneut.",
+        "yourName": "Dein Name",
+        "livePreviewNote": "Live-Vorschau — klicke auf „PDF herunterladen“, um zu exportieren"
     }
 }

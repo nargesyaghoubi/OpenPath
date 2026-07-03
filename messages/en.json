@@ -9,7 +9,8 @@
         "contact": "Contact",
         "login": "Login",
         "register": "Register",
-        "logout": "Logout"
+        "logout": "Logout",
+        "cvBuilder": "CV Builder"
     },
     "home": {
         "hero": {
@@ -241,12 +242,45 @@
     "footer": {
         "tagline": "Connecting the world with opportunity",
         "links": "Quick Links",
-        "categories": "Categories",
         "legal": "Legal",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use",
         "disclaimer": "Demo data disclaimer",
         "rights": "All rights reserved",
+        "connect": "Connect",
         "madeWith": "Made with ❤️ for everyone, everywhere"
+    },
+    "cvBuilder": {
+        "title": "CV / Resume Builder",
+        "subtitle": "Fill in your details, preview your resume live, and download it as a polished PDF.",
+        "personalDetails": "Personal Details",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Jane Smith",
+        "email": "Email",
+        "emailPlaceholder": "jane@example.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+93 700 000 000",
+        "location": "Location",
+        "locationPlaceholder": "Kabul, Afghanistan",
+        "summary": "Summary",
+        "summaryPlaceholder": "A short pitch about yourself...",
+        "skills": "Skills (comma separated)",
+        "skillsPlaceholder": "React, Next.js, Communication",
+        "experience": "Experience",
+        "education": "Education",
+        "add": "Add",
+        "remove": "Remove",
+        "rolePlaceholder": "Role / Title",
+        "companyPlaceholder": "Company",
+        "periodPlaceholder": "e.g. Jan 2024 – Present",
+        "descriptionPlaceholder": "What did you work on?",
+        "degreePlaceholder": "Degree / Program",
+        "schoolPlaceholder": "School / University",
+        "yearPlaceholder": "e.g. 2022 – 2026",
+        "download": "Download as PDF",
+        "generating": "Generating PDF...",
+        "downloadError": "Couldn't generate the PDF. Please check your entries and try again.",
+        "yourName": "Your Name",
+        "livePreviewNote": "Live preview — click \"Download as PDF\" to export"
     }
 }

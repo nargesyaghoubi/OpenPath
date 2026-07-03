@@ -1,257 +1,291 @@
 {
     "nav": {
-      "home": "Accueil",
-      "opportunities": "Opportunités",
-      "saved": "Sauvegardées",
-      "dashboard": "Tableau de bord",
-      "addOpportunity": "Ajouter une opportunité",
-      "about": "À propos",
-      "team": "Team",
-      "contact": "Contact",
-      "login": "Connexion",
-      "register": "S'inscrire",
-      "logout": "Déconnexion"
+        "home": "Accueil",
+        "opportunities": "Opportunités",
+        "saved": "Sauvegardées",
+        "dashboard": "Tableau de bord",
+        "addOpportunity": "Ajouter une opportunité",
+        "about": "À propos",
+        "team": "Team",
+        "contact": "Contact",
+        "login": "Connexion",
+        "register": "S'inscrire",
+        "logout": "Déconnexion",
+        "cvBuilder": "Créateur de CV"
     },
     "home": {
-      "hero": {
-        "badge": "🌍 Des opportunités pour tous",
-        "title": "Découvrez votre prochaine",
-        "titleHighlight": "Opportunité",
-        "subtitle": "OpenPath connecte les personnes du monde entier à des emplois, des bourses, des stages et des opportunités de développement — le tout en un seul endroit.",
-        "browseBtn": "Parcourir les opportunités",
-        "addBtn": "Ajouter une opportunité",
-        "stats": {
-          "opportunities": "Opportunités",
-          "organizations": "Organisations",
-          "categories": "Catégories",
-          "countries": "Pays"
+        "hero": {
+            "badge": "🌍 Des opportunités pour tous",
+            "title": "Découvrez votre prochaine",
+            "titleHighlight": "Opportunité",
+            "subtitle": "OpenPath connecte les personnes du monde entier à des emplois, des bourses, des stages et des opportunités de développement — le tout en un seul endroit.",
+            "browseBtn": "Parcourir les opportunités",
+            "addBtn": "Ajouter une opportunité",
+            "stats": {
+                "opportunities": "Opportunités",
+                "organizations": "Organisations",
+                "categories": "Catégories",
+                "countries": "Pays"
+            }
+        },
+        "categories": {
+            "title": "Parcourir par catégorie",
+            "subtitle": "Trouvez le bon type d'opportunité pour vos objectifs",
+            "viewAll": "Voir tout"
+        },
+        "featured": {
+            "title": "Opportunités en vedette",
+            "subtitle": "Opportunités sélectionnées pour lancer votre carrière",
+            "viewAll": "Voir toutes les opportunités",
+            "deadline": "Date limite",
+            "apply": "Postuler maintenant",
+            "save": "Sauvegarder"
+        },
+        "cta": {
+            "title": "Vous connaissez une excellente opportunité ?",
+            "subtitle": "Aidez d'autres personnes à découvrir des emplois, des bourses et des programmes de formation en partageant des opportunités sur OpenPath.",
+            "btn": "Partager une opportunité"
+        },
+        "byCountry": {
+            "title": "Explore by Country",
+            "subtitle": "Find opportunities in your target destination",
+            "viewAll": "View All"
         }
-      },
-      "categories": {
-        "title": "Parcourir par catégorie",
-        "subtitle": "Trouvez le bon type d'opportunité pour vos objectifs",
-        "viewAll": "Voir tout"
-      },
-      "featured": {
-        "title": "Opportunités en vedette",
-        "subtitle": "Opportunités sélectionnées pour lancer votre carrière",
-        "viewAll": "Voir toutes les opportunités",
-        "deadline": "Date limite",
-        "apply": "Postuler maintenant",
-        "save": "Sauvegarder"
-      },
-      "cta": {
-        "title": "Vous connaissez une excellente opportunité ?",
-        "subtitle": "Aidez d'autres personnes à découvrir des emplois, des bourses et des programmes de formation en partageant des opportunités sur OpenPath." ,
-        "btn": "Partager une opportunité"
-      },
-      "byCountry": {
-        "title": "Explore by Country",
-        "subtitle": "Find opportunities in your target destination",
-        "viewAll": "View All"
-      }
     },
     "opportunities": {
-      "title": "Toutes les opportunités",
-      "subtitle": "{count} opportunités disponibles",
-      "search": "Rechercher des opportunités...",
-      "filters": {
-        "category": "Catégorie",
-        "location": "Lieu",
-        "type": "Type",
-        "allCategories": "Toutes les catégories",
-        "allLocations": "Tous les lieux",
-        "allTypes": "Tous les types",
-        "remote": "À distance",
-        "onsite": "Sur place",
-        "hybrid": "Hybride",
-        "sortBy": "Trier par",
-        "newest": "Plus récent",
+        "title": "Toutes les opportunités",
+        "subtitle": "{count} opportunités disponibles",
+        "search": "Rechercher des opportunités...",
+        "filters": {
+            "category": "Catégorie",
+            "location": "Lieu",
+            "type": "Type",
+            "allCategories": "Toutes les catégories",
+            "allLocations": "Tous les lieux",
+            "allTypes": "Tous les types",
+            "remote": "À distance",
+            "onsite": "Sur place",
+            "hybrid": "Hybride",
+            "sortBy": "Trier par",
+            "newest": "Plus récent",
+            "deadline": "Date limite",
+            "title": "Titre",
+            "country": "Pays",
+            "allCountries": "Tous les pays"
+        },
+        "noResults": "Aucune opportunité trouvée",
+        "noResultsSubtitle": "Essayez d'ajuster vos filtres ou termes de recherche",
         "deadline": "Date limite",
-        "title": "Titre",
-        "country": "Pays",
-        "allCountries": "Tous les pays"
-      },
-      "noResults": "Aucune opportunité trouvée",
-      "noResultsSubtitle": "Essayez d'ajuster vos filtres ou termes de recherche",
-      "deadline": "Date limite",
-      "location": "Lieu",
-      "viewDetails": "Voir les détails",
-      "save": "Sauvegarder",
-      "saved": "Sauvegardée",
-      "featured": "En vedette",
-      "expiringSoon": "Expire bientôt"
+        "location": "Lieu",
+        "viewDetails": "Voir les détails",
+        "save": "Sauvegarder",
+        "saved": "Sauvegardée",
+        "featured": "En vedette",
+        "expiringSoon": "Expire bientôt"
     },
     "details": {
-      "about": "À propos de cette opportunité",
-      "requirements": "Exigences",
-      "deadline": "Date limite de candidature",
-      "location": "Lieu",
-      "type": "Type de travail",
-      "organization": "Organisation",
-      "tags": "Tags",
-      "applyNow": "Postuler maintenant",
-      "saveOpportunity": "Sauvegarder l'opportunité",
-      "saved": "Sauvegardée ✓",
-      "share": "Partager",
-      "back": "Retour aux opportunités",
-      "demoNote": "⚠️ Données de démonstration — Ce sont des exemples de données à des fins éducatives uniquement.",
-      "country": "Pays"
+        "about": "À propos de cette opportunité",
+        "requirements": "Exigences",
+        "deadline": "Date limite de candidature",
+        "location": "Lieu",
+        "type": "Type de travail",
+        "organization": "Organisation",
+        "tags": "Tags",
+        "applyNow": "Postuler maintenant",
+        "saveOpportunity": "Sauvegarder l'opportunité",
+        "saved": "Sauvegardée ✓",
+        "share": "Partager",
+        "back": "Retour aux opportunités",
+        "demoNote": "⚠️ Données de démonstration — Ce sont des exemples de données à des fins éducatives uniquement.",
+        "country": "Pays"
     },
     "saved": {
-      "title": "Opportunités sauvegardées",
-      "subtitle": "Vos opportunités marquées",
-      "empty": "Aucune opportunité sauvegardée pour l'instant",
-      "emptySubtitle": "Parcourez les opportunités et sauvegardez celles qui vous plaisent",
-      "browse": "Parcourir les opportunités",
-      "remove": "Supprimer",
-      "deadline": "Date limite"
+        "title": "Opportunités sauvegardées",
+        "subtitle": "Vos opportunités marquées",
+        "empty": "Aucune opportunité sauvegardée pour l'instant",
+        "emptySubtitle": "Parcourez les opportunités et sauvegardez celles qui vous plaisent",
+        "browse": "Parcourir les opportunités",
+        "remove": "Supprimer",
+        "deadline": "Date limite"
     },
     "dashboard": {
-      "title": "Tableau de bord",
-      "subtitle": "Vue d'ensemble de toutes les opportunités sur OpenPath",
-      "stats": {
-        "total": "Total des opportunités",
-        "jobs": "Emplois",
-        "scholarships": "Bourses",
-        "internships": "Stages",
-        "remote": "À distance",
-        "expiringSoon": "Expire bientôt"
-      },
-      "recentTitle": "Soumissions récentes",
-      "chartTitle": "Opportunités par catégorie",
-      "noData": "Aucune donnée disponible",
-      "countryChartTitle": "Opportunités par pays"
+        "title": "Tableau de bord",
+        "subtitle": "Vue d'ensemble de toutes les opportunités sur OpenPath",
+        "stats": {
+            "total": "Total des opportunités",
+            "jobs": "Emplois",
+            "scholarships": "Bourses",
+            "internships": "Stages",
+            "remote": "À distance",
+            "expiringSoon": "Expire bientôt"
+        },
+        "recentTitle": "Soumissions récentes",
+        "chartTitle": "Opportunités par catégorie",
+        "noData": "Aucune donnée disponible",
+        "countryChartTitle": "Opportunités par pays"
     },
     "addOpportunity": {
-      "title": "Ajouter une opportunité",
-      "subtitle": "Partagez une nouvelle opportunité avec les jeunes afghans",
-      "fields": {
-        "title": "Titre de l'opportunité",
-        "titlePlaceholder": "ex. Stagiaire développeur frontend",
-        "organization": "Organisation",
-        "organizationPlaceholder": "ex. Communauté Tech de Kaboul",
-        "category": "Catégorie",
-        "location": "Lieu",
-        "locationPlaceholder": "ex. Kaboul ou En ligne",
-        "type": "Type de travail",
-        "deadline": "Date limite de candidature",
-        "description": "Description",
-        "descriptionPlaceholder": "Décrivez l'opportunité en détail...",
-        "requirements": "Exigences",
-        "requirementsPlaceholder": "ex. React de base, HTML/CSS (un par ligne)",
-        "applyLink": "Lien de candidature",
-        "applyLinkPlaceholder": "https://example.com/apply",
-        "tags": "Tags",
-        "tagsPlaceholder": "ex. React, À distance, Débutant (séparés par des virgules)",
-        "country": "Country",
-        "countryPlaceholder": "e.g. United Kingdom"
-      },
-      "submit": "Soumettre l'opportunité",
-      "submitting": "Envoi en cours...",
-      "success": "Opportunité soumise avec succès !",
-      "reset": "Ajouter une autre"
+        "title": "Ajouter une opportunité",
+        "subtitle": "Partagez une nouvelle opportunité avec les jeunes afghans",
+        "fields": {
+            "title": "Titre de l'opportunité",
+            "titlePlaceholder": "ex. Stagiaire développeur frontend",
+            "organization": "Organisation",
+            "organizationPlaceholder": "ex. Communauté Tech de Kaboul",
+            "category": "Catégorie",
+            "location": "Lieu",
+            "locationPlaceholder": "ex. Kaboul ou En ligne",
+            "type": "Type de travail",
+            "deadline": "Date limite de candidature",
+            "description": "Description",
+            "descriptionPlaceholder": "Décrivez l'opportunité en détail...",
+            "requirements": "Exigences",
+            "requirementsPlaceholder": "ex. React de base, HTML/CSS (un par ligne)",
+            "applyLink": "Lien de candidature",
+            "applyLinkPlaceholder": "https://example.com/apply",
+            "tags": "Tags",
+            "tagsPlaceholder": "ex. React, À distance, Débutant (séparés par des virgules)",
+            "country": "Country",
+            "countryPlaceholder": "e.g. United Kingdom"
+        },
+        "submit": "Soumettre l'opportunité",
+        "submitting": "Envoi en cours...",
+        "success": "Opportunité soumise avec succès !",
+        "reset": "Ajouter une autre"
     },
     "about": {
-      "title": "À propos de OpenPath",
-      "mission": {
-        "title": "Notre mission",
-        "text": "OpenPath est une plateforme gratuite et ouverte qui connecte les personnes du monde entier à des opportunités enrichissantes — emplois, bourses, stages, travail à distance et programmes de formation — le tout en un seul endroit accessible."
-      },
-      "problem": {
-        "title": "Le problème que nous résolvons",
-        "text": "Partout dans le monde, les informations sur les opportunités sont souvent dispersées entre les réseaux sociaux, les groupes de messagerie et de nombreux sites web. Beaucoup de personnes passent à côté d'opportunités précieuses simplement parce qu'elles ne savent pas où chercher."
-      },
-      "solution": {
-        "title": "Notre solution",
-        "text": "OpenPath centralise les opportunités vérifiées dans une plateforme propre, rapide et adaptée aux mobiles. Les utilisateurs peuvent rechercher, filtrer, sauvegarder et postuler — en plusieurs langues — depuis n'importe quel appareil."
-      },
-      "values": {
-        "title": "Nos valeurs",
-        "access": "Accès égal",
-        "accessText": "Chaque personne mérite de connaître les opportunités qui s'offrent à elle.",
-        "inclusion": "Inclusion",
-        "inclusionText": "Nous donnons la priorité aux femmes, aux jeunes dans les provinces et aux communautés sous-représentées.",
-        "transparency": "Transparence",
-        "transparencyText": "Toutes les données sur la plateforme sont clairement étiquetées — réelles ou de démonstration."
-      },
-      "demoNote": "Ce projet est construit comme projet de fin d'études. Toutes les données actuelles sont des données de démonstration à des fins éducatives."
+        "title": "À propos de OpenPath",
+        "mission": {
+            "title": "Notre mission",
+            "text": "OpenPath est une plateforme gratuite et ouverte qui connecte les personnes du monde entier à des opportunités enrichissantes — emplois, bourses, stages, travail à distance et programmes de formation — le tout en un seul endroit accessible."
+        },
+        "problem": {
+            "title": "Le problème que nous résolvons",
+            "text": "Partout dans le monde, les informations sur les opportunités sont souvent dispersées entre les réseaux sociaux, les groupes de messagerie et de nombreux sites web. Beaucoup de personnes passent à côté d'opportunités précieuses simplement parce qu'elles ne savent pas où chercher."
+        },
+        "solution": {
+            "title": "Notre solution",
+            "text": "OpenPath centralise les opportunités vérifiées dans une plateforme propre, rapide et adaptée aux mobiles. Les utilisateurs peuvent rechercher, filtrer, sauvegarder et postuler — en plusieurs langues — depuis n'importe quel appareil."
+        },
+        "values": {
+            "title": "Nos valeurs",
+            "access": "Accès égal",
+            "accessText": "Chaque personne mérite de connaître les opportunités qui s'offrent à elle.",
+            "inclusion": "Inclusion",
+            "inclusionText": "Nous donnons la priorité aux femmes, aux jeunes dans les provinces et aux communautés sous-représentées.",
+            "transparency": "Transparence",
+            "transparencyText": "Toutes les données sur la plateforme sont clairement étiquetées — réelles ou de démonstration."
+        },
+        "demoNote": "Ce projet est construit comme projet de fin d'études. Toutes les données actuelles sont des données de démonstration à des fins éducatives."
     },
     "team": {
-      "title": "Notre équipe",
-      "subtitle": "Les personnes qui construisent OpenPath"
+        "title": "Notre équipe",
+        "subtitle": "Les personnes qui construisent OpenPath"
     },
     "contact": {
-      "title": "Contactez-nous",
-      "subtitle": "Vous avez une question ou souhaitez collaborer ? Contactez-nous.",
-      "fields": {
-        "name": "Votre nom",
-        "namePlaceholder": "Jane Smith",
-        "email": "Adresse e-mail",
-        "emailPlaceholder": "jane@example.com",
-        "subject": "Sujet",
-        "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
-        "message": "Message",
-        "messagePlaceholder": "Écrivez votre message ici..."
-      },
-      "submit": "Envoyer le message",
-      "submitting": "Envoi en cours...",
-      "success": "Message envoyé ! Nous vous répondrons bientôt.",
-      "info": {
-        "title": "Restez en contact",
-        "email": "hello@openpath.world",
-        "location": "Paris, France",
-        "social": "Suivez-nous"
-      }
+        "title": "Contactez-nous",
+        "subtitle": "Vous avez une question ou souhaitez collaborer ? Contactez-nous.",
+        "fields": {
+            "name": "Votre nom",
+            "namePlaceholder": "Jane Smith",
+            "email": "Adresse e-mail",
+            "emailPlaceholder": "jane@example.com",
+            "subject": "Sujet",
+            "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
+            "message": "Message",
+            "messagePlaceholder": "Écrivez votre message ici..."
+        },
+        "submit": "Envoyer le message",
+        "submitting": "Envoi en cours...",
+        "success": "Message envoyé ! Nous vous répondrons bientôt.",
+        "info": {
+            "title": "Restez en contact",
+            "email": "hello@openpath.world",
+            "location": "Paris, France",
+            "social": "Suivez-nous"
+        }
     },
     "auth": {
-      "login": {
-        "title": "Bon retour",
-        "subtitle": "Connectez-vous à votre compte OpenPath",
-        "email": "E-mail",
-        "password": "Mot de passe",
-        "submit": "Se connecter",
-        "noAccount": "Pas de compte ?",
-        "register": "S'inscrire",
-        "forgotPassword": "Mot de passe oublié ?"
-      },
-      "register": {
-        "title": "Créer un compte",
-        "subtitle": "Rejoignez OpenPath et découvrez des opportunités",
-        "name": "Nom complet",
-        "email": "E-mail",
-        "password": "Mot de passe",
-        "confirmPassword": "Confirmer le mot de passe",
-        "submit": "Créer un compte",
-        "hasAccount": "Vous avez déjà un compte ?",
-        "login": "Se connecter"
-      }
+        "login": {
+            "title": "Bon retour",
+            "subtitle": "Connectez-vous à votre compte OpenPath",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "submit": "Se connecter",
+            "noAccount": "Pas de compte ?",
+            "register": "S'inscrire",
+            "forgotPassword": "Mot de passe oublié ?"
+        },
+        "register": {
+            "title": "Créer un compte",
+            "subtitle": "Rejoignez OpenPath et découvrez des opportunités",
+            "name": "Nom complet",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "confirmPassword": "Confirmer le mot de passe",
+            "submit": "Créer un compte",
+            "hasAccount": "Vous avez déjà un compte ?",
+            "login": "Se connecter"
+        }
     },
     "common": {
-      "loading": "Chargement...",
-      "error": "Quelque chose s'est mal passé",
-      "retry": "Réessayer",
-      "notFound": "Page introuvable",
-      "backHome": "Retour à l'accueil",
-      "demoData": "Données de démo",
-      "learnMore": "En savoir plus",
-      "close": "Fermer",
-      "cancel": "Annuler",
-      "confirm": "Confirmer",
-      "delete": "Supprimer",
-      "edit": "Modifier",
-      "save": "Sauvegarder",
-      "language": "Langue"
+        "loading": "Chargement...",
+        "error": "Quelque chose s'est mal passé",
+        "retry": "Réessayer",
+        "notFound": "Page introuvable",
+        "backHome": "Retour à l'accueil",
+        "demoData": "Données de démo",
+        "learnMore": "En savoir plus",
+        "close": "Fermer",
+        "cancel": "Annuler",
+        "confirm": "Confirmer",
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "save": "Sauvegarder",
+        "language": "Langue"
     },
     "footer": {
-      "tagline": "Connecter les talents aux opportunités",
-      "links": "Liens rapides",
-      "categories": "Catégories",
-      "legal": "Juridique",
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation",
-      "disclaimer": "Avertissement données de démo",
-      "rights": "Tous droits réservés",
-      "madeWith": "Fait avec ❤️ pour tous"
+        "tagline": "Connecter les talents aux opportunités",
+        "links": "Liens rapides",
+        "legal": "Juridique",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation",
+        "disclaimer": "Avertissement données de démo",
+        "rights": "Tous droits réservés",
+        "connect": "Me suivre",
+        "madeWith": "Fait avec ❤️ pour tous"
+    },
+    "cvBuilder": {
+        "title": "Créateur de CV",
+        "subtitle": "Renseignez vos informations, visualisez un aperçu en direct et téléchargez un CV PDF soigné.",
+        "personalDetails": "Informations personnelles",
+        "fullName": "Nom complet",
+        "fullNamePlaceholder": "Jeanne Dupont",
+        "email": "E-mail",
+        "emailPlaceholder": "jeanne@example.com",
+        "phone": "Téléphone",
+        "phonePlaceholder": "+33 6 00 00 00 00",
+        "location": "Lieu",
+        "locationPlaceholder": "Paris, France",
+        "summary": "Résumé",
+        "summaryPlaceholder": "Une courte présentation de vous-même...",
+        "skills": "Compétences (séparées par des virgules)",
+        "skillsPlaceholder": "React, Next.js, Communication",
+        "experience": "Expérience",
+        "education": "Formation",
+        "add": "Ajouter",
+        "remove": "Supprimer",
+        "rolePlaceholder": "Poste / Titre",
+        "companyPlaceholder": "Entreprise",
+        "periodPlaceholder": "ex. Janv. 2024 – Présent",
+        "descriptionPlaceholder": "Sur quoi avez-vous travaillé ?",
+        "degreePlaceholder": "Diplôme / Filière",
+        "schoolPlaceholder": "École / Université",
+        "yearPlaceholder": "ex. 2022 – 2026",
+        "download": "Télécharger le PDF",
+        "generating": "Génération du PDF...",
+        "downloadError": "Impossible de générer le PDF. Vérifiez vos informations et réessayez.",
+        "yourName": "Votre nom",
+        "livePreviewNote": "Aperçu en direct — cliquez sur « Télécharger le PDF » pour exporter"
     }
-  }
+}
