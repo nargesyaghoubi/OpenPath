@@ -1,6 +1,5 @@
 # OpenPath
-
-**A modern opportunity-finder platform** that helps students, graduates, and job seekers discover jobs, internships, scholarships, online courses, remote work, and training programs all in one place.
+OpenPath is a modern opportunity discovery platform that brings jobs, internships, scholarships, remote work, online courses, and training programs together in one place. With multilingual support, authentication, a CV builder, and full CRUD functionality, it provides a seamless experience for students, graduates, and job seekers.
 
 ---
 ## Live Demo & Repository
@@ -95,7 +94,7 @@
 
 - [Problem It Solves](#problem-it-solves)
 - [Target Users](#target-users)
-- [Live Demo](#live-demo)
+- [Live Demo & Repository](#live-demo--repository)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
@@ -207,16 +206,28 @@ cd openpath
 npm install
 ```
 
-### Environment setup
+### Environment Setup
 
-```bash
-cp .env.example .env.local
-```
+Create a `.env.local` file in the project root
 
-Then generate a secret and fill in `.env.local`:
+Generate a secret and fill in `.env.local`:
 
 ```bash
 npx auth secret
+```
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `AUTH_SECRET` | Secret used by next-auth to sign session tokens. Generate with `npx auth secret`. |
+| `AUTH_URL` | Base URL of the app (e.g. `http://localhost:3000` in dev). |
+| `NEXT_PUBLIC_DEMO_MODE` | Set to `true` to show demo-mode notices in the UI. |
+
+```env
+AUTH_SECRET=your_generated_secret
+AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_DEMO_MODE=true
 ```
 
 ### Run the dev server
@@ -226,14 +237,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/en`.
-
-## Environment Variables
-
-| Variable | Description |
-|---|---|
-| `AUTH_SECRET` | Secret used by next-auth to sign session tokens. Generate with `npx auth secret`. |
-| `AUTH_URL` | Base URL of the app (e.g. `http://localhost:3000` in dev). |
-| `NEXT_PUBLIC_DEMO_MODE` | Set to `true` to show demo-mode notices in the UI. |
 
 
 ## Demo Accounts
