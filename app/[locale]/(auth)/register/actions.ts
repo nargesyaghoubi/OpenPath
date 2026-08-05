@@ -1,9 +1,5 @@
 "use server";
 
-// Server action for account registration.
-// Creates a real (in-memory, demo) user and immediately signs them in,
-// so the account they just created can be used right away.
-
 import { z } from "zod/v4";
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
@@ -36,11 +32,12 @@ export async function registerAction(_prev: unknown, formData: FormData) {
         return { error: parsed.error.issues[0]?.message ?? "Please check your details and try again." };
     }
 
-    if (findUserByEmail(parsed.data.email)) {
+    if (await findUserByEmail(parsed.data.email)) {
         return { error: "An account with this email already exists. Try signing in instead." };
     }
 
-    addUser({
+    // addUser hashes the password with bcrypt before it is stored.
+    await addUser({
         name: parsed.data.name,
         email: parsed.data.email,
         password: parsed.data.password,

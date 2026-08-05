@@ -1,9 +1,10 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { findUserByEmail } from "@/lib/users-store";
+import { verifyPassword } from "@/lib/password";
 
-// User lookup lives in lib/users-store.ts so that accounts created via the
-// /register page (in production: replace with DB + bcrypt) can also sign in.
+// User lookup lives in lib/users-store.ts (PostgreSQL via Prisma) so that
+// accounts created via the /register page can also sign in.
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     trustHost: true,
@@ -25,11 +26,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
                 if (!email || !password) return null;
 
-                const user = findUserByEmail(email);
+                const user = await findUserByEmail(email);
+                if (!user) return null;
 
-                // Demo only: plain-text comparison.
-                // Production: use bcrypt.compare(password, user.hashedPassword)
-                if (!user || user.password !== password) return null;
+                const valid = await verifyPassword(password, user.passwordHash);
+                if (!valid) return null;
 
                 return { id: user.id, name: user.name, email: user.email, role: user.role };
             },
