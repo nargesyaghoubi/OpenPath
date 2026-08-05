@@ -1,0 +1,72 @@
+// Prisma schema — PostgreSQL (Neon)
+// After changes: npx prisma migrate dev --name <description>
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL") // direct connection, used for migrations
+}
+
+enum Role {
+  user
+  admin
+}
+
+enum OpportunityStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(user)
+  createdAt    DateTime @default(now())
+
+  opportunities Opportunity[] @relation("SubmittedOpportunities")
+  reviewed      Opportunity[] @relation("ReviewedOpportunities")
+
+  @@map("users")
+}
+
+model Opportunity {
+  id           String            @id @default(cuid())
+  title        String
+  organization String
+  category     String
+  location     String
+  country      String
+  countryCode  String
+  type         String
+  deadline     String
+  description  String            @db.Text
+  requirements String[]
+  applyLink    String
+  tags         String[]
+  featured     Boolean           @default(false)
+
+  status       OpportunityStatus @default(PENDING)
+  rejectReason String?
+
+  submittedBy String?
+  submitter   User?   @relation("SubmittedOpportunities", fields: [submittedBy], references: [id], onDelete: SetNull)
+
+  reviewedBy String?
+  reviewer   User?     @relation("ReviewedOpportunities", fields: [reviewedBy], references: [id], onDelete: SetNull)
+  reviewedAt DateTime?
+
+  postedAt  DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([category])
+  @@map("opportunities")
+}
