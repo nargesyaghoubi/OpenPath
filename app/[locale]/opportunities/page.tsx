@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { useSession } from "next-auth/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOpportunities } from "@/context/OpportunitiesContext";
 import OpportunityCard from "@/components/OpportunityCard";
@@ -17,6 +18,8 @@ export default function OpportunitiesPage() {
     const locale = useLocale();
     const rtl = isRTL(locale);
     const router = useRouter();
+    const { data: session } = useSession();
+    const currentUser = session?.user as { id?: string; role?: string } | undefined;
     const { opportunities, deleteOpportunity } = useOpportunities();
 
     const [search, setSearch] = useState("");
@@ -91,10 +94,13 @@ export default function OpportunitiesPage() {
                                 exit={{ opacity: 0, scale: 0.94 }}
                                 transition={{ duration: 0.25 }}
                             >
-                                {/* Opportunity card */}
+                                {/* Opportunity card — edit/delete only for the owner or an admin */}
                                 <OpportunityCard
                                     opportunity={opp}
-                                    showActions
+                                    showActions={
+                                        !!currentUser &&
+                                        (currentUser.role === "admin" || currentUser.id === opp.submittedBy)
+                                    }
                                     onDelete={(id) => setDeleteTarget(id)}
                                     onEdit={(o) => router.push(`/edit-opportunity/${o.id}`)}
                                 />
@@ -114,7 +120,17 @@ export default function OpportunitiesPage() {
                         Cancel
                     </button>
                     <button
-                        onClick={() => { if (deleteTarget) { deleteOpportunity(deleteTarget); setDeleteTarget(null); } }}
+                        onClick={async () => {
+                            if (!deleteTarget) return;
+                            try {
+                                await deleteOpportunity(deleteTarget);
+                            } catch {
+                                // Context surfaces no toast system here; the item simply
+                                // stays in the list if the delete fails server-side.
+                            } finally {
+                                setDeleteTarget(null);
+                            }
+                        }}
                         className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors"
                     >
                         <Trash2 className="w-4 h-4" /> Delete

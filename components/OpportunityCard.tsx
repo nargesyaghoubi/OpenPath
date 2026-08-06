@@ -48,6 +48,16 @@ export default function OpportunityCard({ opportunity, onDelete, onEdit, showAct
                 )}>
                     {opportunity.type}
                 </span>
+                {opportunity.status && opportunity.status !== "APPROVED" && (
+                    <span className={cn(
+                        "text-xs font-medium px-2.5 py-1 rounded-full",
+                        opportunity.status === "REJECTED"
+                            ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300"
+                            : "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300"
+                    )}>
+                        {opportunity.status === "REJECTED" ? t("statusRejected") : t("statusPending")}
+                    </span>
+                )}
                 {opportunity.featured && (
                     <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300">
                         ⭐ {t("featured")}
