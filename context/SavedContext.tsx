@@ -1,12 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from "react";
 import { Opportunity } from "@/types";
 
-// Type definition for all available saved context operations
 interface SavedContextType {
     savedIds: string[];
-    savedOpportunities: Opportunity[];
+    savedOpportunities: Opportunity[]; // live data, not a cached snapshot
+    loading: boolean;
     toggleSave: (opportunity: Opportunity) => void;
     isSaved: (id: string) => boolean;
     clearAll: () => void;
@@ -14,57 +14,72 @@ interface SavedContextType {
 
 const SavedContext = createContext<SavedContextType | null>(null);
 
-// Key used to persist saved opportunities in localStorage
-const STORAGE_KEY = "kaaryab_saved_opportunities";
+// Only ids are persisted — content is always fetched fresh
+const STORAGE_KEY = "openpath_saved_ids";
 
 export function SavedProvider({ children }: { children: ReactNode }) {
-    // Stores only the ids of saved opportunities
     const [savedIds, setSavedIds] = useState<string[]>([]);
-    // Stores the full opportunity objects for display
     const [savedOpportunities, setSavedOpportunities] = useState<Opportunity[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    // On mount, restore saved opportunities from localStorage
+    // Restore saved ids from localStorage on mount
     useEffect(() => {
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
             if (stored) {
                 const parsed = JSON.parse(stored);
-                setSavedIds(parsed.ids || []);
-                setSavedOpportunities(parsed.opportunities || []);
+                // Support the old snapshot format for backward compatibility
+                setSavedIds(Array.isArray(parsed) ? parsed : parsed.ids || []);
             }
         } catch {
             // Ignore parse errors and start with empty state
         }
     }, []);
 
-    // Syncs both ids and full objects to localStorage
-    const persist = (ids: string[], opps: Opportunity[]) => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ ids, opportunities: opps }));
-    };
-
-    // Saves or unsaves an opportunity depending on current state
-    const toggleSave = (opportunity: Opportunity) => {
-        if (savedIds.includes(opportunity.id)) {
-            // Remove from saved
-            const newIds = savedIds.filter((id) => id !== opportunity.id);
-            const newOpps = savedOpportunities.filter((o) => o.id !== opportunity.id);
-            setSavedIds(newIds);
-            setSavedOpportunities(newOpps);
-            persist(newIds, newOpps);
-        } else {
-            // Add to saved
-            const newIds = [...savedIds, opportunity.id];
-            const newOpps = [...savedOpportunities, opportunity];
-            setSavedIds(newIds);
-            setSavedOpportunities(newOpps);
-            persist(newIds, newOpps);
+    // Fetch the live version of each saved id; missing/403'd items are dropped
+    const refreshOpportunities = useCallback(async (ids: string[]) => {
+        if (ids.length === 0) {
+            setSavedOpportunities([]);
+            setLoading(false);
+            return;
         }
+        setLoading(true);
+        const results = await Promise.all(
+            ids.map(async (id) => {
+                try {
+                    const res = await fetch(`/api/opportunities/${id}`, { cache: "no-store" });
+                    if (!res.ok) return null;
+                    const data = await res.json();
+                    return data.opportunity as Opportunity;
+                } catch {
+                    return null;
+                }
+            })
+        );
+        setSavedOpportunities(results.filter((o): o is Opportunity => o !== null));
+        setLoading(false);
+    }, []);
+
+    useEffect(() => {
+        refreshOpportunities(savedIds);
+    }, [savedIds, refreshOpportunities]);
+
+    const persist = (ids: string[]) => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
     };
 
-    // Returns true if an opportunity is already saved
+    const toggleSave = (opportunity: Opportunity) => {
+        setSavedIds((prev) => {
+            const next = prev.includes(opportunity.id)
+                ? prev.filter((id) => id !== opportunity.id)
+                : [...prev, opportunity.id];
+            persist(next);
+            return next;
+        });
+    };
+
     const isSaved = (id: string) => savedIds.includes(id);
 
-    // Clears all saved opportunities from state and localStorage
     const clearAll = () => {
         setSavedIds([]);
         setSavedOpportunities([]);
@@ -72,13 +87,12 @@ export function SavedProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        <SavedContext.Provider value={{ savedIds, savedOpportunities, toggleSave, isSaved, clearAll }}>
+        <SavedContext.Provider value={{ savedIds, savedOpportunities, loading, toggleSave, isSaved, clearAll }}>
             {children}
         </SavedContext.Provider>
     );
 }
 
-// Custom hook for easy access to the SavedContext
 export function useSaved() {
     const ctx = useContext(SavedContext);
     if (!ctx) throw new Error("useSaved must be used within SavedProvider");
