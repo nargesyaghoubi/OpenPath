@@ -33,8 +33,8 @@ type FormData = z.infer<typeof schema>;
 interface OpportunityFormProps {
     mode: "add" | "edit";
     initialData?: Opportunity;
-    /** Called after a successful edit (e.g. to navigate back to the details page) */
-    onSaved?: (id: string) => void;
+    /** Called after a successful edit with the freshly saved opportunity (e.g. to navigate away) */
+    onSaved?: (opportunity: Opportunity) => void;
 }
 
 // Turns an Opportunity record into the flat string-based shape the form fields use
@@ -60,14 +60,17 @@ export default function OpportunityForm({ mode, initialData, onSaved }: Opportun
     // Opportunity context actions
     const { addOpportunity, updateOpportunity } = useOpportunities();
     const [success, setSuccess] = useState(false);
+    const [autoApproved, setAutoApproved] = useState(false);
 
     const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
         resolver: zodResolver(schema),
         defaultValues: toFormValues(initialData),
     });
+    const [submitError, setSubmitError] = useState<string | null>(null);
+
     // Handle form submission for both creating and updating opportunities
     const onSubmit = async (data: FormData) => {
-        await new Promise((r) => setTimeout(r, 500));
+        setSubmitError(null);
         // Transform form values into the Opportunity model
         const payload = {
             title: data.title,
@@ -84,15 +87,20 @@ export default function OpportunityForm({ mode, initialData, onSaved }: Opportun
             tags: data.tags ? data.tags.split(",").map((s) => s.trim()).filter(Boolean) : [],
             featured: initialData?.featured ?? false,
         };
-        // Update an existing opportunity
-        if (mode === "edit" && initialData) {
-            updateOpportunity(initialData.id, payload);
-            onSaved?.(initialData.id);
-            return;
-        }
+        try {
+            // Update an existing opportunity
+            if (mode === "edit" && initialData) {
+                const saved = await updateOpportunity(initialData.id, payload);
+                onSaved?.(saved);
+                return;
+            }
 
-        addOpportunity(payload);
-        setSuccess(true);
+            const created = await addOpportunity(payload);
+            setAutoApproved(created.status === "APPROVED");
+            setSuccess(true);
+        } catch (err) {
+            setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+        }
     };
 
     // Add-mode success screen (edit mode navigates away instead, via onSaved)
@@ -103,6 +111,9 @@ export default function OpportunityForm({ mode, initialData, onSaved }: Opportun
                     <CheckCircle2 className="w-8 h-8 text-indigo-600" />
                 </div>
                 <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3">{t("success")}</h2>
+                <p className="text-neutral-500 dark:text-neutral-400 mb-5">
+                    {autoApproved ? t("successApproved") : t("successPending")}
+                </p>
                 <button
                     onClick={() => { setSuccess(false); reset(); }}
                     className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-medium transition-colors"
@@ -193,6 +204,12 @@ export default function OpportunityForm({ mode, initialData, onSaved }: Opportun
                 <label className={labelClass}>{t("fields.tags")}</label>
                 <input {...register("tags")} placeholder={t("fields.tagsPlaceholder")} className={inputClass} />
             </div>
+
+            {submitError && (
+                <div className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg px-3 py-2">
+                    ⚠️ {submitError}
+                </div>
+            )}
 
             <button
                 type="submit"
