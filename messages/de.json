@@ -1,291 +1,327 @@
 {
-    "nav": {
-        "home": "Startseite",
+  "nav": {
+    "home": "Startseite",
+    "opportunities": "Möglichkeiten",
+    "saved": "Gespeicherte",
+    "dashboard": "Dashboard",
+    "addOpportunity": "Möglichkeit hinzufügen",
+    "about": "Über uns",
+    "team": "Team",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "cvBuilder": "Lebenslauf-Ersteller",
+    "review": "Prüfen"
+  },
+  "home": {
+    "hero": {
+      "badge": "Für alle, überall",
+      "title": "Entdecke deine nächste",
+      "titleHighlight": "Möglichkeit",
+      "subtitle": "OpenPath verbindet junge Menschen weltweit mit Jobs, Stipendien, Praktika und Weiterbildungsmöglichkeiten – alles an einem Ort.",
+      "browseBtn": "Möglichkeiten durchsuchen",
+      "addBtn": "Möglichkeit hinzufügen",
+      "stats": {
         "opportunities": "Möglichkeiten",
-        "saved": "Gespeicherte",
-        "dashboard": "Dashboard",
-        "addOpportunity": "Möglichkeit hinzufügen",
-        "about": "Über uns",
-        "team": "Team",
-        "contact": "Kontakt",
-        "login": "Anmelden",
-        "register": "Registrieren",
-        "logout": "Abmelden",
-        "cvBuilder": "Lebenslauf-Ersteller"
+        "organizations": "Organisationen",
+        "categories": "Kategorien",
+        "countries": "Länder"
+      }
     },
-    "home": {
-        "hero": {
-            "badge": "Für alle, überall",
-            "title": "Entdecke deine nächste",
-            "titleHighlight": "Möglichkeit",
-            "subtitle": "OpenPath verbindet junge Menschen weltweit mit Jobs, Stipendien, Praktika und Weiterbildungsmöglichkeiten – alles an einem Ort.",
-            "browseBtn": "Möglichkeiten durchsuchen",
-            "addBtn": "Möglichkeit hinzufügen",
-            "stats": {
-                "opportunities": "Möglichkeiten",
-                "organizations": "Organisationen",
-                "categories": "Kategorien",
-                "countries": "Länder"
-            }
-        },
-        "categories": {
-            "title": "Nach Kategorie durchsuchen",
-            "subtitle": "Finde den richtigen Möglichkeitstyp für deine Ziele",
-            "viewAll": "Alle anzeigen"
-        },
-        "featured": {
-            "title": "Hervorgehobene Möglichkeiten",
-            "subtitle": "Ausgewählte Möglichkeiten, um deine Karriere zu starten",
-            "viewAll": "Alle Möglichkeiten anzeigen",
-            "deadline": "Bewerbungsschluss",
-            "apply": "Jetzt bewerben",
-            "save": "Speichern"
-        },
-        "cta": {
-            "title": "Kennst du eine tolle Möglichkeit?",
-            "subtitle": "Hilf anderen jungen Menschen, indem du Jobs, Stipendien und Weiterbildungsprogramme auf OpenPath teilst.",
-            "btn": "Möglichkeit teilen"
-        },
-        "byCountry": {
-            "title": "Explore by Country",
-            "subtitle": "Find opportunities in your target destination",
-            "viewAll": "View All"
-        }
+    "categories": {
+      "title": "Nach Kategorie durchsuchen",
+      "subtitle": "Finde den richtigen Möglichkeitstyp für deine Ziele",
+      "viewAll": "Alle anzeigen"
     },
-    "opportunities": {
-        "title": "Alle Möglichkeiten",
-        "subtitle": "{count} Möglichkeiten für junge Menschen weltweit",
-        "search": "Möglichkeiten suchen...",
-        "filters": {
-            "category": "Kategorie",
-            "location": "Ort",
-            "type": "Typ",
-            "allCategories": "Alle Kategorien",
-            "allLocations": "Alle Orte",
-            "allTypes": "Alle Typen",
-            "remote": "Remote",
-            "onsite": "Vor Ort",
-            "hybrid": "Hybrid",
-            "sortBy": "Sortieren nach",
-            "newest": "Neueste",
-            "deadline": "Bewerbungsschluss",
-            "title": "Titel",
-            "country": "Country",
-            "allCountries": "All Countries"
-        },
-        "noResults": "Keine Möglichkeiten gefunden",
-        "noResultsSubtitle": "Versuche, deine Filter oder Suchbegriffe anzupassen",
-        "deadline": "Bewerbungsschluss",
-        "location": "Ort",
-        "viewDetails": "Details anzeigen",
-        "save": "Speichern",
-        "saved": "Gespeichert",
-        "featured": "Hervorgehoben",
-        "expiringSoon": "Läuft bald ab"
+    "featured": {
+      "title": "Hervorgehobene Möglichkeiten",
+      "subtitle": "Ausgewählte Möglichkeiten, um deine Karriere zu starten",
+      "viewAll": "Alle Möglichkeiten anzeigen",
+      "deadline": "Bewerbungsschluss",
+      "apply": "Jetzt bewerben",
+      "save": "Speichern"
     },
-    "details": {
-        "about": "Über diese Möglichkeit",
-        "requirements": "Anforderungen",
-        "deadline": "Bewerbungsschluss",
-        "location": "Ort",
-        "type": "Arbeitstyp",
-        "organization": "Organisation",
-        "tags": "Tags",
-        "applyNow": "Jetzt bewerben",
-        "saveOpportunity": "Möglichkeit speichern",
-        "saved": "Gespeichert ✓",
-        "share": "Teilen",
-        "back": "Zurück zu Möglichkeiten",
-        "demoNote": "⚠️ Demodaten — Dies sind Beispieldaten nur zu Bildungszwecken.",
-        "country": "Country"
+    "cta": {
+      "title": "Kennst du eine tolle Möglichkeit?",
+      "subtitle": "Hilf anderen jungen Menschen, indem du Jobs, Stipendien und Weiterbildungsprogramme auf OpenPath teilst.",
+      "btn": "Möglichkeit teilen"
     },
-    "saved": {
-        "title": "Gespeicherte Möglichkeiten",
-        "subtitle": "Deine mit Lesezeichen versehenen Möglichkeiten",
-        "empty": "Noch keine gespeicherten Möglichkeiten",
-        "emptySubtitle": "Durchsuche Möglichkeiten und speichere die, die dir gefallen",
-        "browse": "Möglichkeiten durchsuchen",
-        "remove": "Entfernen",
-        "deadline": "Bewerbungsschluss"
-    },
-    "dashboard": {
-        "title": "Dashboard",
-        "subtitle": "Übersicht aller Möglichkeiten auf OpenPath",
-        "stats": {
-            "total": "Gesamte Möglichkeiten",
-            "jobs": "Jobs",
-            "scholarships": "Stipendien",
-            "internships": "Praktika",
-            "remote": "Remote",
-            "expiringSoon": "Läuft bald ab"
-        },
-        "recentTitle": "Aktuelle Einreichungen",
-        "chartTitle": "Möglichkeiten nach Kategorie",
-        "noData": "Keine Daten verfügbar",
-        "countryChartTitle": "Opportunities by Country"
-    },
-    "addOpportunity": {
-        "title": "Möglichkeit hinzufügen",
-        "subtitle": "Teile neue Chancen mit jungen Menschen weltweit.",
-        "fields": {
-            "title": "Titel der Möglichkeit",
-            "titlePlaceholder": "z.B. Frontend-Entwickler Praktikant",
-            "organization": "Organisation",
-            "organizationPlaceholder": "z.B. Kabul Tech Community",
-            "category": "Kategorie",
-            "location": "Ort",
-            "locationPlaceholder": "z.B. Kabul oder Online",
-            "type": "Arbeitstyp",
-            "deadline": "Bewerbungsschluss",
-            "description": "Beschreibung",
-            "descriptionPlaceholder": "Beschreibe die Möglichkeit ausführlich...",
-            "requirements": "Anforderungen",
-            "requirementsPlaceholder": "z.B. Grundlegendes React, HTML/CSS (eines pro Zeile)",
-            "applyLink": "Bewerbungslink",
-            "applyLinkPlaceholder": "https://example.com/apply",
-            "tags": "Tags",
-            "tagsPlaceholder": "z.B. React, Remote, Anfänger (durch Kommas getrennt)",
-            "country": "Country",
-            "countryPlaceholder": "e.g. United Kingdom"
-        },
-        "submit": "Möglichkeit einreichen",
-        "submitting": "Wird eingereicht...",
-        "success": "Möglichkeit erfolgreich eingereicht!",
-        "reset": "Weitere hinzufügen"
-    },
-    "about": {
-        "title": "Über OpenPath",
-        "mission": {
-            "title": "Unsere Mission",
-            "text": "OpenPath ist eine kostenlose, offene Plattform, die Menschen mit lebensverändernden Möglichkeiten verbindet – Jobs, Stipendien, Praktika, Remote-Arbeit und Weiterbildungsprogramme – alles an einem zentralen und leicht zugänglichen Ort."
-        },
-        "problem": {
-            "title": "Das Problem, das wir lösen",
-            "text": "Weltweit sind Informationen über Chancen oft über soziale Medien, Messenger-Gruppen und zahlreiche Websites verstreut. Viele Menschen verpassen wertvolle Möglichkeiten, weil sie nicht wissen, wo sie suchen sollen."
-        },
-        "solution": {
-            "title": "Unsere Lösung",
-            "text": "OpenPath bündelt verifizierte Chancen auf einer schnellen, benutzerfreundlichen und für Mobilgeräte optimierten Plattform. Nutzer können Chancen suchen, filtern, speichern und sich bewerben – in mehreren Sprachen und von jedem Gerät aus."
-        },
-        "values": {
-            "title": "Unsere Werte",
-            "access": "Gleicher Zugang",
-            "accessText": "Jeder junge globale verdient es, die für ihn verfügbaren Möglichkeiten zu kennen.",
-            "inclusion": "Inklusion",
-            "inclusionText": "Wir priorisieren Frauen, Jugendliche in Provinzen und unterrepräsentierte Gemeinschaften.",
-            "transparency": "Transparenz",
-            "transparencyText": "Alle Daten auf der Plattform sind klar gekennzeichnet — real oder Demo."
-        },
-        "demoNote": "Dieses Projekt wurde als Abschlussprojekt erstellt. Alle aktuellen Daten sind Demodaten zu Bildungszwecken."
-    },
-    "team": {
-        "title": "Unser Team",
-        "subtitle": "Die Menschen, die OpenPath aufbauen"
-    },
-    "contact": {
-        "title": "Kontaktiere uns",
-        "subtitle": "Hast du eine Frage oder möchtest zusammenarbeiten? Melde dich.",
-        "fields": {
-            "name": "Dein Name",
-            "namePlaceholder": "Jane Smith",
-            "email": "E-Mail-Adresse",
-            "emailPlaceholder": "jane@example.com",
-            "subject": "Betreff",
-            "subjectPlaceholder": "Wie können wir helfen?",
-            "message": "Nachricht",
-            "messagePlaceholder": "Schreibe deine Nachricht hier..."
-        },
-        "submit": "Nachricht senden",
-        "submitting": "Wird gesendet...",
-        "success": "Nachricht gesendet! Wir melden uns bald bei dir.",
-        "info": {
-            "title": "In Kontakt bleiben",
-            "email": "hello@openpath.world",
-            "location": "Berlin, Germany",
-            "social": "Folge uns"
-        }
-    },
-    "auth": {
-        "login": {
-            "title": "Willkommen zurück",
-            "subtitle": "Melde dich bei deinem OpenPath-Konto an",
-            "email": "E-Mail",
-            "password": "Passwort",
-            "submit": "Anmelden",
-            "noAccount": "Kein Konto?",
-            "register": "Registrieren",
-            "forgotPassword": "Passwort vergessen?"
-        },
-        "register": {
-            "title": "Konto erstellen",
-            "subtitle": "Tritt OpenPath bei und entdecke Möglichkeiten",
-            "name": "Vollständiger Name",
-            "email": "E-Mail",
-            "password": "Passwort",
-            "confirmPassword": "Passwort bestätigen",
-            "submit": "Konto erstellen",
-            "hasAccount": "Hast du bereits ein Konto?",
-            "login": "Anmelden"
-        }
-    },
-    "common": {
-        "loading": "Wird geladen...",
-        "error": "Etwas ist schiefgelaufen",
-        "retry": "Erneut versuchen",
-        "notFound": "Seite nicht gefunden",
-        "backHome": "Zurück zur Startseite",
-        "demoData": "Demodaten",
-        "learnMore": "Mehr erfahren",
-        "close": "Schließen",
-        "cancel": "Abbrechen",
-        "confirm": "Bestätigen",
-        "delete": "Löschen",
-        "edit": "Bearbeiten",
-        "save": "Speichern",
-        "language": "Sprache"
-    },
-    "footer": {
-        "tagline": "Menschen weltweit mit Chancen verbinden",
-        "links": "Schnelllinks",
-        "legal": "Rechtliches",
-        "privacy": "Datenschutzrichtlinie",
-        "terms": "Nutzungsbedingungen",
-        "disclaimer": "Demodaten-Haftungsausschluss",
-        "rights": "Alle Rechte vorbehalten",
-        "connect": "Folgen",
-        "madeWith": "Mit ❤️ für alle gemacht"
-    },
-    "cvBuilder": {
-        "title": "Lebenslauf-Ersteller",
-        "subtitle": "Gib deine Daten ein, sieh eine Live-Vorschau und lade einen professionellen Lebenslauf als PDF herunter.",
-        "personalDetails": "Persönliche Daten",
-        "fullName": "Vollständiger Name",
-        "fullNamePlaceholder": "Jana Schmidt",
-        "email": "E-Mail",
-        "emailPlaceholder": "jana@example.com",
-        "phone": "Telefon",
-        "phonePlaceholder": "+49 170 0000000",
-        "location": "Standort",
-        "locationPlaceholder": "Berlin, Deutschland",
-        "summary": "Zusammenfassung",
-        "summaryPlaceholder": "Eine kurze Vorstellung von dir...",
-        "skills": "Fähigkeiten (durch Kommas getrennt)",
-        "skillsPlaceholder": "React, Next.js, Kommunikation",
-        "experience": "Berufserfahrung",
-        "education": "Ausbildung",
-        "add": "Hinzufügen",
-        "remove": "Entfernen",
-        "rolePlaceholder": "Position / Titel",
-        "companyPlaceholder": "Unternehmen",
-        "periodPlaceholder": "z. B. Jan. 2024 – heute",
-        "descriptionPlaceholder": "Woran hast du gearbeitet?",
-        "degreePlaceholder": "Abschluss / Studiengang",
-        "schoolPlaceholder": "Schule / Universität",
-        "yearPlaceholder": "z. B. 2022 – 2026",
-        "download": "PDF herunterladen",
-        "generating": "PDF wird erstellt...",
-        "downloadError": "PDF konnte nicht erstellt werden. Bitte überprüfe deine Angaben und versuche es erneut.",
-        "yourName": "Dein Name",
-        "livePreviewNote": "Live-Vorschau — klicke auf „PDF herunterladen“, um zu exportieren"
+    "byCountry": {
+      "title": "Explore by Country",
+      "subtitle": "Find opportunities in your target destination",
+      "viewAll": "View All"
     }
+  },
+  "opportunities": {
+    "title": "Alle Möglichkeiten",
+    "subtitle": "{count} Möglichkeiten für junge Menschen weltweit",
+    "search": "Möglichkeiten suchen...",
+    "filters": {
+      "category": "Kategorie",
+      "location": "Ort",
+      "type": "Typ",
+      "allCategories": "Alle Kategorien",
+      "allLocations": "Alle Orte",
+      "allTypes": "Alle Typen",
+      "remote": "Remote",
+      "onsite": "Vor Ort",
+      "hybrid": "Hybrid",
+      "sortBy": "Sortieren nach",
+      "newest": "Neueste",
+      "deadline": "Bewerbungsschluss",
+      "title": "Titel",
+      "country": "Country",
+      "allCountries": "All Countries"
+    },
+    "noResults": "Keine Möglichkeiten gefunden",
+    "noResultsSubtitle": "Versuche, deine Filter oder Suchbegriffe anzupassen",
+    "deadline": "Bewerbungsschluss",
+    "location": "Ort",
+    "viewDetails": "Details anzeigen",
+    "save": "Speichern",
+    "saved": "Gespeichert",
+    "featured": "Hervorgehoben",
+    "expiringSoon": "Läuft bald ab",
+    "statusPending": "In Prüfung",
+    "statusRejected": "Abgelehnt",
+    "statusApproved": "Genehmigt"
+  },
+  "details": {
+    "about": "Über diese Möglichkeit",
+    "requirements": "Anforderungen",
+    "deadline": "Bewerbungsschluss",
+    "location": "Ort",
+    "type": "Arbeitstyp",
+    "organization": "Organisation",
+    "tags": "Tags",
+    "applyNow": "Jetzt bewerben",
+    "saveOpportunity": "Möglichkeit speichern",
+    "saved": "Gespeichert ✓",
+    "share": "Teilen",
+    "back": "Zurück zu Möglichkeiten",
+    "demoNote": "⚠️ Demodaten — Dies sind Beispieldaten nur zu Bildungszwecken.",
+    "country": "Country",
+    "pendingTitle": "Diese Einreichung wird noch geprüft",
+    "pendingBody": "Ein Admin hat dieses Angebot noch nicht geprüft, daher ist es nicht öffentlich sichtbar. Es erscheint hier und in der öffentlichen Liste, sobald es genehmigt wurde.",
+    "rejectedTitle": "Diese Einreichung wurde abgelehnt",
+    "rejectedBody": "Ein Admin hat dieses Angebot geprüft und nicht genehmigt.",
+    "reasonLabel": "Grund",
+    "backToDashboard": "Zurück zum Dashboard",
+    "editSubmission": "Einreichung bearbeiten"
+  },
+  "saved": {
+    "title": "Gespeicherte Möglichkeiten",
+    "subtitle": "Deine mit Lesezeichen versehenen Möglichkeiten",
+    "empty": "Noch keine gespeicherten Möglichkeiten",
+    "emptySubtitle": "Durchsuche Möglichkeiten und speichere die, die dir gefallen",
+    "browse": "Möglichkeiten durchsuchen",
+    "remove": "Entfernen",
+    "deadline": "Bewerbungsschluss"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Übersicht aller Möglichkeiten auf OpenPath",
+    "stats": {
+      "total": "Gesamte Möglichkeiten",
+      "jobs": "Jobs",
+      "scholarships": "Stipendien",
+      "internships": "Praktika",
+      "remote": "Remote",
+      "expiringSoon": "Läuft bald ab"
+    },
+    "recentTitle": "Aktuelle Einreichungen",
+    "chartTitle": "Möglichkeiten nach Kategorie",
+    "noData": "Keine Daten verfügbar",
+    "countryChartTitle": "Opportunities by Country",
+    "welcomeBack": "Willkommen zurück,",
+    "adminBadge": "Admin",
+    "reviewLink": "Ausstehende Angebote prüfen",
+    "mySubmissions": "Meine Einreichungen",
+    "loadingEllipsis": "Wird geladen…",
+    "noSubmissions": "Du hast noch keine Möglichkeiten eingereicht.",
+    "addOne": "Eine hinzufügen",
+    "reasonLabel": "Grund"
+  },
+  "addOpportunity": {
+    "title": "Möglichkeit hinzufügen",
+    "subtitle": "Teile neue Chancen mit jungen Menschen weltweit.",
+    "fields": {
+      "title": "Titel der Möglichkeit",
+      "titlePlaceholder": "z.B. Frontend-Entwickler Praktikant",
+      "organization": "Organisation",
+      "organizationPlaceholder": "z.B. Kabul Tech Community",
+      "category": "Kategorie",
+      "location": "Ort",
+      "locationPlaceholder": "z.B. Kabul oder Online",
+      "type": "Arbeitstyp",
+      "deadline": "Bewerbungsschluss",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Beschreibe die Möglichkeit ausführlich...",
+      "requirements": "Anforderungen",
+      "requirementsPlaceholder": "z.B. Grundlegendes React, HTML/CSS (eines pro Zeile)",
+      "applyLink": "Bewerbungslink",
+      "applyLinkPlaceholder": "https://example.com/apply",
+      "tags": "Tags",
+      "tagsPlaceholder": "z.B. React, Remote, Anfänger (durch Kommas getrennt)",
+      "country": "Country",
+      "countryPlaceholder": "e.g. United Kingdom"
+    },
+    "submit": "Möglichkeit einreichen",
+    "submitting": "Wird eingereicht...",
+    "success": "Möglichkeit erfolgreich eingereicht!",
+    "reset": "Weitere hinzufügen",
+    "successPending": "Ein Admin prüft dein Angebot, bevor es öffentlich erscheint. Den Status kannst du in deinem Dashboard verfolgen.",
+    "successApproved": "Es ist jetzt live und bereits in der öffentlichen Liste sichtbar.",
+    "statusLabel": "Status"
+  },
+  "about": {
+    "title": "Über OpenPath",
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "OpenPath ist eine kostenlose, offene Plattform, die Menschen mit lebensverändernden Möglichkeiten verbindet – Jobs, Stipendien, Praktika, Remote-Arbeit und Weiterbildungsprogramme – alles an einem zentralen und leicht zugänglichen Ort."
+    },
+    "problem": {
+      "title": "Das Problem, das wir lösen",
+      "text": "Weltweit sind Informationen über Chancen oft über soziale Medien, Messenger-Gruppen und zahlreiche Websites verstreut. Viele Menschen verpassen wertvolle Möglichkeiten, weil sie nicht wissen, wo sie suchen sollen."
+    },
+    "solution": {
+      "title": "Unsere Lösung",
+      "text": "OpenPath bündelt verifizierte Chancen auf einer schnellen, benutzerfreundlichen und für Mobilgeräte optimierten Plattform. Nutzer können Chancen suchen, filtern, speichern und sich bewerben – in mehreren Sprachen und von jedem Gerät aus."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "access": "Gleicher Zugang",
+      "accessText": "Jeder junge globale verdient es, die für ihn verfügbaren Möglichkeiten zu kennen.",
+      "inclusion": "Inklusion",
+      "inclusionText": "Wir priorisieren Frauen, Jugendliche in Provinzen und unterrepräsentierte Gemeinschaften.",
+      "transparency": "Transparenz",
+      "transparencyText": "Alle Daten auf der Plattform sind klar gekennzeichnet — real oder Demo."
+    },
+    "demoNote": "Dieses Projekt wurde als Abschlussprojekt erstellt. Alle aktuellen Daten sind Demodaten zu Bildungszwecken."
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "Die Menschen, die OpenPath aufbauen"
+  },
+  "contact": {
+    "title": "Kontaktiere uns",
+    "subtitle": "Hast du eine Frage oder möchtest zusammenarbeiten? Melde dich.",
+    "fields": {
+      "name": "Dein Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "jane@example.com",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Wie können wir helfen?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Schreibe deine Nachricht hier..."
+    },
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet...",
+    "success": "Nachricht gesendet! Wir melden uns bald bei dir.",
+    "info": {
+      "title": "In Kontakt bleiben",
+      "email": "hello@openpath.world",
+      "location": "Berlin, Germany",
+      "social": "Folge uns"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melde dich bei deinem OpenPath-Konto an",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "noAccount": "Kein Konto?",
+      "register": "Registrieren",
+      "forgotPassword": "Passwort vergessen?"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "subtitle": "Tritt OpenPath bei und entdecke Möglichkeiten",
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "submit": "Konto erstellen",
+      "hasAccount": "Hast du bereits ein Konto?",
+      "login": "Anmelden"
+    }
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Etwas ist schiefgelaufen",
+    "retry": "Erneut versuchen",
+    "notFound": "Seite nicht gefunden",
+    "backHome": "Zurück zur Startseite",
+    "demoData": "Demodaten",
+    "learnMore": "Mehr erfahren",
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "language": "Sprache"
+  },
+  "footer": {
+    "tagline": "Menschen weltweit mit Chancen verbinden",
+    "links": "Schnelllinks",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "disclaimer": "Demodaten-Haftungsausschluss",
+    "rights": "Alle Rechte vorbehalten",
+    "connect": "Folgen",
+    "madeWith": "Mit ❤️ für alle gemacht"
+  },
+  "cvBuilder": {
+    "title": "Lebenslauf-Ersteller",
+    "subtitle": "Gib deine Daten ein, sieh eine Live-Vorschau und lade einen professionellen Lebenslauf als PDF herunter.",
+    "personalDetails": "Persönliche Daten",
+    "fullName": "Vollständiger Name",
+    "fullNamePlaceholder": "Jana Schmidt",
+    "email": "E-Mail",
+    "emailPlaceholder": "jana@example.com",
+    "phone": "Telefon",
+    "phonePlaceholder": "+49 170 0000000",
+    "location": "Standort",
+    "locationPlaceholder": "Berlin, Deutschland",
+    "summary": "Zusammenfassung",
+    "summaryPlaceholder": "Eine kurze Vorstellung von dir...",
+    "skills": "Fähigkeiten (durch Kommas getrennt)",
+    "skillsPlaceholder": "React, Next.js, Kommunikation",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "add": "Hinzufügen",
+    "remove": "Entfernen",
+    "rolePlaceholder": "Position / Titel",
+    "companyPlaceholder": "Unternehmen",
+    "periodPlaceholder": "z. B. Jan. 2024 – heute",
+    "descriptionPlaceholder": "Woran hast du gearbeitet?",
+    "degreePlaceholder": "Abschluss / Studiengang",
+    "schoolPlaceholder": "Schule / Universität",
+    "yearPlaceholder": "z. B. 2022 – 2026",
+    "download": "PDF herunterladen",
+    "generating": "PDF wird erstellt...",
+    "downloadError": "PDF konnte nicht erstellt werden. Bitte überprüfe deine Angaben und versuche es erneut.",
+    "yourName": "Dein Name",
+    "livePreviewNote": "Live-Vorschau — klicke auf „PDF herunterladen“, um zu exportieren"
+  },
+  "admin": {
+    "title": "Angebote prüfen",
+    "subtitle": "Von Nutzern eingereichte Angebote genehmigen oder ablehnen.",
+    "filterPending": "Ausstehend",
+    "filterApproved": "Genehmigt",
+    "filterRejected": "Abgelehnt",
+    "approve": "Genehmigen",
+    "reject": "Ablehnen",
+    "rejectPrompt": "Grund für die Ablehnung (optional):",
+    "noItems": "Hier gibt es nichts.",
+    "loadError": "Angebote konnten nicht geladen werden.",
+    "actionError": "Dieses Angebot konnte nicht aktualisiert werden. Bitte erneut versuchen.",
+    "rejectedReason": "Abgelehnt: {reason}"
+  }
 }
