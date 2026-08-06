@@ -1,15 +1,15 @@
 "use client";
 
-import { useOpportunities } from "@/context/OpportunitiesContext";
 import { useSaved } from "@/context/SavedContext";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { motion } from "framer-motion";
 import { CATEGORY_COLORS, CATEGORY_ICONS, formatDeadline, isExpiringSoon, isRTL } from "@/lib/utils";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, Calendar, Building2, Tag, ExternalLink, Bookmark, BookmarkCheck, CheckCircle2, Pencil } from "lucide-react";
-import { use } from "react";
+import { ArrowLeft, MapPin, Calendar, Building2, Tag, ExternalLink, Bookmark, BookmarkCheck, CheckCircle2, Pencil, Clock, XCircle, Loader2 } from "lucide-react";
+import { use, useEffect, useState } from "react";
 import CountdownTimer from "@/components/CountdownTimer";
+import { Opportunity } from "@/types";
 
 export default function OpportunityDetailPage({ params }: { params: Promise<{ id: string }> }) {
     // Get route params, translations, locale, and opportunity data
@@ -17,12 +17,77 @@ export default function OpportunityDetailPage({ params }: { params: Promise<{ id
     const t = useTranslations("details");
     const locale = useLocale();
     const rtl = isRTL(locale);
-    const { getById } = useOpportunities();
     const { toggleSave, isSaved } = useSaved();
-    const opp = getById(id);
+    const [opp, setOpp] = useState<Opportunity | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [hardNotFound, setHardNotFound] = useState(false);
 
-    // Redirect to 404 page if the opportunity does not exist
+    useEffect(() => {
+        let cancelled = false;
+        (async () => {
+            try {
+                const res = await fetch(`/api/opportunities/${id}`, { cache: "no-store" });
+                if (res.status === 404 || res.status === 403) {
+                    if (!cancelled) setHardNotFound(true);
+                    return;
+                }
+                if (!res.ok) throw new Error("Failed to load");
+                const data = await res.json();
+                if (!cancelled) setOpp(data.opportunity);
+            } catch {
+                if (!cancelled) setHardNotFound(true);
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
+        })();
+        return () => { cancelled = true; };
+    }, [id]);
+
+    if (hardNotFound) return notFound();
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center py-24 text-neutral-400">
+                <Loader2 className="w-6 h-6 animate-spin" />
+            </div>
+        );
+    }
     if (!opp) return notFound();
+
+    if (opp.status && opp.status !== "APPROVED") {
+        const isRejected = opp.status === "REJECTED";
+        return (
+            <div dir={rtl ? "rtl" : "ltr"} className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                {isRejected ? (
+                    <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                ) : (
+                    <Clock className="w-12 h-12 text-amber-500 mx-auto mb-4" />
+                )}
+                <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
+                    {isRejected ? t("rejectedTitle") : t("pendingTitle")}
+                </h1>
+                <p className="text-neutral-500 dark:text-neutral-400 mb-1">
+                    <strong>{opp.title}</strong>
+                </p>
+                <p className="text-neutral-500 dark:text-neutral-400 mb-6">
+                    {isRejected ? t("rejectedBody") : t("pendingBody")}
+                </p>
+                {opp.rejectReason && (
+                    <p className="text-sm text-red-500 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-4 py-3 mb-6 inline-block">
+                        {t("reasonLabel")}: {opp.rejectReason}
+                    </p>
+                )}
+                <div className="flex items-center justify-center gap-3">
+                    <Link href="/dashboard" className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                        {t("backToDashboard")}
+                    </Link>
+                    <Link href={`/edit-opportunity/${opp.id}`} className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium transition-colors">
+                        {t("editSubmission")}
+                    </Link>
+                </div>
+            </div>
+        );
+    }
 
     const saved = isSaved(opp.id);
     const expiring = isExpiringSoon(opp.deadline);
