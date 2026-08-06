@@ -1,286 +1,322 @@
 {
-    "nav": {
-        "home": "خانه",
-        "opportunities": "فرصت‌ها",
-        "saved": "ذخیره‌شده",
-        "dashboard": "داشبورد",
-        "addOpportunity": "افزودن فرصت",
-        "about": "درباره ما",
-        "contact": "تماس",
-        "login": "ورود",
-        "register": "ثبت‌نام",
-        "logout": "خروج",
-        "cvBuilder": "سازندهٔ رزومه"
+  "nav": {
+    "home": "خانه",
+    "opportunities": "فرصت‌ها",
+    "saved": "ذخیره‌شده",
+    "dashboard": "داشبورد",
+    "addOpportunity": "افزودن فرصت",
+    "about": "درباره ما",
+    "contact": "تماس",
+    "login": "ورود",
+    "register": "ثبت‌نام",
+    "logout": "خروج",
+    "cvBuilder": "سازندهٔ رزومه",
+    "review": "بررسی"
+  },
+  "home": {
+    "hero": {
+      "badge": "🌍 شناسایی فرصت‌های جهانی",
+      "title": "فرصت بعدیت",
+      "titleHighlight": "اینجاست",
+      "subtitle": "OpenPath افراد را از سراسر جهان به شغل، بورسیه، کارآموزی و فرصت‌های مهارتی متصل می‌کند — همه در یک جا.",
+      "browseBtn": "مرور فرصت‌ها",
+      "addBtn": "افزودن فرصت",
+      "stats": {
+        "opportunities": "فرصت",
+        "countries": "کشور",
+        "categories": "دسته‌بندی",
+        "organizations": "سازمان"
+      }
     },
-    "home": {
-        "hero": {
-            "badge": "🌍 شناسایی فرصت‌های جهانی",
-            "title": "فرصت بعدیت",
-            "titleHighlight": "اینجاست",
-            "subtitle": "OpenPath افراد را از سراسر جهان به شغل، بورسیه، کارآموزی و فرصت‌های مهارتی متصل می‌کند — همه در یک جا.",
-            "browseBtn": "مرور فرصت‌ها",
-            "addBtn": "افزودن فرصت",
-            "stats": {
-                "opportunities": "فرصت",
-                "countries": "کشور",
-                "categories": "دسته‌بندی",
-                "organizations": "سازمان"
-            }
-        },
-        "categories": {
-            "title": "مرور بر اساس دسته‌بندی",
-            "subtitle": "نوع مناسب فرصت برای اهداف خود را پیدا کنید",
-            "viewAll": "مشاهده همه"
-        },
-        "featured": {
-            "title": "فرصت‌های ویژه",
-            "subtitle": "فرصت‌های منتخب از سراسر جهان",
-            "viewAll": "مشاهده همه فرصت‌ها",
-            "deadline": "مهلت",
-            "apply": "درخواست دهید",
-            "save": "ذخیره"
-        },
-        "byCountry": {
-            "title": "کشف بر اساس کشور",
-            "subtitle": "فرصت‌های مقصد هدف خود را کشف کنید",
-            "viewAll": "مشاهده همه"
-        },
-        "cta": {
-            "title": "از یک فرصت عالی خبر دارید؟",
-            "subtitle": "با به اشتراک گذاشتن شغل، بورسیه و برنامه‌های آموزشی در OpenPath به دیگران کمک کنید.",
-            "btn": "اشتراک‌گذاری فرصت"
-        }
+    "categories": {
+      "title": "مرور بر اساس دسته‌بندی",
+      "subtitle": "نوع مناسب فرصت برای اهداف خود را پیدا کنید",
+      "viewAll": "مشاهده همه"
     },
-    "opportunities": {
-        "title": "همه فرصت‌ها",
-        "subtitle": "{count} فرصت در سراسر جهان",
-        "search": "جستجوی فرصت‌ها...",
-        "filters": {
-            "category": "دسته‌بندی",
-            "location": "مکان",
-            "country": "کشور",
-            "type": "نوع",
-            "allCategories": "همه دسته‌بندی‌ها",
-            "allLocations": "همه مکان‌ها",
-            "allCountries": "همه کشورها",
-            "allTypes": "همه انواع",
-            "remote": "دورکاری",
-            "onsite": "حضوری",
-            "hybrid": "ترکیبی",
-            "sortBy": "مرتب‌سازی",
-            "newest": "جدیدترین",
-            "deadline": "مهلت",
-            "title": "عنوان"
-        },
-        "noResults": "فرصتی یافت نشد",
-        "noResultsSubtitle": "فیلترها یا عبارت جستجوی خود را تغییر دهید",
-        "deadline": "مهلت",
-        "location": "مکان",
-        "viewDetails": "مشاهده جزئیات",
-        "save": "ذخیره",
-        "saved": "ذخیره‌شده",
-        "featured": "ویژه",
-        "expiringSoon": "در حال انقضا"
+    "featured": {
+      "title": "فرصت‌های ویژه",
+      "subtitle": "فرصت‌های منتخب از سراسر جهان",
+      "viewAll": "مشاهده همه فرصت‌ها",
+      "deadline": "مهلت",
+      "apply": "درخواست دهید",
+      "save": "ذخیره"
     },
-    "details": {
-        "about": "درباره این فرصت",
-        "requirements": "الزامات",
-        "deadline": "مهلت ثبت‌نام",
-        "location": "مکان",
-        "country": "کشور",
-        "type": "نوع کار",
-        "organization": "سازمان",
-        "tags": "برچسب‌ها",
-        "applyNow": "درخواست دهید",
-        "saveOpportunity": "ذخیره فرصت",
-        "saved": "ذخیره‌شده ✓",
-        "share": "اشتراک‌گذاری",
-        "back": "بازگشت به فرصت‌ها",
-        "demoNote": "⚠️ داده نمونه — این داده نمونه‌ای برای اهداف آموزشی است."
+    "byCountry": {
+      "title": "کشف بر اساس کشور",
+      "subtitle": "فرصت‌های مقصد هدف خود را کشف کنید",
+      "viewAll": "مشاهده همه"
     },
-    "saved": {
-        "title": "فرصت‌های ذخیره‌شده",
-        "subtitle": "فرصت‌های نشانه‌گذاری‌شده شما",
-        "empty": "هنوز فرصتی ذخیره نشده",
-        "emptySubtitle": "فرصت‌ها را مرور کنید و آنهایی را که دوست دارید ذخیره کنید",
-        "browse": "مرور فرصت‌ها",
-        "remove": "حذف",
-        "deadline": "مهلت"
-    },
-    "dashboard": {
-        "title": "داشبورد",
-        "subtitle": "مرور کلی تمام فرصت‌های OpenPath",
-        "stats": {
-            "total": "کل فرصت‌ها",
-            "jobs": "شغل",
-            "scholarships": "بورسیه",
-            "internships": "کارآموزی",
-            "remote": "دورکاری",
-            "expiringSoon": "در حال انقضا"
-        },
-        "recentTitle": "ارسال‌های اخیر",
-        "chartTitle": "فرصت‌ها بر اساس دسته‌بندی",
-        "countryChartTitle": "فرصت‌ها بر اساس کشور",
-        "noData": "داده‌ای موجود نیست"
-    },
-    "addOpportunity": {
-        "title": "افزودن فرصت",
-        "subtitle": "یک فرصت جدید را با جهان به اشتراک بگذارید",
-        "fields": {
-            "title": "عنوان فرصت",
-            "titlePlaceholder": "مثال: کارآموز توسعه‌دهنده فرانت‌اند",
-            "organization": "سازمان",
-            "organizationPlaceholder": "مثال: گوگل، دانشگاه آکسفورد",
-            "category": "دسته‌بندی",
-            "country": "کشور",
-            "countryPlaceholder": "مثال: انگلستان",
-            "location": "شهر / مکان",
-            "locationPlaceholder": "مثال: لندن یا آنلاین",
-            "type": "نوع کار",
-            "deadline": "مهلت ثبت‌نام",
-            "description": "توضیحات",
-            "descriptionPlaceholder": "فرصت را به تفصیل توضیح دهید...",
-            "requirements": "الزامات",
-            "requirementsPlaceholder": "مثال: React پایه، HTML/CSS (هر مورد در یک خط)",
-            "applyLink": "لینک ثبت‌نام",
-            "applyLinkPlaceholder": "https://example.com/apply",
-            "tags": "برچسب‌ها",
-            "tagsPlaceholder": "مثال: React، دورکاری، مبتدی (با کاما جدا کنید)"
-        },
-        "submit": "ارسال فرصت",
-        "submitting": "در حال ارسال...",
-        "success": "فرصت با موفقیت ارسال شد!",
-        "reset": "افزودن فرصت دیگر"
-    },
-    "about": {
-        "title": "درباره OpenPath",
-        "mission": {
-            "title": "مأموریت ما",
-            "text": "OpenPath یک پلتفرم رایگان و باز است که به اتصال مردم از سراسر جهان با فرصت‌های تغییردهنده زندگی — شغل، بورسیه، کارآموزی، کار دورکاری و برنامه‌های آموزشی — بدون توجه به محل زندگی یا منشأ آن‌ها اختصاص دارد."
-        },
-        "problem": {
-            "title": "مشکلی که ما حل می‌کنیم",
-            "text": "فرصت‌ها در صدها وب‌سایت، گروه‌های شبکه اجتماعی و خبرنامه‌های ایمیلی پراکنده هستند. مردم — به‌ویژه کسانی که در مناطق محروم زندگی می‌کنند — مهلت‌های حیاتی را از دست می‌دهند چون نمی‌دانند کجا دنبال بگردند."
-        },
-        "solution": {
-            "title": "راه‌حل ما",
-            "text": "OpenPath فرصت‌های جهانی تأییدشده را در یک پلتفرم تمیز، سریع و دوستانه برای موبایل یکجا می‌کند. کاربران می‌توانند از هر دستگاهی — به چندین زبان — جستجو، فیلتر بر اساس کشور، ذخیره و درخواست دهند."
-        },
-        "values": {
-            "title": "ارزش‌های ما",
-            "access": "دسترسی برابر",
-            "accessText": "هر فردی شایسته است از فرصت‌های موجود برای او مطلع باشد، صرف نظر از پس‌زمینه‌اش.",
-            "inclusion": "شمول",
-            "inclusionText": "ما به جوامع کم‌نمایندگی، زنان و مردم در مناطق با درآمد پایین‌تر اولویت می‌دهیم.",
-            "transparency": "شفافیت",
-            "transparencyText": "تمام داده‌های پلتفرم به وضوح برچسب‌گذاری شده — واقعی یا نمونه — تا کاربران همیشه بدانند با چه چیزی روبرو هستند."
-        },
-        "demoNote": "این پروژه به عنوان پروژه نهایی ساخته شده است. تمام داده‌های فعلی داده نمونه برای اهداف آموزشی است."
-    },
-    "contact": {
-        "title": "تماس با ما",
-        "subtitle": "سؤالی دارید یا می‌خواهید همکاری کنید؟ با ما در ارتباط باشید.",
-        "fields": {
-            "name": "نام شما",
-            "namePlaceholder": "حسین یعقوبی",
-            "email": "آدرس ایمیل",
-            "emailPlaceholder": "hossein@example.com",
-            "subject": "موضوع",
-            "subjectPlaceholder": "چطور می‌توانیم کمک کنیم؟",
-            "message": "پیام",
-            "messagePlaceholder": "پیام خود را اینجا بنویسید..."
-        },
-        "submit": "ارسال پیام",
-        "submitting": "در حال ارسال...",
-        "success": "پیام ارسال شد! به زودی پاسخ خواهیم داد.",
-        "info": {
-            "title": "در تماس باشید",
-            "email": "hello@openpath.world",
-            "location": "جهانی — اولویت دورکاری",
-            "social": "ما را دنبال کنید"
-        }
-    },
-    "auth": {
-        "login": {
-            "title": "خوش برگشتید",
-            "subtitle": "وارد حساب OpenPath خود شوید",
-            "email": "ایمیل",
-            "password": "رمز عبور",
-            "submit": "ورود",
-            "noAccount": "حساب ندارید؟",
-            "register": "ثبت‌نام",
-            "forgotPassword": "رمز عبور را فراموش کرده‌اید؟"
-        },
-        "register": {
-            "title": "ایجاد حساب",
-            "subtitle": "به OpenPath بپیوندید و فرصت‌ها را کشف کنید",
-            "name": "نام کامل",
-            "email": "ایمیل",
-            "password": "رمز عبور",
-            "confirmPassword": "تأیید رمز عبور",
-            "submit": "ایجاد حساب",
-            "hasAccount": "قبلاً حساب دارید؟",
-            "login": "ورود"
-        }
-    },
-    "common": {
-        "loading": "در حال بارگذاری...",
-        "error": "مشکلی پیش آمد",
-        "retry": "دوباره امتحان کنید",
-        "notFound": "صفحه یافت نشد",
-        "backHome": "بازگشت به خانه",
-        "demoData": "داده نمونه",
-        "learnMore": "بیشتر بدانید",
-        "close": "بستن",
-        "cancel": "لغو",
-        "confirm": "تأیید",
-        "delete": "حذف",
-        "edit": "ویرایش",
-        "save": "ذخیره",
-        "language": "زبان"
-    },
-    "footer": {
-        "tagline": " اتصال جهان با فرصت ها",
-        "links": "لینک‌های سریع",
-        "legal": "قانونی",
-        "privacy": "سیاست حریم خصوصی",
-        "terms": "شرایط استفاده",
-        "disclaimer": "سلب مسئولیت داده نمونه",
-        "rights": "تمام حقوق محفوظ است",
-        "connect": "ارتباط با من",
-        "madeWith": "ساخته شده با ❤️ برای همه، از همه جا"
-    },
-    "cvBuilder": {
-        "title": "سازندهٔ رزومه (سی‌وی)",
-        "subtitle": "اطلاعاتت را وارد کن، پیش‌نمایش زنده ببین، و یک رزومهٔ حرفه‌ای PDF دانلود کن.",
-        "personalDetails": "اطلاعات شخصی",
-        "fullName": "نام کامل",
-        "fullNamePlaceholder": "مثلاً: زهرا احمدی",
-        "email": "ایمیل",
-        "emailPlaceholder": "zahra@example.com",
-        "phone": "شماره تماس",
-        "phonePlaceholder": "+93 700 000 000",
-        "location": "محل سکونت",
-        "locationPlaceholder": "کابل، افغانستان",
-        "summary": "خلاصه",
-        "summaryPlaceholder": "یک معرفی کوتاه از خودت بنویس...",
-        "skills": "مهارت‌ها (با کاما جدا کن)",
-        "skillsPlaceholder": "ری‌اکت، Next.js، ارتباطات",
-        "experience": "سوابق کاری",
-        "education": "تحصیلات",
-        "add": "افزودن",
-        "remove": "حذف",
-        "rolePlaceholder": "سمت / عنوان شغلی",
-        "companyPlaceholder": "شرکت",
-        "periodPlaceholder": "مثلاً: ژانویه ۲۰۲۴ – تاکنون",
-        "descriptionPlaceholder": "روی چه چیزی کار کردی؟",
-        "degreePlaceholder": "مدرک / رشته",
-        "schoolPlaceholder": "مدرسه / دانشگاه",
-        "yearPlaceholder": "مثلاً: ۲۰۲۲ – ۲۰۲۶",
-        "download": "دانلود PDF",
-        "generating": "در حال ساخت PDF...",
-        "downloadError": "ساخت PDF ممکن نشد. لطفاً اطلاعات را بررسی کن و دوباره امتحان کن.",
-        "yourName": "نام شما",
-        "livePreviewNote": "پیش‌نمایش زنده — برای دانلود روی «دانلود PDF» بزن"
+    "cta": {
+      "title": "از یک فرصت عالی خبر دارید؟",
+      "subtitle": "با به اشتراک گذاشتن شغل، بورسیه و برنامه‌های آموزشی در OpenPath به دیگران کمک کنید.",
+      "btn": "اشتراک‌گذاری فرصت"
     }
+  },
+  "opportunities": {
+    "title": "همه فرصت‌ها",
+    "subtitle": "{count} فرصت در سراسر جهان",
+    "search": "جستجوی فرصت‌ها...",
+    "filters": {
+      "category": "دسته‌بندی",
+      "location": "مکان",
+      "country": "کشور",
+      "type": "نوع",
+      "allCategories": "همه دسته‌بندی‌ها",
+      "allLocations": "همه مکان‌ها",
+      "allCountries": "همه کشورها",
+      "allTypes": "همه انواع",
+      "remote": "دورکاری",
+      "onsite": "حضوری",
+      "hybrid": "ترکیبی",
+      "sortBy": "مرتب‌سازی",
+      "newest": "جدیدترین",
+      "deadline": "مهلت",
+      "title": "عنوان"
+    },
+    "noResults": "فرصتی یافت نشد",
+    "noResultsSubtitle": "فیلترها یا عبارت جستجوی خود را تغییر دهید",
+    "deadline": "مهلت",
+    "location": "مکان",
+    "viewDetails": "مشاهده جزئیات",
+    "save": "ذخیره",
+    "saved": "ذخیره‌شده",
+    "featured": "ویژه",
+    "expiringSoon": "در حال انقضا",
+    "statusPending": "در حال بررسی",
+    "statusRejected": "ردشده",
+    "statusApproved": "تأییدشده"
+  },
+  "details": {
+    "about": "درباره این فرصت",
+    "requirements": "الزامات",
+    "deadline": "مهلت ثبت‌نام",
+    "location": "مکان",
+    "country": "کشور",
+    "type": "نوع کار",
+    "organization": "سازمان",
+    "tags": "برچسب‌ها",
+    "applyNow": "درخواست دهید",
+    "saveOpportunity": "ذخیره فرصت",
+    "saved": "ذخیره‌شده ✓",
+    "share": "اشتراک‌گذاری",
+    "back": "بازگشت به فرصت‌ها",
+    "demoNote": "⚠️ داده نمونه — این داده نمونه‌ای برای اهداف آموزشی است.",
+    "pendingTitle": "این فرصت در حال بررسیه",
+    "pendingBody": "ادمین هنوز این فرصت رو بررسی نکرده، پس عمومی نیست. به‌محض تأیید، اینجا و توی فهرست عمومی نمایش داده می‌شه.",
+    "rejectedTitle": "این فرصت رد شده",
+    "rejectedBody": "ادمین این فرصت رو بررسی کرده و تأییدش نکرده.",
+    "reasonLabel": "دلیل",
+    "backToDashboard": "بازگشت به داشبورد",
+    "editSubmission": "ویرایش فرصت"
+  },
+  "saved": {
+    "title": "فرصت‌های ذخیره‌شده",
+    "subtitle": "فرصت‌های نشانه‌گذاری‌شده شما",
+    "empty": "هنوز فرصتی ذخیره نشده",
+    "emptySubtitle": "فرصت‌ها را مرور کنید و آنهایی را که دوست دارید ذخیره کنید",
+    "browse": "مرور فرصت‌ها",
+    "remove": "حذف",
+    "deadline": "مهلت"
+  },
+  "dashboard": {
+    "title": "داشبورد",
+    "subtitle": "مرور کلی تمام فرصت‌های OpenPath",
+    "stats": {
+      "total": "کل فرصت‌ها",
+      "jobs": "شغل",
+      "scholarships": "بورسیه",
+      "internships": "کارآموزی",
+      "remote": "دورکاری",
+      "expiringSoon": "در حال انقضا"
+    },
+    "recentTitle": "ارسال‌های اخیر",
+    "chartTitle": "فرصت‌ها بر اساس دسته‌بندی",
+    "countryChartTitle": "فرصت‌ها بر اساس کشور",
+    "noData": "داده‌ای موجود نیست",
+    "welcomeBack": "خوش اومدی،",
+    "adminBadge": "ادمین",
+    "reviewLink": "بررسی فرصت‌های در انتظار",
+    "mySubmissions": "فرصت‌های ثبت‌شده‌ی من",
+    "loadingEllipsis": "در حال بارگذاری…",
+    "noSubmissions": "هنوز هیچ فرصتی ثبت نکرده‌ای.",
+    "addOne": "یکی اضافه کن",
+    "reasonLabel": "دلیل"
+  },
+  "addOpportunity": {
+    "title": "افزودن فرصت",
+    "subtitle": "یک فرصت جدید را با جهان به اشتراک بگذارید",
+    "fields": {
+      "title": "عنوان فرصت",
+      "titlePlaceholder": "مثال: کارآموز توسعه‌دهنده فرانت‌اند",
+      "organization": "سازمان",
+      "organizationPlaceholder": "مثال: گوگل، دانشگاه آکسفورد",
+      "category": "دسته‌بندی",
+      "country": "کشور",
+      "countryPlaceholder": "مثال: انگلستان",
+      "location": "شهر / مکان",
+      "locationPlaceholder": "مثال: لندن یا آنلاین",
+      "type": "نوع کار",
+      "deadline": "مهلت ثبت‌نام",
+      "description": "توضیحات",
+      "descriptionPlaceholder": "فرصت را به تفصیل توضیح دهید...",
+      "requirements": "الزامات",
+      "requirementsPlaceholder": "مثال: React پایه، HTML/CSS (هر مورد در یک خط)",
+      "applyLink": "لینک ثبت‌نام",
+      "applyLinkPlaceholder": "https://example.com/apply",
+      "tags": "برچسب‌ها",
+      "tagsPlaceholder": "مثال: React، دورکاری، مبتدی (با کاما جدا کنید)"
+    },
+    "submit": "ارسال فرصت",
+    "submitting": "در حال ارسال...",
+    "success": "فرصت با موفقیت ارسال شد!",
+    "reset": "افزودن فرصت دیگر",
+    "successPending": "ادمین قبل از نمایش عمومی، این فرصت رو بررسی می‌کنه. می‌تونی وضعیتش رو از داشبوردت پیگیری کنی.",
+    "successApproved": "همین الان منتشر شد و توی فهرست عمومی قابل‌مشاهده‌ست.",
+    "statusLabel": "وضعیت"
+  },
+  "about": {
+    "title": "درباره OpenPath",
+    "mission": {
+      "title": "مأموریت ما",
+      "text": "OpenPath یک پلتفرم رایگان و باز است که به اتصال مردم از سراسر جهان با فرصت‌های تغییردهنده زندگی — شغل، بورسیه، کارآموزی، کار دورکاری و برنامه‌های آموزشی — بدون توجه به محل زندگی یا منشأ آن‌ها اختصاص دارد."
+    },
+    "problem": {
+      "title": "مشکلی که ما حل می‌کنیم",
+      "text": "فرصت‌ها در صدها وب‌سایت، گروه‌های شبکه اجتماعی و خبرنامه‌های ایمیلی پراکنده هستند. مردم — به‌ویژه کسانی که در مناطق محروم زندگی می‌کنند — مهلت‌های حیاتی را از دست می‌دهند چون نمی‌دانند کجا دنبال بگردند."
+    },
+    "solution": {
+      "title": "راه‌حل ما",
+      "text": "OpenPath فرصت‌های جهانی تأییدشده را در یک پلتفرم تمیز، سریع و دوستانه برای موبایل یکجا می‌کند. کاربران می‌توانند از هر دستگاهی — به چندین زبان — جستجو، فیلتر بر اساس کشور، ذخیره و درخواست دهند."
+    },
+    "values": {
+      "title": "ارزش‌های ما",
+      "access": "دسترسی برابر",
+      "accessText": "هر فردی شایسته است از فرصت‌های موجود برای او مطلع باشد، صرف نظر از پس‌زمینه‌اش.",
+      "inclusion": "شمول",
+      "inclusionText": "ما به جوامع کم‌نمایندگی، زنان و مردم در مناطق با درآمد پایین‌تر اولویت می‌دهیم.",
+      "transparency": "شفافیت",
+      "transparencyText": "تمام داده‌های پلتفرم به وضوح برچسب‌گذاری شده — واقعی یا نمونه — تا کاربران همیشه بدانند با چه چیزی روبرو هستند."
+    },
+    "demoNote": "این پروژه به عنوان پروژه نهایی ساخته شده است. تمام داده‌های فعلی داده نمونه برای اهداف آموزشی است."
+  },
+  "contact": {
+    "title": "تماس با ما",
+    "subtitle": "سؤالی دارید یا می‌خواهید همکاری کنید؟ با ما در ارتباط باشید.",
+    "fields": {
+      "name": "نام شما",
+      "namePlaceholder": "حسین یعقوبی",
+      "email": "آدرس ایمیل",
+      "emailPlaceholder": "hossein@example.com",
+      "subject": "موضوع",
+      "subjectPlaceholder": "چطور می‌توانیم کمک کنیم؟",
+      "message": "پیام",
+      "messagePlaceholder": "پیام خود را اینجا بنویسید..."
+    },
+    "submit": "ارسال پیام",
+    "submitting": "در حال ارسال...",
+    "success": "پیام ارسال شد! به زودی پاسخ خواهیم داد.",
+    "info": {
+      "title": "در تماس باشید",
+      "email": "hello@openpath.world",
+      "location": "جهانی — اولویت دورکاری",
+      "social": "ما را دنبال کنید"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "خوش برگشتید",
+      "subtitle": "وارد حساب OpenPath خود شوید",
+      "email": "ایمیل",
+      "password": "رمز عبور",
+      "submit": "ورود",
+      "noAccount": "حساب ندارید؟",
+      "register": "ثبت‌نام",
+      "forgotPassword": "رمز عبور را فراموش کرده‌اید؟"
+    },
+    "register": {
+      "title": "ایجاد حساب",
+      "subtitle": "به OpenPath بپیوندید و فرصت‌ها را کشف کنید",
+      "name": "نام کامل",
+      "email": "ایمیل",
+      "password": "رمز عبور",
+      "confirmPassword": "تأیید رمز عبور",
+      "submit": "ایجاد حساب",
+      "hasAccount": "قبلاً حساب دارید؟",
+      "login": "ورود"
+    }
+  },
+  "common": {
+    "loading": "در حال بارگذاری...",
+    "error": "مشکلی پیش آمد",
+    "retry": "دوباره امتحان کنید",
+    "notFound": "صفحه یافت نشد",
+    "backHome": "بازگشت به خانه",
+    "demoData": "داده نمونه",
+    "learnMore": "بیشتر بدانید",
+    "close": "بستن",
+    "cancel": "لغو",
+    "confirm": "تأیید",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "save": "ذخیره",
+    "language": "زبان"
+  },
+  "footer": {
+    "tagline": " اتصال جهان با فرصت ها",
+    "links": "لینک‌های سریع",
+    "legal": "قانونی",
+    "privacy": "سیاست حریم خصوصی",
+    "terms": "شرایط استفاده",
+    "disclaimer": "سلب مسئولیت داده نمونه",
+    "rights": "تمام حقوق محفوظ است",
+    "connect": "ارتباط با من",
+    "madeWith": "ساخته شده با ❤️ برای همه، از همه جا"
+  },
+  "cvBuilder": {
+    "title": "سازندهٔ رزومه (سی‌وی)",
+    "subtitle": "اطلاعاتت را وارد کن، پیش‌نمایش زنده ببین، و یک رزومهٔ حرفه‌ای PDF دانلود کن.",
+    "personalDetails": "اطلاعات شخصی",
+    "fullName": "نام کامل",
+    "fullNamePlaceholder": "مثلاً: زهرا احمدی",
+    "email": "ایمیل",
+    "emailPlaceholder": "zahra@example.com",
+    "phone": "شماره تماس",
+    "phonePlaceholder": "+93 700 000 000",
+    "location": "محل سکونت",
+    "locationPlaceholder": "کابل، افغانستان",
+    "summary": "خلاصه",
+    "summaryPlaceholder": "یک معرفی کوتاه از خودت بنویس...",
+    "skills": "مهارت‌ها (با کاما جدا کن)",
+    "skillsPlaceholder": "ری‌اکت، Next.js، ارتباطات",
+    "experience": "سوابق کاری",
+    "education": "تحصیلات",
+    "add": "افزودن",
+    "remove": "حذف",
+    "rolePlaceholder": "سمت / عنوان شغلی",
+    "companyPlaceholder": "شرکت",
+    "periodPlaceholder": "مثلاً: ژانویه ۲۰۲۴ – تاکنون",
+    "descriptionPlaceholder": "روی چه چیزی کار کردی؟",
+    "degreePlaceholder": "مدرک / رشته",
+    "schoolPlaceholder": "مدرسه / دانشگاه",
+    "yearPlaceholder": "مثلاً: ۲۰۲۲ – ۲۰۲۶",
+    "download": "دانلود PDF",
+    "generating": "در حال ساخت PDF...",
+    "downloadError": "ساخت PDF ممکن نشد. لطفاً اطلاعات را بررسی کن و دوباره امتحان کن.",
+    "yourName": "نام شما",
+    "livePreviewNote": "پیش‌نمایش زنده — برای دانلود روی «دانلود PDF» بزن"
+  },
+  "admin": {
+    "title": "بررسی فرصت‌ها",
+    "subtitle": "فرصت‌های ثبت‌شده توسط کاربران رو تأیید یا رد کن.",
+    "filterPending": "در انتظار",
+    "filterApproved": "تأییدشده",
+    "filterRejected": "ردشده",
+    "approve": "تأیید",
+    "reject": "رد",
+    "rejectPrompt": "دلیل رد (اختیاری):",
+    "noItems": "موردی وجود نداره.",
+    "loadError": "بارگذاری فرصت‌ها با خطا مواجه شد.",
+    "actionError": "به‌روزرسانی این فرصت با خطا مواجه شد. دوباره امتحان کن.",
+    "rejectedReason": "دلیل رد: {reason}"
+  }
 }

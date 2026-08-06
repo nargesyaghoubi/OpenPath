@@ -1,286 +1,322 @@
 {
-    "nav": {
-        "home": "Home",
+  "nav": {
+    "home": "Home",
+    "opportunities": "Opportunities",
+    "saved": "Saved",
+    "dashboard": "Dashboard",
+    "addOpportunity": "Add Opportunity",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "cvBuilder": "CV Builder",
+    "review": "Review"
+  },
+  "home": {
+    "hero": {
+      "badge": "🌍 Global Opportunity Finder",
+      "title": "Your Next Opportunity",
+      "titleHighlight": "Starts Here",
+      "subtitle": "OpenPath connects ambitious people worldwide with jobs, scholarships, internships, and skill-building opportunities — all in one place.",
+      "browseBtn": "Browse Opportunities",
+      "addBtn": "Add Opportunity",
+      "stats": {
         "opportunities": "Opportunities",
-        "saved": "Saved",
-        "dashboard": "Dashboard",
-        "addOpportunity": "Add Opportunity",
-        "about": "About",
-        "contact": "Contact",
-        "login": "Login",
-        "register": "Register",
-        "logout": "Logout",
-        "cvBuilder": "CV Builder"
+        "countries": "Countries",
+        "categories": "Categories",
+        "organizations": "Organizations"
+      }
     },
-    "home": {
-        "hero": {
-            "badge": "🌍 Global Opportunity Finder",
-            "title": "Your Next Opportunity",
-            "titleHighlight": "Starts Here",
-            "subtitle": "OpenPath connects ambitious people worldwide with jobs, scholarships, internships, and skill-building opportunities — all in one place.",
-            "browseBtn": "Browse Opportunities",
-            "addBtn": "Add Opportunity",
-            "stats": {
-                "opportunities": "Opportunities",
-                "countries": "Countries",
-                "categories": "Categories",
-                "organizations": "Organizations"
-            }
-        },
-        "categories": {
-            "title": "Browse by Category",
-            "subtitle": "Find the right type of opportunity for your goals",
-            "viewAll": "View All"
-        },
-        "featured": {
-            "title": "Featured Opportunities",
-            "subtitle": "Hand-picked opportunities from around the world",
-            "viewAll": "View All Opportunities",
-            "deadline": "Deadline",
-            "apply": "Apply Now",
-            "save": "Save"
-        },
-        "byCountry": {
-            "title": "Explore by Country",
-            "subtitle": "Discover opportunities in your target destination",
-            "viewAll": "View All"
-        },
-        "cta": {
-            "title": "Know of a great opportunity?",
-            "subtitle": "Help others by sharing jobs, scholarships, and training programs on OpenPath.",
-            "btn": "Share an Opportunity"
-        }
+    "categories": {
+      "title": "Browse by Category",
+      "subtitle": "Find the right type of opportunity for your goals",
+      "viewAll": "View All"
     },
-    "opportunities": {
-        "title": "All Opportunities",
-        "subtitle": "Browse {count} opportunities worldwide",
-        "search": "Search opportunities...",
-        "filters": {
-            "category": "Category",
-            "location": "Location",
-            "country": "Country",
-            "type": "Type",
-            "allCategories": "All Categories",
-            "allLocations": "All Locations",
-            "allCountries": "All Countries",
-            "allTypes": "All Types",
-            "remote": "Remote",
-            "onsite": "On-site",
-            "hybrid": "Hybrid",
-            "sortBy": "Sort by",
-            "newest": "Newest",
-            "deadline": "Deadline",
-            "title": "Title"
-        },
-        "noResults": "No opportunities found",
-        "noResultsSubtitle": "Try adjusting your filters or search terms",
-        "deadline": "Deadline",
-        "location": "Location",
-        "viewDetails": "View Details",
-        "save": "Save",
-        "saved": "Saved",
-        "featured": "Featured",
-        "expiringSoon": "Expiring Soon"
+    "featured": {
+      "title": "Featured Opportunities",
+      "subtitle": "Hand-picked opportunities from around the world",
+      "viewAll": "View All Opportunities",
+      "deadline": "Deadline",
+      "apply": "Apply Now",
+      "save": "Save"
     },
-    "details": {
-        "about": "About this opportunity",
-        "requirements": "Requirements",
-        "deadline": "Application Deadline",
-        "location": "Location",
-        "country": "Country",
-        "type": "Work Type",
-        "organization": "Organization",
-        "tags": "Tags",
-        "applyNow": "Apply Now",
-        "saveOpportunity": "Save Opportunity",
-        "saved": "Saved ✓",
-        "share": "Share",
-        "back": "Back to Opportunities",
-        "demoNote": "⚠️ Demo Data — This is sample data for educational purposes only."
+    "byCountry": {
+      "title": "Explore by Country",
+      "subtitle": "Discover opportunities in your target destination",
+      "viewAll": "View All"
     },
-    "saved": {
-        "title": "Saved Opportunities",
-        "subtitle": "Your bookmarked opportunities",
-        "empty": "No saved opportunities yet",
-        "emptySubtitle": "Browse opportunities and save the ones you like",
-        "browse": "Browse Opportunities",
-        "remove": "Remove",
-        "deadline": "Deadline"
-    },
-    "dashboard": {
-        "title": "Dashboard",
-        "subtitle": "Overview of all opportunities on OpenPath",
-        "stats": {
-            "total": "Total Opportunities",
-            "jobs": "Jobs",
-            "scholarships": "Scholarships",
-            "internships": "Internships",
-            "remote": "Remote",
-            "expiringSoon": "Expiring Soon"
-        },
-        "recentTitle": "Recent Submissions",
-        "chartTitle": "Opportunities by Category",
-        "countryChartTitle": "Opportunities by Country",
-        "noData": "No data available"
-    },
-    "addOpportunity": {
-        "title": "Add Opportunity",
-        "subtitle": "Share a new opportunity with the world",
-        "fields": {
-            "title": "Opportunity Title",
-            "titlePlaceholder": "e.g. Frontend Developer Intern",
-            "organization": "Organization",
-            "organizationPlaceholder": "e.g. Google, University of Oxford",
-            "category": "Category",
-            "country": "Country",
-            "countryPlaceholder": "e.g. United Kingdom",
-            "location": "City / Location",
-            "locationPlaceholder": "e.g. London or Online",
-            "type": "Work Type",
-            "deadline": "Application Deadline",
-            "description": "Description",
-            "descriptionPlaceholder": "Describe the opportunity in detail...",
-            "requirements": "Requirements",
-            "requirementsPlaceholder": "e.g. Basic React, HTML/CSS (one per line)",
-            "applyLink": "Application Link",
-            "applyLinkPlaceholder": "https://example.com/apply",
-            "tags": "Tags",
-            "tagsPlaceholder": "e.g. React, Remote, Beginner (comma separated)"
-        },
-        "submit": "Submit Opportunity",
-        "submitting": "Submitting...",
-        "success": "Opportunity submitted successfully!",
-        "reset": "Add Another"
-    },
-    "about": {
-        "title": "About OpenPath",
-        "mission": {
-            "title": "Our Mission",
-            "text": "OpenPath is a free, open platform dedicated to connecting people everywhere with life-changing opportunities — jobs, scholarships, internships, remote work, and training programs — regardless of where they live or come from."
-        },
-        "problem": {
-            "title": "The Problem We Solve",
-            "text": "Opportunities are scattered across hundreds of websites, social media groups, and email newsletters. People — especially those in underserved regions — miss critical deadlines simply because they don't know where to look."
-        },
-        "solution": {
-            "title": "Our Solution",
-            "text": "OpenPath centralises verified global opportunities in a clean, fast, and mobile-friendly platform. Users can search, filter by country, save and apply — in multiple languages — from any device."
-        },
-        "values": {
-            "title": "Our Values",
-            "access": "Equal Access",
-            "accessText": "Every person deserves to know about the opportunities available to them, regardless of background.",
-            "inclusion": "Inclusion",
-            "inclusionText": "We prioritise underrepresented communities, women, and people in lower-income regions.",
-            "transparency": "Transparency",
-            "transparencyText": "All data on the platform is clearly labelled — real or demo — so users always know what they are looking at."
-        },
-        "demoNote": "This project is built as a capstone project. All current data is demo data for educational purposes."
-    },
-    "contact": {
-        "title": "Contact Us",
-        "subtitle": "Have a question or want to collaborate? Reach out.",
-        "fields": {
-            "name": "Your Name",
-            "namePlaceholder": "Jane Smith",
-            "email": "Email Address",
-            "emailPlaceholder": "jane@example.com",
-            "subject": "Subject",
-            "subjectPlaceholder": "How can we help?",
-            "message": "Message",
-            "messagePlaceholder": "Write your message here..."
-        },
-        "submit": "Send Message",
-        "submitting": "Sending...",
-        "success": "Message sent! We'll get back to you soon.",
-        "info": {
-            "title": "Get in Touch",
-            "email": "hello@openpath.world",
-            "location": "Global — Remote-first",
-            "social": "Follow us"
-        }
-    },
-    "auth": {
-        "login": {
-            "title": "Welcome back",
-            "subtitle": "Sign in to your OpenPath account",
-            "email": "Email",
-            "password": "Password",
-            "submit": "Sign in",
-            "noAccount": "Don't have an account?",
-            "register": "Register",
-            "forgotPassword": "Forgot password?"
-        },
-        "register": {
-            "title": "Create account",
-            "subtitle": "Join OpenPath and discover opportunities",
-            "name": "Full Name",
-            "email": "Email",
-            "password": "Password",
-            "confirmPassword": "Confirm Password",
-            "submit": "Create Account",
-            "hasAccount": "Already have an account?",
-            "login": "Sign in"
-        }
-    },
-    "common": {
-        "loading": "Loading...",
-        "error": "Something went wrong",
-        "retry": "Try again",
-        "notFound": "Page not found",
-        "backHome": "Back to Home",
-        "demoData": "Demo Data",
-        "learnMore": "Learn More",
-        "close": "Close",
-        "cancel": "Cancel",
-        "confirm": "Confirm",
-        "delete": "Delete",
-        "edit": "Edit",
-        "save": "Save",
-        "language": "Language"
-    },
-    "footer": {
-        "tagline": "Connecting the world with opportunity",
-        "links": "Quick Links",
-        "legal": "Legal",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Use",
-        "disclaimer": "Demo data disclaimer",
-        "rights": "All rights reserved",
-        "connect": "Connect",
-        "madeWith": "Made with ❤️ for everyone, everywhere"
-    },
-    "cvBuilder": {
-        "title": "CV / Resume Builder",
-        "subtitle": "Fill in your details, preview your resume live, and download it as a polished PDF.",
-        "personalDetails": "Personal Details",
-        "fullName": "Full Name",
-        "fullNamePlaceholder": "Jane Smith",
-        "email": "Email",
-        "emailPlaceholder": "jane@example.com",
-        "phone": "Phone",
-        "phonePlaceholder": "+93 700 000 000",
-        "location": "Location",
-        "locationPlaceholder": "Kabul, Afghanistan",
-        "summary": "Summary",
-        "summaryPlaceholder": "A short pitch about yourself...",
-        "skills": "Skills (comma separated)",
-        "skillsPlaceholder": "React, Next.js, Communication",
-        "experience": "Experience",
-        "education": "Education",
-        "add": "Add",
-        "remove": "Remove",
-        "rolePlaceholder": "Role / Title",
-        "companyPlaceholder": "Company",
-        "periodPlaceholder": "e.g. Jan 2024 – Present",
-        "descriptionPlaceholder": "What did you work on?",
-        "degreePlaceholder": "Degree / Program",
-        "schoolPlaceholder": "School / University",
-        "yearPlaceholder": "e.g. 2022 – 2026",
-        "download": "Download as PDF",
-        "generating": "Generating PDF...",
-        "downloadError": "Couldn't generate the PDF. Please check your entries and try again.",
-        "yourName": "Your Name",
-        "livePreviewNote": "Live preview — click \"Download as PDF\" to export"
+    "cta": {
+      "title": "Know of a great opportunity?",
+      "subtitle": "Help others by sharing jobs, scholarships, and training programs on OpenPath.",
+      "btn": "Share an Opportunity"
     }
+  },
+  "opportunities": {
+    "title": "All Opportunities",
+    "subtitle": "Browse {count} opportunities worldwide",
+    "search": "Search opportunities...",
+    "filters": {
+      "category": "Category",
+      "location": "Location",
+      "country": "Country",
+      "type": "Type",
+      "allCategories": "All Categories",
+      "allLocations": "All Locations",
+      "allCountries": "All Countries",
+      "allTypes": "All Types",
+      "remote": "Remote",
+      "onsite": "On-site",
+      "hybrid": "Hybrid",
+      "sortBy": "Sort by",
+      "newest": "Newest",
+      "deadline": "Deadline",
+      "title": "Title"
+    },
+    "noResults": "No opportunities found",
+    "noResultsSubtitle": "Try adjusting your filters or search terms",
+    "deadline": "Deadline",
+    "location": "Location",
+    "viewDetails": "View Details",
+    "save": "Save",
+    "saved": "Saved",
+    "featured": "Featured",
+    "expiringSoon": "Expiring Soon",
+    "statusPending": "In review",
+    "statusRejected": "Rejected",
+    "statusApproved": "Approved"
+  },
+  "details": {
+    "about": "About this opportunity",
+    "requirements": "Requirements",
+    "deadline": "Application Deadline",
+    "location": "Location",
+    "country": "Country",
+    "type": "Work Type",
+    "organization": "Organization",
+    "tags": "Tags",
+    "applyNow": "Apply Now",
+    "saveOpportunity": "Save Opportunity",
+    "saved": "Saved ✓",
+    "share": "Share",
+    "back": "Back to Opportunities",
+    "demoNote": "⚠️ Demo Data — This is sample data for educational purposes only.",
+    "pendingTitle": "This submission is pending review",
+    "pendingBody": "An admin hasn't reviewed this opportunity yet, so it isn't publicly visible. It'll appear here and in the public listing as soon as it's approved.",
+    "rejectedTitle": "This submission was rejected",
+    "rejectedBody": "An admin reviewed this opportunity and did not approve it.",
+    "reasonLabel": "Reason",
+    "backToDashboard": "Back to dashboard",
+    "editSubmission": "Edit submission"
+  },
+  "saved": {
+    "title": "Saved Opportunities",
+    "subtitle": "Your bookmarked opportunities",
+    "empty": "No saved opportunities yet",
+    "emptySubtitle": "Browse opportunities and save the ones you like",
+    "browse": "Browse Opportunities",
+    "remove": "Remove",
+    "deadline": "Deadline"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Overview of all opportunities on OpenPath",
+    "stats": {
+      "total": "Total Opportunities",
+      "jobs": "Jobs",
+      "scholarships": "Scholarships",
+      "internships": "Internships",
+      "remote": "Remote",
+      "expiringSoon": "Expiring Soon"
+    },
+    "recentTitle": "Recent Submissions",
+    "chartTitle": "Opportunities by Category",
+    "countryChartTitle": "Opportunities by Country",
+    "noData": "No data available",
+    "welcomeBack": "Welcome back,",
+    "adminBadge": "Admin",
+    "reviewLink": "Review pending opportunities",
+    "mySubmissions": "My Submissions",
+    "loadingEllipsis": "Loading…",
+    "noSubmissions": "You haven't submitted any opportunities yet.",
+    "addOne": "Add one",
+    "reasonLabel": "Reason"
+  },
+  "addOpportunity": {
+    "title": "Add Opportunity",
+    "subtitle": "Share a new opportunity with the world",
+    "fields": {
+      "title": "Opportunity Title",
+      "titlePlaceholder": "e.g. Frontend Developer Intern",
+      "organization": "Organization",
+      "organizationPlaceholder": "e.g. Google, University of Oxford",
+      "category": "Category",
+      "country": "Country",
+      "countryPlaceholder": "e.g. United Kingdom",
+      "location": "City / Location",
+      "locationPlaceholder": "e.g. London or Online",
+      "type": "Work Type",
+      "deadline": "Application Deadline",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the opportunity in detail...",
+      "requirements": "Requirements",
+      "requirementsPlaceholder": "e.g. Basic React, HTML/CSS (one per line)",
+      "applyLink": "Application Link",
+      "applyLinkPlaceholder": "https://example.com/apply",
+      "tags": "Tags",
+      "tagsPlaceholder": "e.g. React, Remote, Beginner (comma separated)"
+    },
+    "submit": "Submit Opportunity",
+    "submitting": "Submitting...",
+    "success": "Opportunity submitted successfully!",
+    "reset": "Add Another",
+    "successPending": "An admin will review it before it appears publicly. You can track its status from your dashboard.",
+    "successApproved": "It's live now and already visible in the public listing.",
+    "statusLabel": "Status"
+  },
+  "about": {
+    "title": "About OpenPath",
+    "mission": {
+      "title": "Our Mission",
+      "text": "OpenPath is a free, open platform dedicated to connecting people everywhere with life-changing opportunities — jobs, scholarships, internships, remote work, and training programs — regardless of where they live or come from."
+    },
+    "problem": {
+      "title": "The Problem We Solve",
+      "text": "Opportunities are scattered across hundreds of websites, social media groups, and email newsletters. People — especially those in underserved regions — miss critical deadlines simply because they don't know where to look."
+    },
+    "solution": {
+      "title": "Our Solution",
+      "text": "OpenPath centralises verified global opportunities in a clean, fast, and mobile-friendly platform. Users can search, filter by country, save and apply — in multiple languages — from any device."
+    },
+    "values": {
+      "title": "Our Values",
+      "access": "Equal Access",
+      "accessText": "Every person deserves to know about the opportunities available to them, regardless of background.",
+      "inclusion": "Inclusion",
+      "inclusionText": "We prioritise underrepresented communities, women, and people in lower-income regions.",
+      "transparency": "Transparency",
+      "transparencyText": "All data on the platform is clearly labelled — real or demo — so users always know what they are looking at."
+    },
+    "demoNote": "This project is built as a capstone project. All current data is demo data for educational purposes."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or want to collaborate? Reach out.",
+    "fields": {
+      "name": "Your Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "Email Address",
+      "emailPlaceholder": "jane@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here..."
+    },
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Message sent! We'll get back to you soon.",
+    "info": {
+      "title": "Get in Touch",
+      "email": "hello@openpath.world",
+      "location": "Global — Remote-first",
+      "social": "Follow us"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your OpenPath account",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "forgotPassword": "Forgot password?"
+    },
+    "register": {
+      "title": "Create account",
+      "subtitle": "Join OpenPath and discover opportunities",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "notFound": "Page not found",
+    "backHome": "Back to Home",
+    "demoData": "Demo Data",
+    "learnMore": "Learn More",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Connecting the world with opportunity",
+    "links": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "disclaimer": "Demo data disclaimer",
+    "rights": "All rights reserved",
+    "connect": "Connect",
+    "madeWith": "Made with ❤️ for everyone, everywhere"
+  },
+  "cvBuilder": {
+    "title": "CV / Resume Builder",
+    "subtitle": "Fill in your details, preview your resume live, and download it as a polished PDF.",
+    "personalDetails": "Personal Details",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Jane Smith",
+    "email": "Email",
+    "emailPlaceholder": "jane@example.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+93 700 000 000",
+    "location": "Location",
+    "locationPlaceholder": "Kabul, Afghanistan",
+    "summary": "Summary",
+    "summaryPlaceholder": "A short pitch about yourself...",
+    "skills": "Skills (comma separated)",
+    "skillsPlaceholder": "React, Next.js, Communication",
+    "experience": "Experience",
+    "education": "Education",
+    "add": "Add",
+    "remove": "Remove",
+    "rolePlaceholder": "Role / Title",
+    "companyPlaceholder": "Company",
+    "periodPlaceholder": "e.g. Jan 2024 – Present",
+    "descriptionPlaceholder": "What did you work on?",
+    "degreePlaceholder": "Degree / Program",
+    "schoolPlaceholder": "School / University",
+    "yearPlaceholder": "e.g. 2022 – 2026",
+    "download": "Download as PDF",
+    "generating": "Generating PDF...",
+    "downloadError": "Couldn't generate the PDF. Please check your entries and try again.",
+    "yourName": "Your Name",
+    "livePreviewNote": "Live preview — click \"Download as PDF\" to export"
+  },
+  "admin": {
+    "title": "Review Opportunities",
+    "subtitle": "Approve or reject opportunities submitted by users.",
+    "filterPending": "Pending",
+    "filterApproved": "Approved",
+    "filterRejected": "Rejected",
+    "approve": "Approve",
+    "reject": "Reject",
+    "rejectPrompt": "Reason for rejection (optional):",
+    "noItems": "No opportunities here.",
+    "loadError": "Failed to load opportunities.",
+    "actionError": "Failed to update this opportunity. Please try again.",
+    "rejectedReason": "Rejected: {reason}"
+  }
 }
