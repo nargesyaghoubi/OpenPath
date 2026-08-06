@@ -10,7 +10,7 @@ import { useTheme } from "@/components/ThemeProvider";
 import UserMenu from "@/components/auth/UserMenu";
 import {
     Menu, X, Bookmark, LayoutDashboard, Plus, Globe,
-    Sun, Moon, ChevronDown, LogIn, FileText,
+    Sun, Moon, ChevronDown, LogIn, FileText, ShieldCheck,
 } from "lucide-react";
 
 
@@ -38,7 +38,7 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
         { href: "/about", label: t("about") },
         { href: "/contact", label: t("contact") },
     ];
-    
+
     // Handle locale switching
     const changeLocale = (newLocale: string) => {
         router.push(pathname, { locale: newLocale });
@@ -110,6 +110,17 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                             >
                                 <FileText className="w-4 h-4" />
                                 <span>{t("cvBuilder")}</span>
+                            </Link>
+                        )}
+
+                        {/* Admin moderation queue — admins only */}
+                        {user?.role === "admin" && (
+                            <Link
+                                href="/admin/opportunities"
+                                className="hidden md:flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
+                            >
+                                <ShieldCheck className="w-4 h-4" />
+                                <span>{t("review")}</span>
                             </Link>
                         )}
 
@@ -216,6 +227,11 @@ export default function NavbarClient({ user, locale }: NavbarClientProps) {
                             <Link href="/add-opportunity" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium bg-indigo-600 text-white mt-2">
                                 <Plus className="w-4 h-4" /> {t("addOpportunity")}
                             </Link>
+                            {user.role === "admin" && (
+                                <Link href="/admin/opportunities" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-600 dark:text-neutral-400">
+                                    <ShieldCheck className="w-4 h-4" /> {t("review")}
+                                </Link>
+                            )}
                         </>
                     )}
                     {!user && (
