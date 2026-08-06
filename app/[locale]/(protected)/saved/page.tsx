@@ -6,14 +6,14 @@ import { useSaved } from "@/context/SavedContext";
 import OpportunityCard from "@/components/OpportunityCard";
 import EmptyState from "@/components/EmptyState";
 import { isRTL } from "@/lib/utils";
-import { Trash2, Bookmark } from "lucide-react";
+import { Trash2, Bookmark, Loader2 } from "lucide-react";
 
 export default function SavedPage() {
     const t = useTranslations("saved");
     const locale = useLocale();
     const rtl = isRTL(locale);
     // Get saved opportunities and actions from context
-    const { savedOpportunities, toggleSave, clearAll } = useSaved();
+    const { savedOpportunities, loading, clearAll } = useSaved();
 
     return (
         <div dir={rtl ? "rtl" : "ltr"} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -36,7 +36,11 @@ export default function SavedPage() {
                 )}
             </div>
             {/* Empty state - shown when no opportunities are saved */}
-            {savedOpportunities.length === 0 ? (
+            {loading ? (
+                <div className="flex items-center justify-center py-16 text-neutral-400">
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                </div>
+            ) : savedOpportunities.length === 0 ? (
                 <EmptyState
                     icon="🔖"
                     title={t("empty")}

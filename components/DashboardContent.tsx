@@ -1,25 +1,51 @@
 "use client";
 // Dashboard content with live statistics, charts, and recent opportunities.
+import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { useOpportunities } from "@/context/OpportunitiesContext";
-import { isExpiringSoon, formatDeadline, CATEGORY_COLORS, CATEGORY_ICONS } from "@/lib/utils";
+import { isExpiringSoon, formatDeadline, CATEGORY_COLORS, CATEGORY_ICONS, cn } from "@/lib/utils";
 import DashboardCard from "@/components/DashboardCard";
 import DashboardCharts from "@/components/DashboardCharts";
-import { LayoutDashboard, ShieldCheck } from "lucide-react";
+import { LayoutDashboard, ShieldCheck, ClipboardList } from "lucide-react";
+import { Opportunity } from "@/types";
 
 interface DashboardContentProps {
     user: { name: string; email: string; role?: string };
 }
 
-// Client component so stats/charts/table always reflect the live opportunities
-// list from OpportunitiesContext (localStorage), including anything the user
-// has added, edited, or deleted — not just the original seed data.
+// Shows live stats/charts from OpportunitiesContext, plus a
+// "My Submissions" panel with this user's items and review status
+const STATUS_STYLES: Record<string, string> = {
+    PENDING: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
+    APPROVED: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300",
+    REJECTED: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300",
+};
 
 export default function DashboardContent({ user }: DashboardContentProps) {
     const t = useTranslations("dashboard");
+    const tOpp = useTranslations("opportunities");
     const locale = useLocale();
     const { opportunities } = useOpportunities();
+    const [mine, setMine] = useState<Opportunity[]>([]);
+    const [mineLoading, setMineLoading] = useState(true);
+
+    useEffect(() => {
+        let cancelled = false;
+        (async () => {
+            try {
+                const res = await fetch("/api/opportunities/mine", { cache: "no-store" });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (!cancelled) setMine(data.opportunities ?? []);
+                }
+            } finally {
+                if (!cancelled) setMineLoading(false);
+            }
+        })();
+        return () => { cancelled = true; };
+    }, []);
+
     // Calculate dashboard statistics from the current opportunities list
     const jobs = opportunities.filter((o) => o.category === "Job").length;
     const scholarships = opportunities.filter((o) => o.category === "Scholarship").length;
@@ -40,14 +66,22 @@ export default function DashboardContent({ user }: DashboardContentProps) {
                     <h1 className="text-2xl font-bold">{t("title")}</h1>
                 </div>
                 <p className="text-indigo-100">
-                    Welcome back, <strong>{user.name}</strong>
+                    {t("welcomeBack")} <strong>{user.name}</strong>
                     {user.role === "admin" && (
                         <span className="ml-2 inline-flex items-center gap-1 bg-white/20 px-2 py-0.5 rounded-full text-xs font-medium">
-                            <ShieldCheck className="w-3 h-3" /> Admin
+                            <ShieldCheck className="w-3 h-3" /> {t("adminBadge")}
                         </span>
                     )}
                 </p>
                 <p className="text-indigo-100/70 text-sm mt-0.5">{user.email}</p>
+                {user.role === "admin" && (
+                    <Link
+                        href="/admin/opportunities"
+                        className="inline-flex items-center gap-1.5 mt-4 px-3 py-1.5 bg-white/15 hover:bg-white/25 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        <ShieldCheck className="w-3.5 h-3.5" /> {t("reviewLink")}
+                    </Link>
+                )}
             </div>
 
             {/* Stats */}
@@ -62,6 +96,44 @@ export default function DashboardContent({ user }: DashboardContentProps) {
 
             {/* Charts */}
             <DashboardCharts opportunities={opportunities} t={{ chartTitle: t("chartTitle"), countryChartTitle: t("countryChartTitle") }} />
+
+            {/* My submissions — tracks review status for opportunities this user submitted */}
+            <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 mt-6">
+                <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-5 flex items-center gap-2">
+                    <ClipboardList className="w-5 h-5 text-indigo-500" /> {t("mySubmissions")}
+                </h2>
+                {mineLoading ? (
+                    <p className="text-sm text-neutral-400">{t("loadingEllipsis")}</p>
+                ) : mine.length === 0 ? (
+                    <p className="text-sm text-neutral-400">
+                        {t("noSubmissions")}{" "}
+                        <Link href="/add-opportunity" className="text-indigo-600 dark:text-indigo-400 font-medium">
+                            {t("addOne")}
+                        </Link>
+                        .
+                    </p>
+                ) : (
+                    <div className="space-y-3">
+                        {mine.map((opp) => (
+                            <div
+                                key={opp.id}
+                                className="flex items-center justify-between gap-3 border border-neutral-100 dark:border-neutral-800 rounded-xl px-4 py-3"
+                            >
+                                <div>
+                                    <p className="font-medium text-neutral-900 dark:text-white text-sm">{opp.title}</p>
+                                    <p className="text-xs text-neutral-400">{opp.organization}</p>
+                                    {opp.status === "REJECTED" && opp.rejectReason && (
+                                        <p className="text-xs text-red-500 mt-1">{t("reasonLabel")}: {opp.rejectReason}</p>
+                                    )}
+                                </div>
+                                <span className={cn("text-xs font-medium px-2.5 py-1 rounded-full shrink-0", STATUS_STYLES[opp.status ?? "PENDING"])}>
+                                    {opp.status === "PENDING" ? tOpp("statusPending") : opp.status === "REJECTED" ? tOpp("statusRejected") : tOpp("statusApproved")}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
 
             {/* Recent submissions */}
             <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 mt-6">
